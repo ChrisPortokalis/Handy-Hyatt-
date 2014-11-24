@@ -19,7 +19,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -41,8 +41,16 @@
 
     [super viewDidLoad];
 
-     [self.navigationBar setBackgroundColor: [UIColor clearColor]];
+    [self.navigationBar setBackgroundColor: [UIColor clearColor]];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"TabBar_Background.png"]forBarMetrics: UIBarMetricsDefault];
+    self.navigationBar.translucent = NO;
+    
+    [self setNavBackButton];
+    
+    
+
+    
+    
     //[self.navigationBar setTintColor: [UIColor clearColor]];
    
     
@@ -63,10 +71,12 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidLoad];
+    [self setNavBackButton];
+    
+    
+    
     
     //[self.navigationBar setBackgroundImage:[UIImage imageNamed:@"TabBar_Background.png"]forBarMetrics: UIBarMetricsDefault];
-    [self.navigationBar setBackgroundColor: [UIColor clearColor]];
-    
    // UIImage *clockImage = [[UIImage imageNamed:@"TabBar_Clock_ClockedOut.png"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
     //CGRect frameimg = CGRectMake(0, 0, 20, 20);
     //UIImageView* clockView = [[UIImageView alloc] initWithImage: clockImage];
@@ -115,16 +125,30 @@
     
 }
 
+-(void) setNavBackButton
+{
+    //set back button arrow color
+    [self.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
+    //set back button color
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
+    //set back button arrow color
+    [self.navigationBar setTintColor:[UIColor whiteColor]];
+    
+   
+    
+
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)clockIn
+-(void)popBack
 {
-    
-    
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

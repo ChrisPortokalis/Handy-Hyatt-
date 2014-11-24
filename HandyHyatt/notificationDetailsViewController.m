@@ -21,7 +21,7 @@
 
 
 @property (strong, nonatomic) PFObject* thisNotifcation;
-@property (strong, nonatomic) NSDate* segDate;
+
 
 @end
 
@@ -31,35 +31,14 @@
     [super viewDidLoad];
     
     //get data from push segue
-    self.segDate = self.notifDate;
-    PFUser* thisUser = [PFUser currentUser];
     UIImage* sentBG = self.bgImage;
     self.thisNotifcation = self.selectedNotification;
     
     //setup UI from notification that was selected
     [self.background setImage: sentBG];
-    self.detailTextView.text = self.thisNotifcation[@"description"];
-    self.detailTextView.editable = NO;
-    self.titleLabel.text = self.thisNotifcation[@"title"];
-    
-    NSString* titleText = self.thisNotifcation[@"title"];
-    
-    if([titleText isEqualToString:@"Shift Change Request"])
-    {
-        self.acceptButton.hidden = NO;
-        self.declineButton.hidden = NO;
-        self.divBar.hidden = NO;
-    }
-    else
-    {
-        self.acceptButton.hidden = YES;
-        self.declineButton.hidden = YES;
-        self.divBar.hidden = YES;
-    }
-    
-    
-    self.nameLabel.text = thisUser[@"employeeName"];
-    [self getRealDate: self.thisNotifcation.createdAt];
+    [self setupViews];
+    [self setLabelFont: self.nameLabel];
+  
     
 }
 
@@ -68,85 +47,77 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
+-(void)setupViews
+{
+    NSString* titleText = self.thisNotifcation[@"title"];
+    
+    self.detailTextView.text = self.thisNotifcation[@"description"];
+    self.detailTextView.editable = NO;
+    self.titleLabel.text = self.thisNotifcation[@"title"];
+    
+    //get and display date from notification
+   [self getRealDate: self.thisNotifcation.createdAt];
+    
+    
+    
+    if([titleText isEqualToString:@"Shift Change Request"])
+    {
+        //dont hide views
+        self.acceptButton.hidden = NO;
+        self.declineButton.hidden = NO;
+        self.divBar.hidden = NO;
+        self.nameLabel.hidden = NO;
+       
+        
+        //get the current user
+        PFUser* thisUser = [PFUser currentUser];
+        
+        
+        self.nameLabel.text = thisUser[@"employeeName"];
+        
+    }
+    else
+    {
+        //hide views
+        self.acceptButton.hidden = YES;
+        self.declineButton.hidden = YES;
+        self.divBar.hidden = YES;
+        self.nameLabel.hidden = YES;
+    }
+    
+    
+}
+
+
 -(void)getRealDate: (NSDate*) notifDate {
-    
-   // NSDateComponents* components = [[NSDateComponents alloc] init];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents* components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday fromDate: notifDate];
-    [components setCalendar: calendar];
-    NSInteger monthInt = [components month];
-    
-    NSLog([NSString stringWithFormat:@"Month = %ld", (long)monthInt]);
     
     NSDateFormatter* format = [[NSDateFormatter alloc] init];
     
     [format setDateFormat:@"EEEE, d MMMM"];
     NSString* dateString = [format stringFromDate: notifDate];
     
-
+    
     self.dateLabel.text = dateString;
     
 }
 
--(NSString*)getMonthString: (NSInteger) month
+
+-(void)setLabelFont: (id) sender
 {
+    UILabel* thisLabel = (UILabel*) sender;
     
-    int monthInt = month;
+    /*for(NSString* family in [UIFont familyNames])
+     {
+     for(NSString* name in [UIFont fontNamesForFamilyName:family])
+     {
+     NSLog(@" %@", name);
+     }
+     }*/
     
-    //NSLog([NSString stringWithFormat: @"Month int = %ld", monthInt]);
-    
-    if(monthInt == 1)
-    {
-        return @"Jan";
-    }
-    else if(monthInt == 2)
-    {
-        return @"Feb";
-    }
-    else if(monthInt == 3)
-    {
-        return @"Mar";
-    }
-    else if(monthInt == 4)
-    {
-        return @"Apr";
-    }
-    else if(monthInt == 5)
-    {
-        return @"May";
-    }
-    else if(monthInt == 6)
-    {
-        return @"Jun";
-    }
-    else if(monthInt == 7)
-    {
-        return @"Jul";
-    }
-    else if(monthInt == 8)
-    {
-        return @"Aug";
-    }
-    else if(monthInt == 9)
-    {
-        return @"Sep";
-    }
-    else if(monthInt == 10)
-    {
-        return @"Oct";
-    }
-    else if(monthInt == 11)
-    {
-        return @"Nov";
-    }
-    else if(monthInt == 12)
-    {
-        return @"Dec";
-    }
-    else
-    {
-        return @"Error unknown date";
-    }
+    thisLabel.font = [UIFont fontWithName: @"BodoniSvtyTwoSCITCTT-Book" size: 32.0];
+    thisLabel.textColor = [UIColor colorWithRed:17.0f/255.0f green:101.0f/255.0f blue:168.0f/255.0f alpha:1.0];
     
 }
 

@@ -16,6 +16,10 @@
     [Parse setApplicationId:@"AphpZfDNs6IcLHusPA70zzvRHcDKxB1pfEg8HnzB"
                   clientKey:@"0811Owpz9qkgv2oZAegNEtGStFgwQaFswaxLi7RI"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+
+    //remove title for navigation bar back button leaving only the arrow
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -64) forBarMetrics:UIBarMetricsDefault];
     // Override point for customization after application launch.
     return YES;
 }

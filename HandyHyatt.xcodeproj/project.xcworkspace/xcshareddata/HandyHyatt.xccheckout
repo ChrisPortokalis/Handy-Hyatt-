@@ -10,31 +10,43 @@
 	<string>HandyHyatt</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>15DB04A5-3EAF-4728-8DDB-56E662152404</key>
+		<key>06DA980E9049EA196501C269B15D8A23A3769530</key>
+		<string>https://github.com/ChrisPortokalis/Handy-Hyatt-.git</string>
+		<key>15682F37214A8CD15CF6CF0E9FC4FEA8B8BBE904</key>
 		<string>https://github.com/ChrisPortokalis/Handy-Hyatt-.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HandyHyatt.xcodeproj/project.xcworkspace</string>
+	<string>HandyHyatt.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>15DB04A5-3EAF-4728-8DDB-56E662152404</key>
+		<key>06DA980E9049EA196501C269B15D8A23A3769530</key>
+		<string>../../../Handy-Hyatt-</string>
+		<key>15682F37214A8CD15CF6CF0E9FC4FEA8B8BBE904</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ChrisPortokalis/Handy-Hyatt-.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>15DB04A5-3EAF-4728-8DDB-56E662152404</string>
+	<string>15682F37214A8CD15CF6CF0E9FC4FEA8B8BBE904</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>15DB04A5-3EAF-4728-8DDB-56E662152404</string>
+			<string>06DA980E9049EA196501C269B15D8A23A3769530</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Handy-Hyatt-</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>15682F37214A8CD15CF6CF0E9FC4FEA8B8BBE904</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Handy-Hyatt--master</string>
 		</dict>
 	</array>
 </dict>

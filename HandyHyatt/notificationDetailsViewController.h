@@ -13,6 +13,5 @@
 
 @property (strong, nonatomic) UIImage* bgImage;
 @property (strong, nonatomic) PFObject* selectedNotification;
-@property (strong, nonatomic) NSDate* notifDate;
 
 @end
