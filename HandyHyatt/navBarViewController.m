@@ -82,7 +82,7 @@
     
     
     self.navClockStatus = [[UILabel alloc] init];
-    [self.navClockStatus setFrame:CGRectMake(nameLabel.frame.origin.x,-5,150,20)];
+    [self.navClockStatus setFrame:CGRectMake(50,-5,150,20)];
     
     [self.navClockStatus setFont:[UIFont fontWithName:@"Verdana" size:24]];
     [self.titleView addSubview:self.navClockStatus];
@@ -103,6 +103,10 @@
          {
              // Log details of the failure
              NSLog(@"Error: %@ %@", error, [error userInfo]);
+             
+             
+             
+             
          } else
          {
              // checking user punchin/punchout status
@@ -115,6 +119,16 @@
                   if (error)
                   {
                       NSLog(@"Error: %@ %@", error, [error userInfo]);
+                      self.clockStatus=@"Clocked Out";
+                      [self.navClockButton setImage:unclockedImage forState:UIControlStateNormal];
+                      [self.navClockStatus setTextColor:[UIColor colorWithRed:128.0f/255.0f
+                                                                        green:130.0f/255.0f
+                                                                         blue:132.0f/255.0f
+                                                                        alpha:1.0f]];
+                      [self.navClockStatus setText: @"CLOCKED OUT"];
+                      [self.navClockStatus sizeToFit];
+                      viewController.navigationItem.titleView = self.titleView;
+                      
                   }
                   else
                   {
@@ -298,6 +312,15 @@
              // first time logged in
              self.alertClockStatus.text=@"Clocked In";
              [self.alertClockStatus sizeToFit];
+             UIImage *clockedImage =   [UIImage imageNamed:@"TabBar_Clock_ClockedIn.png"];
+             [self.navClockButton setImage:clockedImage forState:UIControlStateNormal];
+             
+             [self.navClockStatus setTextColor:[UIColor colorWithRed:255.0f/255.0f
+                                                               green:255.0f/255.0f
+                                                                blue:255.0f/255.0f
+                                                               alpha:1.0f]];
+             self.navClockStatus.text = self.timeLeft;
+             [self.navClockStatus sizeToFit];
              
              PFObject *punchIn = [PFObject objectWithClassName:@"Clock"];
              punchIn[@"user"] = user.username;
@@ -305,6 +328,15 @@
              punchIn[@"status"] = @YES;
              [punchIn saveInBackground];
              self.alertView.hidden=NO;
+             
+             if(self.shiftTimer == nil)
+             {
+                 [self setTimer];
+                 self.shiftTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                                    target:self
+                                                                  selector:@selector(controlTimer)
+                                                                  userInfo:nil repeats:YES];
+             }
              
              
          } else
@@ -369,16 +401,7 @@
              }
          }
      }];
-    
-   /* if(self.startTimer)
-    {
-        self.shiftTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                           target:self
-                                                         selector:@selector(controlTimer)
-                                                         userInfo:nil repeats:YES];
-        self.startTimer = false;
-    }*/
-    
+
     
 }
 
@@ -457,23 +480,20 @@
     
     //bool to flag if shift is over
     bool shiftIsOver = false;
-
+    
+    self.secsLeft--;
     if(self.secsLeft == 0)
     {
-        
+        mins--;
         if(mins == 0)
         {
             hours--;
             mins = 59;
-            
         }
-        else
-        {
-            mins--;
-        }
-        self.secsLeft = 60;
+        
+        self.secsLeft = 59;
     }
-    self.secsLeft--;
+    
 
     if(hours <= 0 && mins <= 0 && self.secsLeft == 0)
     {
@@ -487,7 +507,7 @@
     
     if(shiftIsOver)
     {
-         self.timeLeft = @"Shift Over";
+        self.timeLeft = @"Shift Over";
         [self.shiftTimer invalidate];
         self.shiftTimer = nil;
         
@@ -503,19 +523,22 @@
     {
         PFUser *user=[PFUser currentUser];
         PFQuery *query = [PFQuery queryWithClassName:@"Clock"];
-        [query whereKey:@"user" equalTo:user];
+        [query whereKey:@"user" equalTo:user.username];
         [query orderByDescending:@"updatedAt"];
         [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
          {
-
+            bool status = [object[@"status"] boolValue];
              if(error)
              {
                  NSLog(@"Error with timer");
+                 //self.navClockStatus.text = @"CLOCKED OUT";
+                 [self.shiftTimer invalidate];
+                 self.shiftTimer = nil;
              
              }
              else
              {
-                 bool status = [object[@"status"] boolValue];
+                 
              
                  if(status)
                  {
@@ -605,7 +628,6 @@
                         
                     }
                     
-                
                 }
                 else
                 {

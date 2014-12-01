@@ -164,7 +164,6 @@
         if(!error)
         {
             self.yesterdayArr = [[NSArray alloc] initWithArray: results];
-             NSLog(@"WOOT");
         }
         else
         {
