@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="48o-2S-66t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="48o-2S-66t">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -155,7 +155,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ers-Ca-1xs"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52f-Kt-YNp">
+                                <rect key="frame" x="0.0" y="-91" width="1028" height="800"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xH-X7-z1r">
                                 <rect key="frame" x="120" y="304" width="151" height="143"/>
                                 <state key="normal" title="Button" image="HomeScreen_Icon_CheckList.png">
@@ -220,7 +222,7 @@
                     <navigationItem key="navigationItem" id="QMZ-9c-ais" propertyAccessControl="none"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="background" destination="ers-Ca-1xs" id="pLw-pd-8RE"/>
+                        <outlet property="background" destination="52f-Kt-YNp" id="KGI-NE-eGZ"/>
                         <outlet property="checkListButton" destination="7xH-X7-z1r" id="6rd-sr-hU4"/>
                         <outlet property="notificationButton" destination="uVz-aD-eoQ" id="wn9-hn-Abb"/>
                         <outlet property="scheduleButton" destination="JVP-cZ-5cc" id="wA9-rD-3js"/>
@@ -245,6 +247,35 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLD-KC-z6p">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="IpF-bc-T5U">
+                                <rect key="frame" x="0.0" y="145" width="1024" height="527"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationLevel="3" indentationWidth="10" reuseIdentifier="cellId" textLabel="kyY-4y-RgJ" detailTextLabel="N0S-x9-WIk" style="IBUITableViewCellStyleValue1" id="ByI-ik-c21">
+                                        <rect key="frame" x="0.0" y="22" width="1024" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ByI-ik-c21" id="Qam-MT-nmi">
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kyY-4y-RgJ">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N0S-x9-WIk">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Content_HeaderLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="QKa-GP-Fbq">
                                 <rect key="frame" x="20" y="132" width="984" height="5"/>
                             </imageView>
@@ -301,7 +332,7 @@
                     <connections>
                         <outlet property="background" destination="rLD-KC-z6p" id="VPf-Ey-FP4"/>
                         <outlet property="screenTitleLabel" destination="K4W-Qh-mvS" id="yqy-JX-doc"/>
-                        <outlet property="tableView" destination="xGK-JQ-3oi" id="ElF-Ee-Rr0"/>
+                        <outlet property="tableView" destination="IpF-bc-T5U" id="IMK-14-O1Q"/>
                         <segue destination="Lsy-EN-yn4" kind="push" identifier="notificationToDetail" id="Fhb-tm-wIm"/>
                     </connections>
                 </viewController>
@@ -421,39 +452,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Content_HeaderLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="mGv-AK-2qL">
                                 <rect key="frame" x="24" y="102" width="984" height="5"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vt4-KS-4x3">
-                                <rect key="frame" x="716" y="614" width="71" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="ACCEPT">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nw-Ua-0au">
-                                <rect key="frame" x="826" y="614" width="89" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="DELETE">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Content_DividerLine_Blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="fKD-H2-oPf">
-                                <rect key="frame" x="808" y="614" width="10" height="30"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Calendar Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ir3-Mj-SKG">
-                                <rect key="frame" x="65" y="141" width="500" height="57"/>
+                                <rect key="frame" x="65" y="132" width="500" height="57"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="26"/>
                                 <color key="textColor" red="0.50196078430000002" green="0.50980392159999999" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7L9-AU-LMc">
-                                <rect key="frame" x="89" y="502" width="154" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="See on Calendar">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Sah-FV-QoT" kind="push" id="mUH-VG-E3n"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsP-qv-ubD">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -462,6 +466,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Text Goes Here" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vd-c4-2SH">
+                                <rect key="frame" x="65" y="197" width="851" height="389"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.50196078431372548" green="0.50980392156862742" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7L9-AU-LMc">
+                                <rect key="frame" x="65" y="594" width="154" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="See on Calendar">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Sah-FV-QoT" kind="push" id="mUH-VG-E3n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -474,12 +495,9 @@
                     <navigationItem key="navigationItem" id="goA-vR-DoG"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="acceptButton" destination="Vt4-KS-4x3" id="SQB-tP-0NI"/>
                         <outlet property="background" destination="5uW-fu-JZv" id="A4a-j3-Xyy"/>
                         <outlet property="dateLabel" destination="Ir3-Mj-SKG" id="Byu-ei-Fmu"/>
-                        <outlet property="declineButton" destination="6nw-Ua-0au" id="thM-5T-qmh"/>
-                        <outlet property="detailTextView" destination="hsP-qv-ubD" id="evX-A8-ma2"/>
-                        <outlet property="divBar" destination="fKD-H2-oPf" id="cnf-gN-wj5"/>
+                        <outlet property="detailTextView" destination="2vd-c4-2SH" id="wKK-q3-LZl"/>
                         <outlet property="nameLabel" destination="ZLW-TD-DMT" id="Xdm-Vn-f9r"/>
                         <outlet property="seeOnCalendarButton" destination="7L9-AU-LMc" id="II3-T2-Y4m"/>
                         <outlet property="titleLabel" destination="hIN-hK-PQd" id="Tv6-0o-Ref"/>
@@ -501,7 +519,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLT-sP-FV8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLT-sP-FV8">
                                 <rect key="frame" x="295" y="229" width="98" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="eJN-MR-YCx"/>
@@ -515,7 +533,7 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="fEM-bc-scv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhw-QC-mlz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhw-QC-mlz">
                                 <rect key="frame" x="463" y="229" width="99" height="100"/>
                                 <state key="normal" title="Button" image="2_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -525,7 +543,7 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="6z9-BE-On1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phw-kY-7e5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phw-kY-7e5">
                                 <rect key="frame" x="638" y="229" width="99" height="100"/>
                                 <state key="normal" title="Button" image="3_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -535,7 +553,7 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="mZw-rI-ZO8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdz-MF-LpB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdz-MF-LpB">
                                 <rect key="frame" x="463" y="369" width="99" height="100"/>
                                 <state key="normal" title="Button" image="5_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -545,7 +563,7 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="Odq-5t-ELs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81r-o0-Sym">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81r-o0-Sym">
                                 <rect key="frame" x="638" y="369" width="99" height="100"/>
                                 <state key="normal" title="Button" image="6_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -555,7 +573,7 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="jEg-1L-DyY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lef-dW-N0L">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lef-dW-N0L">
                                 <rect key="frame" x="294" y="500" width="99" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="KHn-rn-iRv"/>
@@ -568,7 +586,7 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="1t8-ic-TKh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD9-fn-Wei">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD9-fn-Wei">
                                 <rect key="frame" x="465" y="500" width="97" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="zha-IQ-cXA"/>
@@ -581,7 +599,7 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="RVk-a5-B6x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwE-Ic-bmU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwE-Ic-bmU">
                                 <rect key="frame" x="638" y="500" width="99" height="100"/>
                                 <state key="normal" title="Button" image="9_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -600,7 +618,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adj-qr-icL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adj-qr-icL">
                                 <rect key="frame" x="643" y="648" width="99" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="99" id="PA5-Xg-r2I"/>
@@ -613,7 +631,7 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="ebZ-Wh-KHH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wt-eI-PHv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wt-eI-PHv">
                                 <rect key="frame" x="463" y="648" width="99" height="100"/>
                                 <state key="normal" title="Button" image="PinDeselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -622,7 +640,7 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="EXq-90-anF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wE9-0i-Aey">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wE9-0i-Aey">
                                 <rect key="frame" x="294" y="648" width="99" height="100"/>
                                 <state key="normal" title="Button" image="PinSelected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -631,7 +649,7 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="kq9-eA-01r"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWU-eM-qPY">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWU-eM-qPY">
                                 <rect key="frame" x="295" y="152" width="71" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="7HH-Wk-ot3"/>
@@ -673,7 +691,7 @@
                                 <color key="textColor" red="0.88790760869999996" green="0.010161577680000001" blue="0.090756688619999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppn-hS-ZNf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppn-hS-ZNf">
                                 <rect key="frame" x="294" y="369" width="99" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="99" id="5nk-vt-MyJ"/>
@@ -789,24 +807,24 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1_selected.png" width="100" height="100"/>
-        <image name="1_unselected.png" width="100" height="100"/>
-        <image name="2_selected.png" width="100" height="100"/>
-        <image name="2_unselected.png" width="100" height="100"/>
-        <image name="3_selected.png" width="100" height="100"/>
-        <image name="3_unselected.png" width="100" height="100"/>
-        <image name="4_selected.png" width="100" height="100"/>
-        <image name="4_unselected.png" width="100" height="100"/>
-        <image name="5_selected.png" width="100" height="100"/>
-        <image name="5_unselected.png" width="100" height="100"/>
-        <image name="6_selected.png" width="100" height="100"/>
-        <image name="6_unselected.png" width="100" height="100"/>
-        <image name="7_selected.png" width="100" height="100"/>
-        <image name="7_unselected.png" width="100" height="100"/>
-        <image name="8_selected.png" width="100" height="100"/>
-        <image name="8_unselected.png" width="100" height="100"/>
-        <image name="9_selected.png" width="100" height="100"/>
-        <image name="9_unselected.png" width="100" height="100"/>
+        <image name="1_selected.png" width="101" height="101"/>
+        <image name="1_unselected.png" width="101" height="101"/>
+        <image name="2_selected.png" width="101" height="101"/>
+        <image name="2_unselected.png" width="101" height="101"/>
+        <image name="3_selected.png" width="101" height="101"/>
+        <image name="3_unselected.png" width="101" height="101"/>
+        <image name="4_selected.png" width="101" height="101"/>
+        <image name="4_unselected.png" width="101" height="101"/>
+        <image name="5_selected.png" width="101" height="101"/>
+        <image name="5_unselected.png" width="101" height="101"/>
+        <image name="6_selected.png" width="101" height="101"/>
+        <image name="6_unselected.png" width="101" height="101"/>
+        <image name="7_selected.png" width="101" height="101"/>
+        <image name="7_unselected.png" width="101" height="101"/>
+        <image name="8_selected.png" width="101" height="101"/>
+        <image name="8_unselected.png" width="101" height="101"/>
+        <image name="9_selected.png" width="101" height="101"/>
+        <image name="9_unselected.png" width="101" height="101"/>
         <image name="Content_DividerLine_Blue.png" width="4" height="37"/>
         <image name="Content_DividerLine_Gray.png" width="4" height="42"/>
         <image name="Content_HeaderLine.png" width="952" height="5"/>
@@ -817,8 +835,8 @@
         <image name="PinDeselected.png" width="100" height="100"/>
         <image name="PinSelected.png" width="100" height="100"/>
         <image name="PopUp_ExitX.png" width="19" height="20"/>
-        <image name="back_selected.png" width="100" height="100"/>
-        <image name="back_unselected.png" width="100" height="100"/>
+        <image name="back_selected.png" width="101" height="101"/>
+        <image name="back_unselected.png" width="101" height="101"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
@@ -826,6 +844,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Vp3-4a-2sX"/>
+        <segue reference="mUH-VG-E3n"/>
     </inferredMetricsTieBreakers>
 </document>

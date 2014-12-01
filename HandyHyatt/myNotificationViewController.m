@@ -11,7 +11,8 @@
 
 @interface myNotificationViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *screenTitleLabel;
 @property (strong, atomic) NSArray* todayArr;
 @property (strong, atomic) NSArray* yesterdayArr;
@@ -22,7 +23,6 @@
 @property (strong, atomic) NSArray* fiveDaysBeforeArr;
 @property (strong, nonatomic) NSMutableArray* sectionArr;
 @property (strong, atomic) NSArray* test;
-@property int threadCount;
 
 
 @end
@@ -37,13 +37,15 @@
      [self.navigationController viewDidAppear:NO];
     //get bgImage from push Segue
     UIImage* bg = self.bgImage;
-    self.threadCount = 0;
     
     //setup background ImageView  and tableView color
     [self.background setImage: bg];
     [self.tableView setBackgroundColor: [UIColor clearColor]];
 
     //get todays date so notifications from today are the only ones displayed
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
 
 
     [self queryDBforNotifications];
@@ -107,6 +109,8 @@
     [yesterdayComponents setDay: [todayComponents day] - 1];
     NSDate *yesterday = [calendar dateFromComponents: yesterdayComponents];
     
+    NSLog(@"%@", yesterday);
+    
     NSDateComponents* dayBeforeComp = yesterdayComponents;
     [dayBeforeComp setDay: [yesterdayComponents day] - 1];
     NSDate *dayBefore = [calendar dateFromComponents: dayBeforeComp];
@@ -152,7 +156,6 @@
         [self initSectionArr];
         [self.tableView reloadData];
     
-        NSLog(@"WOOT");
     }];
 
     PFQuery* minYestQuery = [PFQuery queryWithClassName: @"Notifications" predicate:predicate];
@@ -184,7 +187,6 @@
         if(!error)
         {
             self.dayBeforeArr = [[NSArray alloc] initWithArray: results];
-            NSLog(@"WOOT");
         }
         else
         {
@@ -205,7 +207,6 @@
         if(!error)
         {
             self.twoDaysBeforeArr = [[NSArray alloc] initWithArray: results];
-            NSLog(@"WOOT");
         }
         else
         {
@@ -226,7 +227,6 @@
         if(!error)
         {
             self.threeDaysBeforeArr = [[NSArray alloc] initWithArray: results];
-            NSLog(@"WOOT");
         }
         else
         {
@@ -247,7 +247,6 @@
         if(!error)
         {
             self.fourDaysBeforeArr = [[NSArray alloc] initWithArray: results];
-            NSLog(@"WOOT");
         }
         else
         {
@@ -278,10 +277,7 @@
         [self.tableView reloadData];
         
     }];
-    
-    //[self initSectionArr];
-    //[self.tableView reloadData];
-    
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

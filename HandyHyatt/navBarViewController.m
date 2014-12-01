@@ -19,12 +19,6 @@
 @property (strong,nonatomic) IBOutlet UIButton *alertClose;
 @property (strong, nonatomic) IBOutlet UIView* titleView;
 
-@property(strong,nonatomic) IBOutlet UIView *clockAlertView;
-@property (assign) Boolean alertClockOutStatus;
-
-@property (strong,nonatomic) IBOutlet UIView *logoutAlertView;
-@property(strong,nonatomic) IBOutlet UIBarButtonItem *logoutButton;
-
 @property (strong,nonatomic) IBOutlet UILabel *navClockStatus;
 @property (strong,nonatomic) IBOutlet UIButton *navClockButton;
 @property (strong,nonatomic) NSString *userName;
@@ -54,107 +48,11 @@
     return self;
 }
 
-- (IBAction)logout:(id)sender
-{
-    [self createLogoutAlertView];
-}
-
-- (void) createLogoutAlertView
-{
-    // creating a alert view
-    CGRect frame1 = CGRectMake(150.0, 250.0, 720.0, 250.0);
-    self.logoutAlertView = [[UIView alloc] initWithFrame:frame1];
-    [self.logoutAlertView setBackgroundColor:[UIColor whiteColor]];
-    
-    //creating close button
-    self.alertClose = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.alertClose addTarget:self
-                        action:@selector(closelogoutAlertView)
-              forControlEvents:UIControlEventTouchUpInside];
-    [self.alertClose setBackgroundImage:[UIImage imageNamed:@"PopUp_ExitX.png"] forState:UIControlStateNormal];
-    self.alertClose.frame = CGRectMake(680.0, 20.0, 20.0, 20.0);
-    [self.logoutAlertView addSubview:self.alertClose];
-    
-    
-    //creating title label
-    self.alertEmpName= [[UILabel alloc] initWithFrame:CGRectMake(180.0, 60.0, 50.0, 50.0)];
-    [self.alertEmpName setTextColor:[UIColor colorWithRed:128.0f/255.0f
-                                                    green:130.0f/255.0f
-                                                     blue:132.0f/255.0f
-                                                    alpha:1.0f]];
-    [self.alertEmpName setFont:[UIFont fontWithName:@"Verdana" size:24]];
-    [self.alertEmpName setText:@"Are you sure you want to"];
-    [self.alertEmpName sizeToFit];
-    [self.logoutAlertView addSubview:self.alertEmpName];
-    
-    //creating subtitle label Bookman OldStyle - replaced by Bodoni 72 OldStyle
-    self.alertDate= [[UILabel alloc] initWithFrame:CGRectMake(240.0, 90.0, 80.0, 80.0)];
-    [self.alertDate setTextColor:[UIColor colorWithRed:128.0f/255.0f
-                                                 green:130.0f/255.0f
-                                                  blue:132.0f/255.0f
-                                                 alpha:1.0f]];
-    [self.alertDate setFont:[UIFont fontWithName:@"Bodoni 72 OldStyle" size:60]];
-    [self.alertDate setText:@"log out?"];
-    [self.alertDate sizeToFit];
-    [self.logoutAlertView addSubview:self.alertDate];
-    
-    
-    //creating accept button
-    UIButton *alertAccept = [UIButton buttonWithType:UIButtonTypeCustom];
-    [alertAccept addTarget:self
-                    action:@selector(alertLogoutAccepted)
-          forControlEvents:UIControlEventTouchUpInside];
-    alertAccept.frame = CGRectMake(260.0, 170.0, 50.0, 50.0);
-    alertAccept.titleLabel.font=[UIFont fontWithName:@"Verdana" size:25];
-    [alertAccept setTitleColor:[UIColor colorWithRed:17.0f/255.0f
-                                               green:101.0f/255.0f
-                                                blue:168.0f/255.0f
-                                               alpha:1.0f] forState:(UIControlStateNormal)];
-    [alertAccept setTitle:@"ACCEPT" forState:UIControlStateNormal];
-    [alertAccept sizeToFit];
-    [self.logoutAlertView addSubview:alertAccept];
-    
-    [self.view addSubview:self.logoutAlertView];
-    
-}
-
-- (void) alertLogoutAccepted
-{
-    self.logoutAlertView.hidden=true;
-    [self.logoutAlertView  removeFromSuperview];
-    if([PFUser currentUser]!=nil)
-    {
-        [PFUser logOut];
-    }
-    [self popToRootViewControllerAnimated:NO];
-}
-
-- (void) closelogoutAlertView
-{
-    self.logoutAlertView.hidden=true;
-    [self.logoutAlertView  removeFromSuperview];
-}
-
-
 
 - (void)navigationController:(UINavigationController *)navigationController
        didShowViewController:(UIViewController *)viewController
 
 {
-    
-    //creating logout bar button
-    self.logoutButton =[[UIBarButtonItem alloc] initWithTitle:@"LOG OUT" style:UIBarButtonItemStyleBordered target:self
-                                                       action:@selector(logout:)];
-    
-    
-    [self.logoutButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                               [UIFont fontWithName:@"Verdana" size:18.0], NSFontAttributeName,
-                                               [UIColor colorWithRed:255.0f green:255.0f blue:255.0f alpha:1.0f], NSForegroundColorAttributeName,
-                                               nil]
-                                     forState:UIControlStateNormal];
-    
-    viewController.navigationItem.rightBarButtonItem= self.logoutButton;
-    
     
     UIImage *unclockedImage = [UIImage imageNamed:@"TabBar_Clock_ClockedOut.png"];
     UIImage *clockedImage =   [UIImage imageNamed:@"TabBar_Clock_ClockedIn.png"];
@@ -414,6 +312,15 @@
              // first time logged in
              self.alertClockStatus.text=@"Clocked In";
              [self.alertClockStatus sizeToFit];
+             UIImage *clockedImage =   [UIImage imageNamed:@"TabBar_Clock_ClockedIn.png"];
+             [self.navClockButton setImage:clockedImage forState:UIControlStateNormal];
+             
+             [self.navClockStatus setTextColor:[UIColor colorWithRed:255.0f/255.0f
+                                                               green:255.0f/255.0f
+                                                                blue:255.0f/255.0f
+                                                               alpha:1.0f]];
+             self.navClockStatus.text = self.timeLeft;
+             [self.navClockStatus sizeToFit];
              
              PFObject *punchIn = [PFObject objectWithClassName:@"Clock"];
              punchIn[@"user"] = user.username;
@@ -422,40 +329,41 @@
              [punchIn saveInBackground];
              self.alertView.hidden=NO;
              
+             if(self.shiftTimer == nil)
+             {
+                 [self setTimer];
+                 self.shiftTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                                    target:self
+                                                                  selector:@selector(controlTimer)
+                                                                  userInfo:nil repeats:YES];
+             }
+             
              
          } else
          {
-             self.alertClockOutStatus=false;
+           
              self.status=[[object objectForKey:@"status"] boolValue];
              if(self.status==YES)
              {
-                 // display clock out alert view
-                 [self createClockOutAlertView];
-                 if(self.alertClockOutStatus==true)
-                 {
-                     self.alertClockStatus.text=@"Clocked Out";
-                     [self.alertClockStatus sizeToFit];
-                     [self.shiftTimer invalidate];
-                     self.shiftTimer = nil;
-                     
-                     // change navigation bar status to clocked out and image to unclocked image
-                     UIImage *unclockedImage = [UIImage imageNamed:@"TabBar_Clock_ClockedOut.png"];
-                     [self.navClockButton setImage:unclockedImage forState:UIControlStateNormal];
-                     [self.navClockStatus setTextColor:[UIColor colorWithRed:128.0f/255.0f
-                                                                       green:130.0f/255.0f
-                                                                        blue:132.0f/255.0f
-                                                                       alpha:1.0f]];
-                     self.navClockStatus.text=@"CLOCKED OUT";
-                     [self.navClockStatus sizeToFit];
-                     
-                     object[@"status"]=@NO;
-                     object[@"punchOut"]=now;
-                     [object saveInBackground];
-                     self.clockAlertView.hidden=NO;
-                     self.alertClockOutStatus=false;
-                     self.clockAlertView.hidden=false;
-                     [self.view addSubview:self.clockAlertView];
-                 }
+                 self.alertClockStatus.text=@"Clocked Out";
+                 [self.alertClockStatus sizeToFit];
+                 [self.shiftTimer invalidate];
+                 self.shiftTimer = nil;
+                 
+                 // change navigation bar status to clocked out and image to unclocked image
+                 UIImage *unclockedImage = [UIImage imageNamed:@"TabBar_Clock_ClockedOut.png"];
+                 [self.navClockButton setImage:unclockedImage forState:UIControlStateNormal];
+                 [self.navClockStatus setTextColor:[UIColor colorWithRed:128.0f/255.0f
+                                                                   green:130.0f/255.0f
+                                                                    blue:132.0f/255.0f
+                                                                   alpha:1.0f]];
+                 self.navClockStatus.text=@"CLOCKED OUT";
+                 [self.navClockStatus sizeToFit];
+                 
+                 object[@"status"]=@NO;
+                 object[@"punchOut"]=now;
+                 [object saveInBackground];
+                 self.alertView.hidden=NO;
                  
              }
              else
@@ -475,12 +383,12 @@
                  
                  if(self.shiftTimer == nil)
                  {
-                     [self setTimer];
+                    [self setTimer];
                      self.shiftTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
                                                                         target:self
                                                                       selector:@selector(controlTimer)
                                                                       userInfo:nil repeats:YES];
-                     
+                    
                  }
                  
                  PFObject *punchIn = [PFObject objectWithClassName:@"Clock"];
@@ -493,91 +401,9 @@
              }
          }
      }];
-    
-    
+
     
 }
-
-- (void) createClockOutAlertView
-{
-    // creating a alert view
-    CGRect frame1 = CGRectMake(150.0, 250.0, 720.0, 250.0);
-    self.clockAlertView = [[UIView alloc] initWithFrame:frame1];
-    [self.clockAlertView setBackgroundColor:[UIColor whiteColor]];
-    
-    //creating close button
-    UIButton *alertClose = [UIButton buttonWithType:UIButtonTypeCustom];
-    [alertClose addTarget:self
-                   action:@selector(closeClockOutAlertView)
-         forControlEvents:UIControlEventTouchUpInside];
-    [alertClose setBackgroundImage:[UIImage imageNamed:@"PopUp_ExitX.png"] forState:UIControlStateNormal];
-    alertClose.frame = CGRectMake(680.0, 20.0, 20.0, 20.0);
-    [self.clockAlertView addSubview:alertClose];
-    
-    
-    //creating title label
-    UILabel *alertTitle= [[UILabel alloc] initWithFrame:CGRectMake(180.0, 60.0, 50.0, 50.0)];
-    [alertTitle setTextColor:[UIColor colorWithRed:128.0f/255.0f
-                                             green:130.0f/255.0f
-                                              blue:132.0f/255.0f
-                                             alpha:1.0f]];
-    [alertTitle setFont:[UIFont fontWithName:@"Verdana" size:24]];
-    [alertTitle setText:@"Are you sure you want to"];
-    [alertTitle sizeToFit];
-    [self.clockAlertView addSubview:alertTitle];
-    
-    //creating subtitle label Bookman OldStyle - replaced by Bodoni 72 OldStyle
-    UILabel *alertSubTitle= [[UILabel alloc] initWithFrame:CGRectMake(240.0, 90.0, 80.0, 80.0)];
-    [alertSubTitle setTextColor:[UIColor colorWithRed:128.0f/255.0f
-                                                green:130.0f/255.0f
-                                                 blue:132.0f/255.0f
-                                                alpha:1.0f]];
-    [alertSubTitle setFont:[UIFont fontWithName:@"Bodoni 72 OldStyle" size:60]];
-    [alertSubTitle setText:@"clock out?"];
-    [alertSubTitle sizeToFit];
-    [self.clockAlertView addSubview:alertSubTitle];
-    
-    
-    //creating accept button
-    UIButton *alertAccept = [UIButton buttonWithType:UIButtonTypeCustom];
-    [alertAccept addTarget:self
-                    action:@selector(alertClockOutAccepted)
-          forControlEvents:UIControlEventTouchUpInside];
-    alertAccept.frame = CGRectMake(260.0, 170.0, 50.0, 50.0);
-    alertAccept.titleLabel.font=[UIFont fontWithName:@"Verdana" size:25];
-    [alertAccept setTitleColor:[UIColor colorWithRed:17.0f/255.0f
-                                               green:101.0f/255.0f
-                                                blue:168.0f/255.0f
-                                               alpha:1.0f] forState:(UIControlStateNormal)];
-    [alertAccept setTitle:@"ACCEPT" forState:UIControlStateNormal];
-    [alertAccept sizeToFit];
-    [self.clockAlertView addSubview:alertAccept];
-    
-    [self.view addSubview:self.clockAlertView];
-    
-    
-    
-    
-    
-}
-
-- (void) alertClockOutAccepted
-{
-    self.clockAlertView.hidden=true;
-    [self.clockAlertView removeFromSuperview];
-    [self.view addSubview:self.alertView];
-}
-
-- (void) closeClockOutAlertView
-{
-    self.clockAlertView.hidden=true;
-    //self.alertView.hidden=true;
-    //[self.alertView removeFromSuperview];
-    [self.clockAlertView removeFromSuperview];
-    
-    
-}
-
 
 
 -(void) getRealDate
@@ -642,10 +468,9 @@
 }
 
 
-- (void)closeAlertView
+- (IBAction)closeAlertView:(id)sender
 {
-    self.alertView.hidden=true;
-    [self.alertView removeFromSuperview];
+    self.alertView.hidden=YES;
 }
 
 -(void)controlTimer

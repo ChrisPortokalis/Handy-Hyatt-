@@ -60,7 +60,10 @@
     
     self.detailTextView.text = self.thisNotifcation[@"description"];
     self.detailTextView.editable = NO;
+    self.detailTextView.backgroundColor = [UIColor clearColor];
     self.titleLabel.text = self.thisNotifcation[@"title"];
+    self.detailTextView.font = [UIFont fontWithName: @"Verdana" size: 21.0];
+    self.detailTextView.textColor = [UIColor colorWithRed:128.0/255.0 green:130.0/255.0 blue:132.0/255.0 alpha:1.0];
     
     //get and display date from notification
    [self getRealDate: self.thisNotifcation.createdAt];

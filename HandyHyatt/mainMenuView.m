@@ -16,8 +16,9 @@
 
 @interface mainMenuView ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *background;
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 @property  CGRect actualFrame;
 @property (weak, nonatomic) IBOutlet UIButton *notificationButton;
 @property (weak, nonatomic) IBOutlet UIButton *scheduleButton;
@@ -52,7 +53,7 @@
     
     
     //test -- ***NOT needed after login page is finished
-    [PFUser logInWithUsername: @"1456" password:@"1456"];
+    //[PFUser logInWithUsername: @"1456" password:@"1456"];
     
     //get current user
     PFUser* curr = [PFUser currentUser];
