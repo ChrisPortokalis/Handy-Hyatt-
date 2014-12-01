@@ -56,7 +56,9 @@
     
     UIImage *unclockedImage = [UIImage imageNamed:@"TabBar_Clock_ClockedOut.png"];
     UIImage *clockedImage =   [UIImage imageNamed:@"TabBar_Clock_ClockedIn.png"];
-
+    if([PFUser currentUser] != nil)
+    {
+        [self setTimer];
     PFUser* user = [PFUser currentUser];
     
     self.userName = user[@"employeeName"];
@@ -157,7 +159,7 @@
          }
      }];
     
-    
+    }
 }
 
 
@@ -171,14 +173,6 @@
     self.navigationBar.translucent = NO;
     [self setNavBackButton];
     
-    //setup timer
-    [self setTimer];
-    
-    //start timer other fucntions handle the stopping and displaying of this timer
-    self.shiftTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                           target:self
-                                                         selector:@selector(controlTimer)
-                                                         userInfo:nil repeats:YES];
 
     
     CGRect frame1 = CGRectMake(150.0, 250.0, 720.0, 250.0);
@@ -240,7 +234,6 @@
     
     //hiding the alert view
     self.alertView.hidden=YES;
-    [self navigationController:self didShowViewController:self.topViewController];
     
 }
 
@@ -250,7 +243,11 @@
 {
     [super viewDidAppear: animated];
     [self setNavBackButton];
-    [self navigationController:self didShowViewController:self.topViewController];
+    
+    if([PFUser currentUser] != nil)
+    {
+        [self navigationController:self didShowViewController:self.topViewController];
+    }
 }
 
 -(void) setNavBackButton
@@ -502,114 +499,131 @@
     }
     
     //check status of user
-    PFUser *user=[PFUser currentUser];
-    PFQuery *query = [PFQuery queryWithClassName:@"Clock"];
-    [query whereKey:@"user" equalTo:user.username];
-    [query orderByDescending:@"updatedAt"];
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
-     {
+    if([PFUser currentUser] != nil)
+    {
+        PFUser *user=[PFUser currentUser];
+        PFQuery *query = [PFQuery queryWithClassName:@"Clock"];
+        [query whereKey:@"user" equalTo:user];
+        [query orderByDescending:@"updatedAt"];
+        [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+         {
 
-         if(error)
-         {
-             NSLog(@"Error with timer");
-             
-         }
-         else
-         {
-             bool status = [object[@"status"] boolValue];
-             
-             if(status)
+             if(error)
              {
-                 self.navClockStatus.text = self.timeLeft;
-             }
+                 NSLog(@"Error with timer");
              
-         }
+             }
+             else
+             {
+                 bool status = [object[@"status"] boolValue];
+             
+                 if(status)
+                 {
+                     self.navClockStatus.text = self.timeLeft;
+                 }
+             
+             }
     
-     }];
+         }];
+    }
     
 }
 
 -(void)setTimer
 {
-    PFUser* user = [PFUser currentUser];
-    //get start time of today 0:00:00
-    NSDate *now = [NSDate date];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *todayComponents = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour| NSCalendarUnitMinute fromDate:now];
-    [todayComponents setHour: 0];
-    [todayComponents setMinute: 0];
-    [todayComponents setSecond: 0];
-    [todayComponents setNanosecond:0];
-    NSDate* today = [calendar dateFromComponents:todayComponents];
+    if([PFUser currentUser] != nil)
+    {
+        PFUser* user = [PFUser currentUser];
+        //get start time of today 0:00:00
+        NSDate *now = [NSDate date];
+        NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        NSDateComponents *todayComponents = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour| NSCalendarUnitMinute fromDate:now];
+        [todayComponents setHour: 0];
+        [todayComponents setMinute: 0];
+        [todayComponents setSecond: 0];
+        [todayComponents setNanosecond:0];
+        NSDate* today = [calendar dateFromComponents:todayComponents];
     
     //get actual time today
-    NSDateComponents *todayActualComp = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour| NSCalendarUnitMinute fromDate:now];
-    NSDate* todayActual = [calendar dateFromComponents:todayActualComp];
+        NSDateComponents *todayActualComp = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour| NSCalendarUnitMinute fromDate:now];
+        NSDate* todayActual = [calendar dateFromComponents:todayActualComp];
     
-    NSDateComponents *upper = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour fromDate:now];
-    [upper setHour: [upper hour] + 14];
+        NSDateComponents *upper = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour fromDate:now];
+        [upper setHour: [upper hour] + 14];
     
-    NSDate* upperDate = [calendar dateFromComponents:upper];
+        NSDate* upperDate = [calendar dateFromComponents:upper];
     
     //query for schedule that is today but ending after current time
-    PFQuery* schedQuery = [PFQuery queryWithClassName:@"Schedule"];
-    [schedQuery whereKey:@"from" greaterThan:today];
-    [schedQuery whereKey:@"from" lessThan:upperDate];
-    [schedQuery whereKey:@"to" greaterThan:todayActual];
-    [schedQuery whereKey:@"user" equalTo:user];
-    [schedQuery orderByAscending:@"from"];
-    [schedQuery findObjectsInBackgroundWithBlock:^ (NSArray* results, NSError* error) {
+        PFQuery* schedQuery = [PFQuery queryWithClassName:@"Schedule"];
+        [schedQuery whereKey:@"from" greaterThan:today];
+        [schedQuery whereKey:@"from" lessThan:upperDate];
+        [schedQuery whereKey:@"to" greaterThan:todayActual];
+        [schedQuery whereKey:@"user" equalTo:user];
+        [schedQuery orderByAscending:@"from"];
+        [schedQuery findObjectsInBackgroundWithBlock:^ (NSArray* results, NSError* error) {
         
-        if(!error)
-        {
-            //self.todayArr = [[NSArray alloc] initWithArray: results];
-            if(results.count != 0)
+            if(!error)
             {
-                //grab first object
-                PFObject *obj = results[0];
+                //self.todayArr = [[NSArray alloc] initWithArray: results];
+                if(results.count != 0)
+                {
+                    //grab first object
+                    PFObject *obj = results[0];
                 
-                //setup up calendar and get time left from now till end of shift
-                NSDate* to = obj[@"to"];
-                NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-                NSUInteger unitFlags = NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
-                NSDateComponents *components = [calendar components:unitFlags
+                    //setup up calendar and get time left from now till end of shift
+                    NSDate* to = obj[@"to"];
+                    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+                    NSUInteger unitFlags = NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+                    NSDateComponents *components = [calendar components:unitFlags
                                                                     fromDate:now
                                                                       toDate:to
                                                                      options:0];
-                int hours = [components hour];
-                int mins = [components minute];
-                self.secsLeft = [components second];
+                    int hours = [components hour];
+                    int mins = [components minute];
+                    self.secsLeft = [components second];
                 
-                if(hours <= 0 && mins <= 0 && self.secsLeft<=0)
-                {
-                    //if shift over
-                    self.timeLeft = @"Shift Over";
+                    if(hours <= 0 && mins <= 0 && self.secsLeft<=0)
+                    {
+                        //if shift over
+                        self.timeLeft = @"Shift Over";
+                    }
+                
+                    else
+                    {
+                        //set label for timer
+                        self.hoursLeft = [NSString stringWithFormat:@"%ld", (long) hours];
+                        self.minsLeft = [NSString stringWithFormat:@"%ld", (long) mins];
+                        self.timeLeft = [NSString stringWithFormat:@" %@H %@M", self.hoursLeft, self.minsLeft];
+                    }
+                    
+                    if(self.shiftTimer == nil)
+                    {
+                        self.shiftTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                                           target:self
+                                                                         selector:@selector(controlTimer)
+                                                                         userInfo:nil repeats:YES];
+                        
+                    }
+                    
+                
                 }
-                
                 else
                 {
-                    //set label for timer
-                    self.hoursLeft = [NSString stringWithFormat:@"%ld", (long) hours];
-                    self.minsLeft = [NSString stringWithFormat:@"%ld", (long) mins];
-                    self.timeLeft = [NSString stringWithFormat:@" %@H %@M", self.hoursLeft, self.minsLeft];
+                    //no scheduled time so clocked in appears
+                    self.timeLeft = @"CLOCKED IN";
+                    [self.shiftTimer invalidate];
+                    self.shiftTimer = nil;
                 }
-                
+            
+            
             }
             else
             {
-                //no scheduled time so clocked in appears
-                self.timeLeft = @"CLOCKED IN";
-                [self.shiftTimer invalidate];
-                self.shiftTimer = nil;
+                NSLog(@"Error in query for setTimer in navBarController.m");
             }
-            
-            
-        }
-        else
-        {
-            NSLog(@"Error in query for setTimer in navBarController.m");
-        }
-    }];
+        }];
+        
+    }
     
 }
 
