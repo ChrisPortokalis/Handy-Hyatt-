@@ -20,6 +20,10 @@
 
     //remove title for navigation bar back button leaving only the arrow
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -64) forBarMetrics:UIBarMetricsDefault];
+    
+    
+    
+    
     // Override point for customization after application launch.
     return YES;
 }

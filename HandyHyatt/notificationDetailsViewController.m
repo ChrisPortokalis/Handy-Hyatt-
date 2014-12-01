@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationController viewDidAppear:NO];
     //get data from push segue
     UIImage* sentBG = self.bgImage;
     self.thisNotifcation = self.selectedNotification;
@@ -40,6 +40,11 @@
     [self setLabelFont: self.nameLabel];
   
     
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {

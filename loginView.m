@@ -7,6 +7,7 @@
 //
 
 #import "loginView.h"
+#import <Parse/Parse.h>
 
 @interface loginView ()
 
@@ -26,8 +27,52 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+}
 
-	// Do any additional setup after loading the view.
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.navigationController viewDidAppear:animated];
+}
+
+-(void) getRealDate
+{
+    NSDate *notifDate=[[NSDate alloc] init];
+    
+    NSDateFormatter* format = [[NSDateFormatter alloc] init];
+    
+    [format setDateFormat:@"d MMMM YYYY"];
+    NSString* dateString = [format stringFromDate: notifDate];
+    
+}
+
+- (void) getRealTime
+{
+    NSDate *notifDate=[[NSDate alloc] init];
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    [df setDateFormat:@" hh:mma "];
+    NSString* timeString = [df stringFromDate: notifDate];
+    
+}
+
+// to get time left
+- (NSString *) getTimeWorked : (NSString *) punchInTime
+{
+    NSDate *currentDate=[[NSDate alloc] init];
+    
+    //    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //    [dateFormatter setDateFormat:@"<your date format goes here"];
+    //    NSDate *date = [dateFormatter dateFromString:string1];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:currentDate];
+    NSInteger hour = [components hour];
+    NSInteger minute = [components minute];
+    
+    
+    
+    
+    
+    return @"";
 }
 
 - (void)didReceiveMemoryWarning

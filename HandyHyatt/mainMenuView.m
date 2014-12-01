@@ -10,6 +10,8 @@
 #import "myNotificationViewController.h"
 #import "CustomBadgeViewController.h"
 #import "CustomBadge.h"
+#import "navBarViewController.h"
+#import "CKViewController.h"
 #import <Parse/Parse.h>
 
 @interface mainMenuView ()
@@ -39,9 +41,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
-     [self.parentViewController.navigationItem.backBarButtonItem setTitle: @" "];
-
+   
+    [self.parentViewController.navigationItem.backBarButtonItem setTitle: @" "];
+    [self.navigationController viewDidAppear:FALSE];
+    
     //set tags for 3 main menu buttons
     self.checkListButton.tag = 1;
     self.scheduleButton.tag = 2;
@@ -62,26 +65,30 @@
     //check the department to select appropriate background images
     if([dept  isEqual: @1])
     {
-        
         [self.background setImage:[UIImage  imageNamed: @"Kitchen.png"]];
-        
-
     }
     else if([dept isEqual: @2])
     {
         [self.background setImage:[UIImage imageNamed:@"Housekeeping.png"]];
 
     }
-    else
+    else if([dept isEqual: @3])
     {
         [self.background setImage:[UIImage imageNamed: @"Maitenance.png"]];
     }
+    else
+    {
+        [self.background setImage:[UIImage imageNamed: @"Pin.png"]];
+    }
     
+    [self.navigationItem setHidesBackButton:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [self queryTodaysNotifications];
+    [self.navigationController viewDidAppear:animated];
+   
 }
 
 
@@ -106,10 +113,12 @@
     else if(senderButton.tag == 2)
     {
         NSLog(@"Sched");
-        
+        CKViewController* ckView = (CKViewController*) [segue destinationViewController];
+        ckView.bgImage = self.bgImage;
     }
     else
     {
+        //send background pic to next view
         NSLog(@"Noti");
         myNotificationViewController* notiView = (myNotificationViewController*) [segue destinationViewController];
         
@@ -127,6 +136,7 @@
 
 -(void) queryTodaysNotifications
 {
+    //get current date from hour 0 min 0
     PFUser* user = [PFUser currentUser];
     NSDate *now = [NSDate date];
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
@@ -147,6 +157,7 @@
     
     self.todaysNotifs = [notifQuery findObjects];
     
+    //if there are notifcations for today display a badge on notifications
     if(self.todaysNotifs.count != 0)
     {
         NSString* badgeNumber = [[NSNumber numberWithInt:self.todaysNotifs.count] stringValue];
@@ -154,13 +165,12 @@
         CGFloat newX = self.notificationButton.frame.origin.x + self.notificationButton.frame.size.width - 20;
         CGFloat newY = self.notificationButton.frame.origin.y - 20;
     
-        self.notifBadge = [[CustomBadge alloc] init];
+        //self.notifBadge = [[CustomBadge alloc] init];
         self.notifBadge = [CustomBadge customBadgeWithString: badgeNumber];
     
         [self.notifBadge setFrame: CGRectMake(newX, newY, 50, 50)];
         [self.notifBadge.badgeStyle setBadgeTextColor: [UIColor whiteColor]];
         [self.notifBadge.badgeStyle setBadgeInsetColor: [UIColor colorWithRed: 17.0/255.0 green: 101.0/255.0 blue: 168.0/255.0 alpha: 1.0]];
-     //rgba(17, 101, 168, 1.0)
     
         [self.view addSubview:self.notifBadge];
         [self.view bringSubviewToFront:self.notifBadge];

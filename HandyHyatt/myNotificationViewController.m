@@ -34,6 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     [self.navigationController viewDidAppear:NO];
     //get bgImage from push Segue
     UIImage* bg = self.bgImage;
     self.threadCount = 0;
@@ -58,9 +59,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:NO];
-   // [self initSectionArr];
-    //[self.tableView reloadData];
-    
+    [self.navigationController viewDidAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="48o-2S-66t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="48o-2S-66t">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Bookman.otf">
@@ -94,7 +94,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bBB-2t-9gE"/>
+                    <navigationItem key="navigationItem" id="bBB-2t-9gE" propertyAccessControl="none">
+                        <nil key="title"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <segue destination="VDy-wt-mEJ" kind="push" id="shk-Jf-2r0"/>
@@ -102,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="591" y="-347"/>
+            <point key="canvasLocation" x="597" y="-347"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0eq-cg-b0T">
@@ -245,7 +247,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uB3-Xz-Bcx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TOg-Yk-BGp">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ers-Ca-1xs">
@@ -312,7 +314,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="QMZ-9c-ais"/>
+                    <navigationItem key="navigationItem" id="QMZ-9c-ais" propertyAccessControl="none"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="background" destination="ers-Ca-1xs" id="pLw-pd-8RE"/>
@@ -334,7 +336,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WS1-Lb-OtR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vQQ-IO-OgN">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLD-KC-z6p">
@@ -414,11 +416,11 @@
                         <viewControllerLayoutGuide type="bottom" id="I2X-B0-Ffp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YXu-C2-SDw">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Housekeeping.png" translatesAutoresizingMaskIntoConstraints="NO" id="fIE-tl-jSF">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BY1-7M-S60">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z1H-1A-gEw">
                                 <rect key="frame" x="110" y="144" width="805" height="537"/>
@@ -443,12 +445,20 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="BY1-7M-S60" secondAttribute="centerX" constant="57" id="1dq-fg-eOn"/>
+                            <constraint firstAttribute="height" secondItem="BY1-7M-S60" secondAttribute="height" id="3be-3X-EUl"/>
+                            <constraint firstAttribute="centerY" secondItem="BY1-7M-S60" secondAttribute="centerY" constant="-38" id="L5S-dt-1d4"/>
+                            <constraint firstAttribute="width" secondItem="BY1-7M-S60" secondAttribute="width" id="ZwA-dd-cKG"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="8FM-fr-Xyu">
                         <barButtonItem key="backBarButtonItem" title=" " id="EEO-QE-GFP"/>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="bgImageView" destination="BY1-7M-S60" id="fMZ-sP-L7I"/>
                         <outlet property="selectedDateLabel" destination="YxO-Ul-kvF" id="pzV-sY-1BX"/>
                         <outlet property="selectedDateView" destination="Z1H-1A-gEw" id="SUc-tQ-N1w"/>
                     </connections>
@@ -460,7 +470,7 @@
         <!--Nav Bar View Controller-->
         <scene sceneID="5fa-Wy-e9p">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="48o-2S-66t" customClass="navBarViewController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="48o-2S-66t" customClass="navBarViewController" propertyAccessControl="none" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S8l-AB-Vm2">
@@ -488,7 +498,7 @@
                         <viewControllerLayoutGuide type="bottom" id="mSX-aW-ke5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="R4R-ej-Yza">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5uW-fu-JZv">
@@ -587,7 +597,6 @@
         <image name="HomeScreen_Icon_CheckList.png" width="382" height="382"/>
         <image name="HomeScreen_Icon_Notifications.png" width="382" height="382"/>
         <image name="HomeScreen_Icon_Schedule.png" width="382" height="382"/>
-        <image name="Housekeeping.png" width="1024" height="668"/>
         <image name="PinDeselected.png" width="100" height="100"/>
         <image name="PopUp_ExitX.png" width="19" height="20"/>
     </resources>
@@ -598,6 +607,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="shk-Jf-2r0"/>
-        <segue reference="mUH-VG-E3n"/>
+        <segue reference="Vp3-4a-2sX"/>
     </inferredMetricsTieBreakers>
 </document>

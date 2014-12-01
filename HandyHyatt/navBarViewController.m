@@ -11,6 +11,30 @@
 
 @interface navBarViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *alertClockStatus;
+@property (strong, nonatomic) IBOutlet UILabel *alertTime;
+@property (strong, nonatomic) IBOutlet UILabel *alertDate;
+@property (strong, nonatomic) IBOutlet UILabel *alertEmpName;
+@property (strong, nonatomic) IBOutlet UIView *alertView;
+@property (strong,nonatomic) IBOutlet UIButton *alertClose;
+@property (strong, nonatomic) IBOutlet UIView* titleView;
+
+@property (strong,nonatomic) IBOutlet UILabel *navClockStatus;
+@property (strong,nonatomic) IBOutlet UIButton *navClockButton;
+@property (strong,nonatomic) NSString *userName;
+@property (strong,nonatomic) NSString *userObjectid;
+@property (strong,nonatomic) NSString *clockStatus;
+@property (assign) int dept;
+@property  (strong,nonatomic) NSMutableArray *tasks;
+@property (strong, nonatomic) NSString* timeLeft;
+@property (strong, nonatomic) NSString* hoursLeft;
+@property (strong, nonatomic) NSString* minsLeft;
+@property int secsLeft;
+@property (strong, nonatomic) NSTimer* shiftTimer;
+@property bool status;
+@property bool startTimer;
+
+
 @end
 
 @implementation navBarViewController
@@ -25,16 +49,117 @@
 }
 
 
+- (void)navigationController:(UINavigationController *)navigationController
+       didShowViewController:(UIViewController *)viewController
 
-/*-(void)drawRect:(CGRect*) rect
 {
-    UIColor *colorFlat = [UIColor blueColor];
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [colorFlat CGColor]);
-    CGContextFillRect(context, *rect);
+    
+    UIImage *unclockedImage = [UIImage imageNamed:@"TabBar_Clock_ClockedOut.png"];
+    UIImage *clockedImage =   [UIImage imageNamed:@"TabBar_Clock_ClockedIn.png"];
+
+    PFUser* user = [PFUser currentUser];
+    
+    self.userName = user[@"employeeName"];
+    self.alertEmpName.text=self.userName;
+    [self.alertEmpName sizeToFit];
+    
+    // create clock button, name label and clock staus label on navigation bar
+    self.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+    self.titleView.backgroundColor = [UIColor clearColor];
+    
+    UILabel *nameLabel = [[UILabel alloc] init];
+    [nameLabel setFrame:CGRectMake(50,20,100,20)];
+    [nameLabel setTextColor:[UIColor colorWithRed:128.0f/255.0f
+                                            green:130.0f/255.0f
+                                             blue:132.0f/255.0f
+                                            alpha:1.0f]];
+    [nameLabel setFont:[UIFont fontWithName:@"Verdana" size:14]];
+    [nameLabel setText:self.userName];
+    [nameLabel sizeToFit];
+    [self.titleView addSubview:nameLabel];
     
     
-}*/
+    self.navClockStatus = [[UILabel alloc] init];
+    [self.navClockStatus setFrame:CGRectMake(nameLabel.frame.origin.x,-5,150,20)];
+    
+    [self.navClockStatus setFont:[UIFont fontWithName:@"Verdana" size:24]];
+    [self.titleView addSubview:self.navClockStatus];
+    
+    
+    self.navClockButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.navClockButton setFrame:CGRectMake(0, -5, 44, 44)];
+    [self.navClockButton addTarget:self action:@selector(puncherAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.titleView addSubview:self.navClockButton];
+    self.tasks=[[NSMutableArray alloc] init];
+    self.userObjectid = [user objectId];
+    
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"username" equalTo:user.username];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+     {
+         if (error)
+         {
+             // Log details of the failure
+             NSLog(@"Error: %@ %@", error, [error userInfo]);
+         } else
+         {
+             // checking user punchin/punchout status
+             PFQuery *query = [PFQuery queryWithClassName:@"Clock"];
+             [query whereKey:@"user" equalTo:user.username];
+             [query orderByDescending:@"updatedAt"];
+             [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+              {
+                  
+                  if (error)
+                  {
+                      NSLog(@"Error: %@ %@", error, [error userInfo]);
+                  }
+                  else
+                  {
+                      //bool status=false;
+                      self.status=[[object objectForKey:@"status"] boolValue];
+                      // status true indicates he logged in and not logged out
+                      if(self.status == true)
+                      {
+                          
+                          
+                          [self.navClockButton setImage:clockedImage forState:UIControlStateNormal];
+                          
+                          // get the time left to work
+                          //NSString *punchedInTime=object[@"punchIn"];
+                          // NSString *timeWorked = [self getTimeWorked:punchedInTime];
+                          [self.navClockStatus setTextColor:[UIColor colorWithRed:255.0f/255.0f
+                                                                            green:255.0f/255.0f
+                                                                             blue:255.0f/255.0f
+                                                                            alpha:1.0f]];
+                          
+                          //[self setTimer];
+                          [self.navClockStatus setText:self.timeLeft];
+                          [self.navClockStatus sizeToFit];
+                          
+                          
+                          viewController.navigationItem.titleView = self.titleView;
+                          
+                      }
+                      else
+                      {
+                          self.clockStatus=@"Clocked Out";
+                          [self.navClockButton setImage:unclockedImage forState:UIControlStateNormal];
+                          [self.navClockStatus setTextColor:[UIColor colorWithRed:128.0f/255.0f
+                                                                            green:130.0f/255.0f
+                                                                             blue:132.0f/255.0f
+                                                                            alpha:1.0f]];
+                          [self.navClockStatus setText: @"CLOCKED OUT"];
+                          [self.navClockStatus sizeToFit];
+                          viewController.navigationItem.titleView = self.titleView;
+                      }
+                  }}];
+         }
+     }];
+    
+    
+}
+
 
 - (void)viewDidLoad
 {
@@ -44,85 +169,88 @@
     [self.navigationBar setBackgroundColor: [UIColor clearColor]];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"TabBar_Background.png"]forBarMetrics: UIBarMetricsDefault];
     self.navigationBar.translucent = NO;
-    
     [self setNavBackButton];
     
+    //setup timer
+    [self setTimer];
     
+    //start timer other fucntions handle the stopping and displaying of this timer
+    self.shiftTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                           target:self
+                                                         selector:@selector(controlTimer)
+                                                         userInfo:nil repeats:YES];
 
     
+    CGRect frame1 = CGRectMake(150.0, 250.0, 720.0, 250.0);
+    self.alertView = [[UIView alloc] initWithFrame:frame1];
+    [self.alertView setBackgroundColor:[UIColor whiteColor]];
     
-    //[self.navigationBar setTintColor: [UIColor clearColor]];
-   
+    //creating close button
+    self.alertClose = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.alertClose addTarget:self
+                        action:@selector(closeAlertView:)
+              forControlEvents:UIControlEventTouchUpInside];
+    [self.alertClose setBackgroundImage:[UIImage imageNamed:@"PopUp_ExitX.png"] forState:UIControlStateNormal];
+    self.alertClose.frame = CGRectMake(680.0, 20.0, 20.0, 20.0);
+    [self.alertView addSubview:self.alertClose];
     
-    // UIBarButtonItem *clockImage = [[UIBarButtonItem alloc] initWithImage:faceImage style:UIBarButtonItemStyleBordered target:nil action:nil];
     
-   /* [someButton setBackgroundImage:faceImage forState:UIControlStateNormal];
-    [someButton addTarget:self action:nil
-         forControlEvents:UIControlEventTouchUpInside];
-    [someButton setShowsTouchWhenHighlighted:YES];
+    //creating employee name label
+    self.alertEmpName= [[UILabel alloc] initWithFrame:CGRectMake(200.0, 60.0, 50.0, 50.0)];
+    [self.alertEmpName setTextColor:[UIColor colorWithRed:128.0f/255.0f
+                                                    green:130.0f/255.0f
+                                                     blue:132.0f/255.0f
+                                                    alpha:1.0f]];
+    [self.alertEmpName setFont:[UIFont fontWithName:@"Verdana" size:40]];
+    [self.alertEmpName sizeToFit];
+    [self.alertView addSubview:self.alertEmpName];
     
-    UIBarButtonItem *mailbutton =[[UIBarButtonItem alloc] initWithCustomView:someButton];
-    NSMutableArray* buttonArr = [[NSMutableArray alloc] init];
-    [buttonArr addObject: mailbutton];
-    self.navigationItem.leftBarButtonItems=buttonArr;*/
+    //creating date label
+    self.alertDate= [[UILabel alloc] initWithFrame:CGRectMake(220.0, 120.0, 50.0, 50.0)];
+    [self.alertDate setTextColor:[UIColor colorWithRed:128.0f/255.0f
+                                                 green:130.0f/255.0f
+                                                  blue:132.0f/255.0f
+                                                 alpha:1.0f]];
+    [self.alertDate setFont:[UIFont fontWithName:@"Verdana" size:24]];
+    [self.alertView addSubview:self.alertDate];
+    
+    
+    //creating date label    Bookman OldStyle - replaced by Verdana-Bold
+    self.alertClockStatus= [[UILabel alloc] initWithFrame:CGRectMake(100.0, 160.0, 50.0, 50.0)];
+    [self.alertClockStatus setTextColor:[UIColor colorWithRed:17.0f/255.0f
+                                                        green:101.0f/255.0f
+                                                         blue:168.0f/255.0f
+                                                        alpha:1.0f]];
+    [self.alertClockStatus setFont:[UIFont fontWithName:@"Verdana-Bold" size:35]];
+    [self.alertView addSubview:self.alertClockStatus];
+    
+    //creating image view
+    UIImageView *separator=[[UIImageView alloc] initWithFrame:CGRectMake(350.0, 160.0, 5.0, 50.0)];
+    separator.image=[UIImage imageNamed:@"PopUp_DividerLine.png"];
+    [self.alertView addSubview:separator];
+    
+    //creating time label
+    self.alertTime= [[UILabel alloc] initWithFrame:CGRectMake(400.0, 160.0, 50.0, 50.0)];
+    [self.alertTime setTextColor:[UIColor colorWithRed:17.0f/255.0f
+                                                 green:101.0f/255.0f
+                                                  blue:168.0f/255.0f
+                                                 alpha:1.0f]];
+    [self.alertTime setFont:[UIFont fontWithName:@"Verdana-Bold" size:35]];
+    [self.alertView addSubview:self.alertTime];
+    
+    //hiding the alert view
+    self.alertView.hidden=YES;
+    [self navigationController:self didShowViewController:self.topViewController];
     
 }
 
+
+
 -(void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewDidAppear: animated];
     [self setNavBackButton];
-    
-    
-    
-    
-    //[self.navigationBar setBackgroundImage:[UIImage imageNamed:@"TabBar_Background.png"]forBarMetrics: UIBarMetricsDefault];
-   // UIImage *clockImage = [[UIImage imageNamed:@"TabBar_Clock_ClockedOut.png"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
-    //CGRect frameimg = CGRectMake(0, 0, 20, 20);
-    //UIImageView* clockView = [[UIImageView alloc] initWithImage: clockImage];
-    
-    //UIButton *someButton = [[UIButton alloc] initWithFrame:frameimg];
-    //[self.navigationBar addSubview:clockView];
-    
-    if([PFUser currentUser] != nil)
-    {
-       /* NSDate* now = [NSDate date];
-        PFUser* currUser = [PFUser currentUser];
-        PFQuery* clockQuery = [PFQuery queryWithClassName: @"Clock"];
-        
-        [clockQuery whereKey:@"createdAt" equalTo: now];
-        NSArray* clockedIn = [clockQuery findObjects];
-        
-        if(clockedIn.count == 0)
-        {
-            NSLog(@"Logged");
-            NSLog(@"");
-            UIImage *faceImage = [[UIImage imageNamed:@"TabBar_Clock_ClockedOut.png"] imageWithRenderingMode: UIImageRenderingModeAlwaysOriginal];
-            CGRect frameimg = CGRectMake(0, 0, faceImage.size.width, faceImage.size.height);
-            UIButton *someButton = [[UIButton alloc] initWithFrame:frameimg];*/
-            
-            
-           // UIBarButtonItem *clockImage = [[UIBarButtonItem alloc] initWithImage:faceImage style:UIBarButtonItemStyleBordered target:nil action:nil];
-            
-            /*[someButton setBackgroundImage:faceImage forState:UIControlStateNormal];
-            [someButton addTarget:self action:nil
-                 forControlEvents:UIControlEventTouchUpInside];
-            [someButton setShowsTouchWhenHighlighted:YES];
-            
-            UIBarButtonItem *mailbutton =[[UIBarButtonItem alloc] initWithCustomView:someButton];
-            self.navigationItem.rightBarButtonItem=mailbutton;*/
-            
-            
-            /*UIButton *face = [UIButton buttonWithType:UIButtonTypeCustom];
-            face.bounds = CGRectMake( 0, 0, faceImage.size.width, faceImage.size.height );
-           //[face setImage:faceImage forState:UIControlStateNormal];
-            UIBarButtonItem *faceBtn = [[UIBarButtonItem alloc] initWithCustomView:face];
-            self.navigationItem.rightBarButtonItem = faceBtn;*/
-            
-        //}
-    
-    }
-    
+    [self navigationController:self didShowViewController:self.topViewController];
 }
 
 -(void) setNavBackButton
@@ -133,10 +261,6 @@
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,nil] forState:UIControlStateNormal];
     //set back button arrow color
     [self.navigationBar setTintColor:[UIColor whiteColor]];
-    
-   
-    
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -145,10 +269,349 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 -(void)popBack
 {
 
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+
+- (void) puncherAction
+{
+    self.alertView.hidden=NO;
+    [self.view addSubview:self.alertView];
+    [self attachPopUpAnimation];
+    [ self getRealDate];
+    [self getRealTime];
+    NSDate *now = [[NSDate alloc] init];
+    NSLog(@" Punch in/out Time :%@",now);
+    PFUser *user=[PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"Clock"];
+    [query whereKey:@"user" equalTo:user.username];
+    [query orderByDescending:@"updatedAt"];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+     {
+         if (error)
+         {
+             // Log details of the failure
+             NSLog(@"Error: %@ %@", error, [error userInfo]);
+             
+             // first time logged in
+             self.alertClockStatus.text=@"Clocked In";
+             [self.alertClockStatus sizeToFit];
+             
+             PFObject *punchIn = [PFObject objectWithClassName:@"Clock"];
+             punchIn[@"user"] = user.username;
+             punchIn[@"punchIn"] = now;
+             punchIn[@"status"] = @YES;
+             [punchIn saveInBackground];
+             self.alertView.hidden=NO;
+             
+             
+         } else
+         {
+           
+             self.status=[[object objectForKey:@"status"] boolValue];
+             if(self.status==YES)
+             {
+                 self.alertClockStatus.text=@"Clocked Out";
+                 [self.alertClockStatus sizeToFit];
+                 [self.shiftTimer invalidate];
+                 self.shiftTimer = nil;
+                 
+                 // change navigation bar status to clocked out and image to unclocked image
+                 UIImage *unclockedImage = [UIImage imageNamed:@"TabBar_Clock_ClockedOut.png"];
+                 [self.navClockButton setImage:unclockedImage forState:UIControlStateNormal];
+                 [self.navClockStatus setTextColor:[UIColor colorWithRed:128.0f/255.0f
+                                                                   green:130.0f/255.0f
+                                                                    blue:132.0f/255.0f
+                                                                   alpha:1.0f]];
+                 self.navClockStatus.text=@"CLOCKED OUT";
+                 [self.navClockStatus sizeToFit];
+                 
+                 object[@"status"]=@NO;
+                 object[@"punchOut"]=now;
+                 [object saveInBackground];
+                 self.alertView.hidden=NO;
+                 
+             }
+             else
+             {
+                 
+                 self.alertClockStatus.text=@"Clocked In";
+                 // change navigation bar status to time left and clock images to clockedin image
+                 UIImage *clockedImage =   [UIImage imageNamed:@"TabBar_Clock_ClockedIn.png"];
+                 [self.navClockButton setImage:clockedImage forState:UIControlStateNormal];
+                 
+                 [self.navClockStatus setTextColor:[UIColor colorWithRed:255.0f/255.0f
+                                                                   green:255.0f/255.0f
+                                                                    blue:255.0f/255.0f
+                                                                   alpha:1.0f]];
+                 self.navClockStatus.text = self.timeLeft;
+                 [self.navClockStatus sizeToFit];
+                 
+                 if(self.shiftTimer == nil)
+                 {
+                    [self setTimer];
+                     self.shiftTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                                        target:self
+                                                                      selector:@selector(controlTimer)
+                                                                      userInfo:nil repeats:YES];
+                    
+                 }
+                 
+                 PFObject *punchIn = [PFObject objectWithClassName:@"Clock"];
+                 punchIn[@"user"] = user.username;
+                 punchIn[@"punchIn"] = now;
+                 punchIn[@"status"] = @YES;
+                 [punchIn saveInBackground];
+                 self.alertView.hidden=NO;
+                 
+             }
+         }
+     }];
+    
+   /* if(self.startTimer)
+    {
+        self.shiftTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                           target:self
+                                                         selector:@selector(controlTimer)
+                                                         userInfo:nil repeats:YES];
+        self.startTimer = false;
+    }*/
+    
+    
+}
+
+
+-(void) getRealDate
+{
+    NSDate *notifDate=[[NSDate alloc] init];
+    
+    NSDateFormatter* format = [[NSDateFormatter alloc] init];
+    
+    [format setDateFormat:@"d MMMM YYYY"];
+    NSString* dateString = [format stringFromDate: notifDate];
+    
+    self.alertDate.text = dateString;
+    [self.alertDate sizeToFit];
+    
+}
+
+- (void) getRealTime
+{
+    NSDate *notifDate=[[NSDate alloc] init];
+    NSDateFormatter *df = [[NSDateFormatter alloc]init];
+    [df setDateFormat:@" hh:mma "];
+    NSString* timeString = [df stringFromDate: notifDate];
+    self.alertTime.text=timeString;
+    [self.alertTime sizeToFit];
+    
+}
+
+// to get time left
+
+
+- (void) attachPopUpAnimation
+{
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation
+                                      animationWithKeyPath:@"transform"];
+    
+    CATransform3D scale1 = CATransform3DMakeScale(0.5, 0.5, 1);
+    CATransform3D scale2 = CATransform3DMakeScale(1.2, 1.2, 1);
+    CATransform3D scale3 = CATransform3DMakeScale(0.9, 0.9, 1);
+    CATransform3D scale4 = CATransform3DMakeScale(1.0, 1.0, 1);
+    
+    NSArray *frameValues = [NSArray arrayWithObjects:
+                            [NSValue valueWithCATransform3D:scale1],
+                            [NSValue valueWithCATransform3D:scale2],
+                            [NSValue valueWithCATransform3D:scale3],
+                            [NSValue valueWithCATransform3D:scale4],
+                            nil];
+    [animation setValues:frameValues];
+    
+    NSArray *frameTimes = [NSArray arrayWithObjects:
+                           [NSNumber numberWithFloat:0.0],
+                           [NSNumber numberWithFloat:0.5],
+                           [NSNumber numberWithFloat:0.9],
+                           [NSNumber numberWithFloat:1.0],
+                           nil];
+    [animation setKeyTimes:frameTimes];
+    
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;
+    animation.duration = .2;
+    
+    //[self.layer addAnimation:animation forKey:@"popup"];
+}
+
+
+- (IBAction)closeAlertView:(id)sender
+{
+    self.alertView.hidden=YES;
+}
+
+-(void)controlTimer
+{
+    NSInteger hours = [self.hoursLeft integerValue];
+    NSInteger mins = [self.minsLeft integerValue];
+    
+    //bool to flag if shift is over
+    bool shiftIsOver = false;
+
+    if(self.secsLeft == 0)
+    {
+        
+        if(mins == 0)
+        {
+            hours--;
+            mins = 59;
+            
+        }
+        else
+        {
+            mins--;
+        }
+        self.secsLeft = 60;
+    }
+    self.secsLeft--;
+
+    if(hours <= 0 && mins <= 0 && self.secsLeft == 0)
+    {
+        shiftIsOver = true;
+    }
+    
+    //set strings for hours and mins
+    self.hoursLeft = [NSString stringWithFormat:@"%ld", (long)hours];
+    self.minsLeft = [NSString stringWithFormat:@"%ld", (long)mins];
+    
+    
+    if(shiftIsOver)
+    {
+         self.timeLeft = @"Shift Over";
+        [self.shiftTimer invalidate];
+        self.shiftTimer = nil;
+        
+    }
+    else
+    {
+        //set timer label
+       self.timeLeft = [NSString stringWithFormat:@"%@H %@M" , self.hoursLeft, self.minsLeft];
+    }
+    
+    //check status of user
+    PFUser *user=[PFUser currentUser];
+    PFQuery *query = [PFQuery queryWithClassName:@"Clock"];
+    [query whereKey:@"user" equalTo:user.username];
+    [query orderByDescending:@"updatedAt"];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+     {
+
+         if(error)
+         {
+             NSLog(@"Error with timer");
+             
+         }
+         else
+         {
+             bool status = [object[@"status"] boolValue];
+             
+             if(status)
+             {
+                 self.navClockStatus.text = self.timeLeft;
+             }
+             
+         }
+    
+     }];
+    
+}
+
+-(void)setTimer
+{
+    PFUser* user = [PFUser currentUser];
+    //get start time of today 0:00:00
+    NSDate *now = [NSDate date];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *todayComponents = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour| NSCalendarUnitMinute fromDate:now];
+    [todayComponents setHour: 0];
+    [todayComponents setMinute: 0];
+    [todayComponents setSecond: 0];
+    [todayComponents setNanosecond:0];
+    NSDate* today = [calendar dateFromComponents:todayComponents];
+    
+    //get actual time today
+    NSDateComponents *todayActualComp = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour| NSCalendarUnitMinute fromDate:now];
+    NSDate* todayActual = [calendar dateFromComponents:todayActualComp];
+    
+    NSDateComponents *upper = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour fromDate:now];
+    [upper setHour: [upper hour] + 14];
+    
+    NSDate* upperDate = [calendar dateFromComponents:upper];
+    
+    //query for schedule that is today but ending after current time
+    PFQuery* schedQuery = [PFQuery queryWithClassName:@"Schedule"];
+    [schedQuery whereKey:@"from" greaterThan:today];
+    [schedQuery whereKey:@"from" lessThan:upperDate];
+    [schedQuery whereKey:@"to" greaterThan:todayActual];
+    [schedQuery whereKey:@"user" equalTo:user];
+    [schedQuery orderByAscending:@"from"];
+    [schedQuery findObjectsInBackgroundWithBlock:^ (NSArray* results, NSError* error) {
+        
+        if(!error)
+        {
+            //self.todayArr = [[NSArray alloc] initWithArray: results];
+            if(results.count != 0)
+            {
+                //grab first object
+                PFObject *obj = results[0];
+                
+                //setup up calendar and get time left from now till end of shift
+                NSDate* to = obj[@"to"];
+                NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+                NSUInteger unitFlags = NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+                NSDateComponents *components = [calendar components:unitFlags
+                                                                    fromDate:now
+                                                                      toDate:to
+                                                                     options:0];
+                int hours = [components hour];
+                int mins = [components minute];
+                self.secsLeft = [components second];
+                
+                if(hours <= 0 && mins <= 0 && self.secsLeft<=0)
+                {
+                    //if shift over
+                    self.timeLeft = @"Shift Over";
+                }
+                
+                else
+                {
+                    //set label for timer
+                    self.hoursLeft = [NSString stringWithFormat:@"%ld", (long) hours];
+                    self.minsLeft = [NSString stringWithFormat:@"%ld", (long) mins];
+                    self.timeLeft = [NSString stringWithFormat:@" %@H %@M", self.hoursLeft, self.minsLeft];
+                }
+                
+            }
+            else
+            {
+                //no scheduled time so clocked in appears
+                self.timeLeft = @"CLOCKED IN";
+                [self.shiftTimer invalidate];
+                self.shiftTimer = nil;
+            }
+            
+            
+        }
+        else
+        {
+            NSLog(@"Error in query for setTimer in navBarController.m");
+        }
+    }];
+    
+}
+
 
 @end

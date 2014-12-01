@@ -25,6 +25,7 @@
 		E3C6894A1A22D8750022D424 /* Content_SmallSquare_Red.png in Resources */ = {isa = PBXBuildFile; fileRef = E3C689461A22D8750022D424 /* Content_SmallSquare_Red.png */; };
 		E3C6894B1A22D8750022D424 /* Content_SmallSquare_Turquois.png in Resources */ = {isa = PBXBuildFile; fileRef = E3C689471A22D8750022D424 /* Content_SmallSquare_Turquois.png */; };
 		E3D22DDC1A197FCE00224D7F /* notificationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D22DDB1A197FCE00224D7F /* notificationDetailsViewController.m */; };
+		E3E9FA591A2AE79F00B2CA80 /* TabBar_Clock_ClockedIn.png in Resources */ = {isa = PBXBuildFile; fileRef = E3E9FA581A2AE79F00B2CA80 /* TabBar_Clock_ClockedIn.png */; };
 		F71BDA851A1AA0A800E530EE /* Bookman.otf in Resources */ = {isa = PBXBuildFile; fileRef = F71BDA841A1A9F0800E530EE /* Bookman.otf */; };
 		F73B8F6E1A1404E800542120 /* loginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B8F6D1A1404E800542120 /* loginView.m */; };
 		F78031441A115CD500758473 /* PinDeselected.png in Resources */ = {isa = PBXBuildFile; fileRef = F78031421A115CD500758473 /* PinDeselected.png */; };
@@ -68,6 +69,11 @@
 		F7EAF01E1A115A1C0044548F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7EAF0001A115A1C0044548F /* UIKit.framework */; };
 		F7EAF0261A115A1C0044548F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7EAF0241A115A1C0044548F /* InfoPlist.strings */; };
 		F7EAF0281A115A1C0044548F /* HandyHyattTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EAF0271A115A1C0044548F /* HandyHyattTests.m */; };
+		F7EC005F1A23CD77003575E3 /* Calendar_ArrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = F7EC00581A23CD77003575E3 /* Calendar_ArrowLeft.png */; };
+		F7EC00601A23CD77003575E3 /* Calendar_ArrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = F7EC00591A23CD77003575E3 /* Calendar_ArrowRight.png */; };
+		F7EC00611A23CD77003575E3 /* CKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC005B1A23CD77003575E3 /* CKCalendarView.m */; };
+		F7EC00621A23CD77003575E3 /* CKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC005D1A23CD77003575E3 /* CKViewController.m */; };
+		F7EC00631A23CD77003575E3 /* PopUp_ExitX.png in Resources */ = {isa = PBXBuildFile; fileRef = F7EC005E1A23CD77003575E3 /* PopUp_ExitX.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,8 +108,8 @@
 		E3C689471A22D8750022D424 /* Content_SmallSquare_Turquois.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Content_SmallSquare_Turquois.png; sourceTree = "<group>"; };
 		E3D22DDA1A197FCE00224D7F /* notificationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = notificationDetailsViewController.h; sourceTree = "<group>"; };
 		E3D22DDB1A197FCE00224D7F /* notificationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notificationDetailsViewController.m; sourceTree = "<group>"; };
+		E3E9FA581A2AE79F00B2CA80 /* TabBar_Clock_ClockedIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBar_Clock_ClockedIn.png; sourceTree = "<group>"; };
 		F71BDA841A1A9F0800E530EE /* Bookman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bookman.otf; sourceTree = "<group>"; };
-		F71BDA861A1AA12F00E530EE /* Bookman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Bookman.otf; path = HandyHyatt/Bookman.otf; sourceTree = "<group>"; };
 		F73B8F6C1A1404E800542120 /* loginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loginView.h; path = ../loginView.h; sourceTree = "<group>"; };
 		F73B8F6D1A1404E800542120 /* loginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loginView.m; path = ../loginView.m; sourceTree = "<group>"; };
 		F78031421A115CD500758473 /* PinDeselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PinDeselected.png; sourceTree = "<group>"; };
@@ -155,6 +161,13 @@
 		F7EAF0231A115A1C0044548F /* HandyHyattTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HandyHyattTests-Info.plist"; sourceTree = "<group>"; };
 		F7EAF0251A115A1C0044548F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F7EAF0271A115A1C0044548F /* HandyHyattTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HandyHyattTests.m; sourceTree = "<group>"; };
+		F7EC00581A23CD77003575E3 /* Calendar_ArrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar_ArrowLeft.png; sourceTree = "<group>"; };
+		F7EC00591A23CD77003575E3 /* Calendar_ArrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar_ArrowRight.png; sourceTree = "<group>"; };
+		F7EC005A1A23CD77003575E3 /* CKCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCalendarView.h; sourceTree = "<group>"; };
+		F7EC005B1A23CD77003575E3 /* CKCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCalendarView.m; sourceTree = "<group>"; };
+		F7EC005C1A23CD77003575E3 /* CKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKViewController.h; sourceTree = "<group>"; };
+		F7EC005D1A23CD77003575E3 /* CKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKViewController.m; sourceTree = "<group>"; };
+		F7EC005E1A23CD77003575E3 /* PopUp_ExitX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PopUp_ExitX.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,7 +237,6 @@
 		F7EAEFF01A115A1C0044548F = {
 			isa = PBXGroup;
 			children = (
-				F71BDA861A1AA12F00E530EE /* Bookman.otf */,
 				F7EAF0021A115A1C0044548F /* HandyHyatt */,
 				F7EAF0211A115A1C0044548F /* HandyHyattTests */,
 				F7EAEFFB1A115A1C0044548F /* Frameworks */,
@@ -270,6 +282,13 @@
 		F7EAF0021A115A1C0044548F /* HandyHyatt */ = {
 			isa = PBXGroup;
 			children = (
+				F7EC00581A23CD77003575E3 /* Calendar_ArrowLeft.png */,
+				F7EC00591A23CD77003575E3 /* Calendar_ArrowRight.png */,
+				F7EC005A1A23CD77003575E3 /* CKCalendarView.h */,
+				F7EC005B1A23CD77003575E3 /* CKCalendarView.m */,
+				F7EC005C1A23CD77003575E3 /* CKViewController.h */,
+				F7EC005D1A23CD77003575E3 /* CKViewController.m */,
+				F7EC005E1A23CD77003575E3 /* PopUp_ExitX.png */,
 				E3C689371A22D70F0022D424 /* Classes */,
 				F7EAF00B1A115A1C0044548F /* AppDelegate.h */,
 				F73B8F6C1A1404E800542120 /* loginView.h */,
@@ -284,10 +303,6 @@
 				F7B8938B1A140E950030B65C /* navBarViewController.m */,
 				F780314E1A1161C900758473 /* mainMenuView.h */,
 				F780314F1A1161C900758473 /* mainMenuView.m */,
-				A04DC1731A1FE5D70088C7FD /* CKViewController.h */,
-				A04DC1721A1FE5D70088C7FD /* CKViewController.m */,
-				A04DC1701A1FE5220088C7FD /* CKCalendarView.h */,
-				A04DC16F1A1FE5220088C7FD /* CKCalendarView.m */,
 				F7EAF0141A115A1C0044548F /* Images.xcassets */,
 				F7EAF0031A115A1C0044548F /* Supporting Files */,
 			);
@@ -312,6 +327,7 @@
 				F78031531A1164C000758473 /* Content_HeaderLine.png */,
 				F78031551A11661900758473 /* Content_DividerLine_Blue.png */,
 				F78031511A11635100758473 /* Content_DividerLine_Gray.png */,
+				E3E9FA581A2AE79F00B2CA80 /* TabBar_Clock_ClockedIn.png */,
 				F78031461A115EC800758473 /* HomeScreen_DividerLine.png */,
 				F78031471A115EC800758473 /* HomeScreen_Icon_CheckList.png */,
 				F78031481A115EC800758473 /* HomeScreen_Icon_Notifications.png */,
@@ -425,7 +441,6 @@
 				F71BDA851A1AA0A800E530EE /* Bookman.otf in Resources */,
 				F780314D1A115EC800758473 /* HomeScreen_Icon_Schedule.png in Resources */,
 				F7B893B21A14156C0030B65C /* Pin.png in Resources */,
-				A051CBBB1A218D2B006013F6 /* PopUp_ExitX.png in Resources */,
 				F780314A1A115EC800758473 /* HomeScreen_DividerLine.png in Resources */,
 				E37A921B1A1AF59B009990E2 /* TabBar_BackButton.png in Resources */,
 				F7EAF0151A115A1C0044548F /* Images.xcassets in Resources */,
@@ -436,16 +451,19 @@
 				F7EAF0101A115A1C0044548F /* Main.storyboard in Resources */,
 				E38A02BA1A14619000BABC2E /* TabBar_Background.png in Resources */,
 				F78031521A11635100758473 /* Content_DividerLine_Gray.png in Resources */,
-				A051CBBE1A21908F006013F6 /* Calendar_ArrowLeft.png in Resources */,
 				F78031541A1164C000758473 /* Content_HeaderLine.png in Resources */,
 				F7B893B11A14156C0030B65C /* Kitchen.png in Resources */,
 				F7B893AF1A14156C0030B65C /* BlackOverlay.png in Resources */,
 				E3C6894A1A22D8750022D424 /* Content_SmallSquare_Red.png in Resources */,
 				E3C689491A22D8750022D424 /* Content_SmallSquare_Empty.png in Resources */,
+				F7EC00631A23CD77003575E3 /* PopUp_ExitX.png in Resources */,
+				F7EC00601A23CD77003575E3 /* Calendar_ArrowRight.png in Resources */,
 				F78031451A115CD500758473 /* PinSelected.png in Resources */,
 				F7B893B01A14156C0030B65C /* Housekeeping.png in Resources */,
 				E3C6894B1A22D8750022D424 /* Content_SmallSquare_Turquois.png in Resources */,
+				E3E9FA591A2AE79F00B2CA80 /* TabBar_Clock_ClockedIn.png in Resources */,
 				E3C689481A22D8750022D424 /* Content_SmallSquare_Blue.png in Resources */,
+				F7EC005F1A23CD77003575E3 /* Calendar_ArrowLeft.png in Resources */,
 				F78031561A11661900758473 /* Content_DividerLine_Blue.png in Resources */,
 				E38A02BC1A1469B100BABC2E /* TabBar_Clock_ClockedOut.png in Resources */,
 			);
@@ -472,13 +490,13 @@
 				E3C689421A22D70F0022D424 /* CustomBadgeAppDelegate.m in Sources */,
 				E3C689431A22D70F0022D424 /* CustomBadgeViewController.m in Sources */,
 				E3C689401A22D70F0022D424 /* BadgeStyle.m in Sources */,
+				F7EC00611A23CD77003575E3 /* CKCalendarView.m in Sources */,
 				F73B8F6E1A1404E800542120 /* loginView.m in Sources */,
 				E3C689411A22D70F0022D424 /* CustomBadge.m in Sources */,
 				E3D22DDC1A197FCE00224D7F /* notificationDetailsViewController.m in Sources */,
-				A04DC1741A1FE5D70088C7FD /* CKViewController.m in Sources */,
 				F7B8938C1A140E950030B65C /* navBarViewController.m in Sources */,
-				A04DC1711A1FE5220088C7FD /* CKCalendarView.m in Sources */,
 				F7EAF0091A115A1C0044548F /* main.m in Sources */,
+				F7EC00621A23CD77003575E3 /* CKViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

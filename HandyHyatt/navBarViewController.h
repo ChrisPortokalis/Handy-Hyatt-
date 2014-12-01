@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface navBarViewController : UINavigationController
+@interface navBarViewController : UINavigationController <UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UIImageView* bgImage;
 @end

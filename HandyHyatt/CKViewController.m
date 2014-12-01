@@ -13,6 +13,7 @@
 
 @property(nonatomic, strong) IBOutlet UIView *selectedDateView;
 @property(nonatomic, strong) IBOutlet UILabel *selectedDateLabel;
+@property(nonatomic, weak) IBOutlet UIImageView *bgImageView;
 
 
 // "day/monthyear" => ["Shift(P/M)", "Shift2(P/M)", "Shift3(P/M)", ..., "ShiftN(P/M)"]
@@ -42,6 +43,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     [self.navigationController viewDidAppear:false];
     
     //Load shedule
     _scheduleDates = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -52,6 +54,7 @@
                       @[@"8:00A - 11:30A", @"12:30P - 4:30P"],
                       @"30/11/2014", nil];
     
+    self.bgImageView.image = self.bgImage;
     
 	// Do any additional setup after loading the view, typically from a nib.
     CKCalendarView *calendar = [[CKCalendarView alloc] initWithStartDay:startMonday];
