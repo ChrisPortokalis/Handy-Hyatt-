@@ -288,19 +288,7 @@
     
     }
     }
-    else if([viewController isKindOfClass:[loginView class]])
-    {
-        NSLog(@"login view title view");
-        // create compnay logo image on navigation bar at titleview*/
-        UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
-        titleView.backgroundColor = [UIColor clearColor];
-        
-        UIImageView *titleImage=[[UIImageView alloc ] initWithFrame:CGRectMake(0, -5, 200, 50)];
-        titleImage.image=[UIImage imageNamed:@"TabBar_Logo_PinScreen1.png"];
-        [titleView addSubview:titleImage];
-        [viewController.navigationItem.titleView addSubview:titleImage];
-        
-    }
+    
 }
 
 
