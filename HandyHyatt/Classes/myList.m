@@ -54,7 +54,59 @@
     
    // [self.navigationItem setHidesBackButton:YES];
     
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
+    
     PFUser *user=[PFUser currentUser];
+    
+    
+    NSNumber *dept = user[@"dept"];
+    if([dept isEqual:@1])
+    {
+        UIImage *originalImage = [UIImage imageNamed:@"Kitchen.png"];
+        CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+        UIGraphicsBeginImageContext(destinationSize);
+        [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+    }
+    else if([dept isEqual:@2])
+    {
+        // dept 2       => HouseKeeping
+        UIImage *originalImage = [UIImage imageNamed:@"HouseKeeping.png"];
+        CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+        UIGraphicsBeginImageContext(destinationSize);
+        [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+        
+    }
+    else if([dept isEqual:@3])
+    {
+        // dept 3       => Maintenance
+        UIImage *originalImage = [UIImage imageNamed:@"Maintenance.png"];
+        CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+        UIGraphicsBeginImageContext(destinationSize);
+        [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+        
+    }
+    else
+    {
+        // if employee belongs to no department or still department is not connected, then default screen image will be allocated.
+        UIImage *originalImage = [UIImage imageNamed:@"Pin.png"];
+        CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+        UIGraphicsBeginImageContext(destinationSize);
+        [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+        
+    }
+
     self.userName=user.username;
     self.userID=[user objectId];
     
@@ -186,6 +238,7 @@
     }];
     
     
+    cell.backgroundColor= [ UIColor clearColor];
     
     return cell;
     
