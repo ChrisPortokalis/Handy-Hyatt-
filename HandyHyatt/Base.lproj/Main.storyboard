@@ -497,20 +497,12 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="ebZ-Wh-KHH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wt-eI-PHv">
-                                <rect key="frame" x="463" y="648" width="99" height="100"/>
-                                <state key="normal" title="Button" image="PinDeselected.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="EXq-90-anF"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wE9-0i-Aey">
                                 <rect key="frame" x="294" y="648" width="99" height="100"/>
-                                <state key="normal" title="Button" image="PinSelected.png">
+                                <state key="normal" title="Button" image="C_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" image="C_selected.png"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="kq9-eA-01r"/>
                                 </connections>
@@ -569,6 +561,16 @@
                                 <state key="highlighted" image="4_selected.png"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="KxF-vT-1cS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wt-eI-PHv">
+                                <rect key="frame" x="463" y="648" width="99" height="100"/>
+                                <state key="normal" title="Button" image="0_unselected.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="0_selected.png"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="EXq-90-anF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1044,6 +1046,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="0_selected.png" width="101" height="101"/>
+        <image name="0_unselected.png" width="101" height="101"/>
         <image name="1_selected.png" width="101" height="101"/>
         <image name="1_unselected.png" width="101" height="101"/>
         <image name="2_selected.png" width="101" height="101"/>
@@ -1062,6 +1066,8 @@
         <image name="8_unselected.png" width="101" height="101"/>
         <image name="9_selected.png" width="101" height="101"/>
         <image name="9_unselected.png" width="101" height="101"/>
+        <image name="C_selected.png" width="101" height="101"/>
+        <image name="C_unselected.png" width="101" height="101"/>
         <image name="Content_DividerLine_Blue.png" width="4" height="37"/>
         <image name="Content_DividerLine_Gray.png" width="4" height="42"/>
         <image name="Content_HeaderLine.png" width="952" height="5"/>
@@ -1069,8 +1075,6 @@
         <image name="HomeScreen_Icon_CheckList.png" width="382" height="382"/>
         <image name="HomeScreen_Icon_Notifications.png" width="382" height="382"/>
         <image name="HomeScreen_Icon_Schedule.png" width="382" height="382"/>
-        <image name="PinDeselected.png" width="100" height="100"/>
-        <image name="PinSelected.png" width="100" height="100"/>
         <image name="PopUp_ExitX.png" width="19" height="20"/>
         <image name="back_selected.png" width="101" height="101"/>
         <image name="back_unselected.png" width="101" height="101"/>
