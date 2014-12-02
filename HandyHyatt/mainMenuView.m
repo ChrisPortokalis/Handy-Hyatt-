@@ -102,6 +102,11 @@
      [self departmentList];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController viewDidAppear:animated];
+}
+
 
 - (void) departmentList
 {

@@ -9,6 +9,7 @@
 #import "deptListDetail.h"
 #import <Parse/Parse.h>
 #import "navBarViewController.h"
+#import "navBarViewController.h"
 
 @interface deptListDetail ()
 @property (weak, nonatomic) IBOutlet UILabel *tasktitle;
@@ -41,10 +42,62 @@
 {
     [super viewDidLoad];
     
+    [self.navigationController viewDidAppear:FALSE];
+    [self.navigationItem setHidesBackButton:YES];
     
-      // PFUser *user=[PFUser currentUser];
+    self.desc.backgroundColor = [UIColor clearColor];
+    
+    PFUser *user=[PFUser currentUser];
+    NSNumber *dept = user[@"dept"];
+    if([dept isEqual:@1])
+    {
+        UIImage *originalImage = [UIImage imageNamed:@"Kitchen.png"];
+        CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+        UIGraphicsBeginImageContext(destinationSize);
+        [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+    }
+    else if([dept isEqual:@2])
+    {
+        // dept 2       => HouseKeeping
+        UIImage *originalImage = [UIImage imageNamed:@"HouseKeeping.png"];
+        CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+        UIGraphicsBeginImageContext(destinationSize);
+        [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+        
+    }
+    else if([dept isEqual:@3])
+    {
+        // dept 3       => Maintenance
+        UIImage *originalImage = [UIImage imageNamed:@"Maintenance.png"];
+        CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+        UIGraphicsBeginImageContext(destinationSize);
+        [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+        
+    }
+    else
+    {
+        // if employee belongs to no department or still department is not connected, then default screen image will be allocated.
+        UIImage *originalImage = [UIImage imageNamed:@"Pin.png"];
+        CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
+        UIGraphicsBeginImageContext(destinationSize);
+        [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+        
+    }
+   
     PFQuery *query = [PFQuery queryWithClassName:@"Tasks"];
-   // NSLog(@" object id in detail dept list : %@",self.detailObjectid);
+    // NSLog(@" object id in detail dept list : %@",self.detailObjectid);
     [query getObjectInBackgroundWithId:self.detailObjectid block:^(PFObject *object, NSError *error)
     {
         if (!error)

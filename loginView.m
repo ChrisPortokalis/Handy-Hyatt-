@@ -62,7 +62,7 @@
     self.buttonClear.titleLabel.text = @" ";
     self.buttonBack.titleLabel.text = @" ";
     
-    [self setNeedsStatusBarAppearanceUpdate];
+     [self setNeedsStatusBarAppearanceUpdate];
     
 }
 
@@ -115,20 +115,32 @@
         if(![self.textBox4.text isEqualToString:@""])
         {
             self.textBox4.text=@"";
+            NSString *str =self.userName;
+            self.userName=@"";
+            self.userName = [str substringToIndex:[str length]-1];
         }
         else if(![self.textBox3.text isEqualToString:@""])
         {
             self.textBox3.text=@"";
+            NSString *str =self.userName;
+            self.userName=@"";
+            self.userName = [str substringToIndex:[str length]-1];
         }
         else if(![self.textBox2.text isEqualToString:@""])
         {
             self.textBox2.text=@"";
+            NSString *str =self.userName;
+            self.userName=@"";
+            self.userName = [str substringToIndex:[str length]-1];
         }
         else
         {
             self.textBox1.text=@"";
             self.buttonBack.hidden=YES;
             self.buttonClear.hidden=YES;
+            NSString *str =self.userName;
+            self.userName=@"";
+            self.userName = [str substringToIndex:[str length]-1];
         }
     }
     else
@@ -170,18 +182,13 @@
 
 - (void) validate
 {
-    //NSString *part1 = [self.textBox1.text stringByAppendingString:self.textBox2.text];
-    //NSString *part2 = [part1 stringByAppendingString:self.textBox3.text];
-    //self.username = [part2 stringByAppendingString:self.textBox4.text];
-    //self.username = [NSString stringWithFormat:@"%@%@%@%@",self.textBox1.text,self.textBox2.text,self.textBox3.text,self.textBox4.text];
-    self.userName=[self.userName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+     self.userName=[self.userName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     [PFUser logInWithUsernameInBackground:self.userName password:self.userName block:^(PFUser *user, NSError *error)
      {
          if (!error)
          {
-             NSLog(@"Login Success");
-             // Do stuff after successful login.
+            // NSLog(@"Login Success");
              self.navigationController.navigationBarHidden=false;
              [self performSegueWithIdentifier: @"mainMenuView" sender: self];
              
@@ -204,15 +211,22 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    // To hide navigation bar of root view controller
     [self.navigationController viewDidAppear:animated];
-    self.errorLabel.hidden=true;
+     self.navigationController.navigationBarHidden=true;
     
-    self.navigationController.navigationBarHidden=true;
+    //hiding error label
+    self.errorLabel.hidden=YES;
     
-    UINavigationBar *navBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0,0, self.view.bounds.size.width, 65)];
+    
+    
+   
+    //creating navigation bar to display company logo
+    UINavigationBar *navBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0,0, self.view.bounds.size.width, 35)];
     UINavigationItem* item = [[UINavigationItem alloc] init];
     [navBar   setBackgroundImage:[UIImage imageNamed:@"TabBar_Background.png"] forBarMetrics: UIBarMetricsDefault];
     
+    //setting background image of view
     UIImage *originalImage = [UIImage imageNamed:@"Pin.png"];
     CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
     UIGraphicsBeginImageContext(destinationSize);
@@ -221,6 +235,7 @@
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
     
+    //hiding clear and back button
     self.buttonClear.hidden=YES;
     self.buttonBack.hidden =YES;
     
@@ -234,19 +249,9 @@
     
     item.titleView=titleView;
     [navBar pushNavigationItem:item animated:YES];
-    //[navBar addSubview:titleView];
     [self.view addSubview:navBar];
     
-    
-    // self.navigationItem.titleView=titleView;
-    
-    
 }
-
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
-
 
 
 
@@ -255,5 +260,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 
 @end

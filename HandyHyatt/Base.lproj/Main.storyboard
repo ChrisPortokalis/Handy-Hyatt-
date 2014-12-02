@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="48o-2S-66t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="48o-2S-66t">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -145,7 +144,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="my notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4W-Qh-mvS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4W-Qh-mvS">
                                 <rect key="frame" x="333" y="53" width="358" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -385,8 +384,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLT-sP-FV8">
-                                <rect key="frame" x="295" y="229" width="98" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLT-sP-FV8">
+                                <rect key="frame" x="295" y="269" width="98" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="eJN-MR-YCx"/>
                                     <constraint firstAttribute="width" constant="98" id="jfL-RB-6yH"/>
@@ -399,8 +398,8 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="fEM-bc-scv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhw-QC-mlz">
-                                <rect key="frame" x="463" y="229" width="99" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhw-QC-mlz">
+                                <rect key="frame" x="458" y="269" width="99" height="100"/>
                                 <state key="normal" title="Button" image="2_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -409,8 +408,8 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="6z9-BE-On1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phw-kY-7e5">
-                                <rect key="frame" x="638" y="229" width="99" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phw-kY-7e5">
+                                <rect key="frame" x="633" y="269" width="99" height="100"/>
                                 <state key="normal" title="Button" image="3_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -419,8 +418,8 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="mZw-rI-ZO8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdz-MF-LpB">
-                                <rect key="frame" x="463" y="369" width="99" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdz-MF-LpB">
+                                <rect key="frame" x="458" y="397" width="99" height="100"/>
                                 <state key="normal" title="Button" image="5_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -429,8 +428,8 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="Odq-5t-ELs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81r-o0-Sym">
-                                <rect key="frame" x="638" y="369" width="99" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81r-o0-Sym">
+                                <rect key="frame" x="638" y="397" width="99" height="100"/>
                                 <state key="normal" title="Button" image="6_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -439,8 +438,8 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="jEg-1L-DyY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lef-dW-N0L">
-                                <rect key="frame" x="294" y="500" width="99" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lef-dW-N0L">
+                                <rect key="frame" x="293" y="522" width="99" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="KHn-rn-iRv"/>
                                 </constraints>
@@ -452,8 +451,8 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="1t8-ic-TKh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD9-fn-Wei">
-                                <rect key="frame" x="465" y="500" width="97" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hD9-fn-Wei">
+                                <rect key="frame" x="465" y="527" width="97" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="zha-IQ-cXA"/>
                                 </constraints>
@@ -465,8 +464,8 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="RVk-a5-B6x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwE-Ic-bmU">
-                                <rect key="frame" x="638" y="500" width="99" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwE-Ic-bmU">
+                                <rect key="frame" x="638" y="522" width="99" height="100"/>
                                 <state key="normal" title="Button" image="9_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -475,15 +474,6 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="Avw-dh-Lei"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Pin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEH-OQ-A06">
-                                <rect key="frame" x="363" y="72" width="289" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="289" id="1xh-ct-drG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Damascus" family="Damascus" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adj-qr-icL">
                                 <rect key="frame" x="643" y="648" width="99" height="100"/>
                                 <constraints>
@@ -499,24 +489,26 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wt-eI-PHv">
                                 <rect key="frame" x="463" y="648" width="99" height="100"/>
-                                <state key="normal" title="Button" image="PinDeselected.png">
+                                <state key="normal" title="Button" image="0_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" image="0_selected.png"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="EXq-90-anF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wE9-0i-Aey">
                                 <rect key="frame" x="294" y="648" width="99" height="100"/>
-                                <state key="normal" title="Button" image="PinSelected.png">
+                                <state key="normal" title="Button" image="C_unselected.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="highlighted" image="C_selected.png"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="kq9-eA-01r"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWU-eM-qPY">
-                                <rect key="frame" x="295" y="152" width="71" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWU-eM-qPY">
+                                <rect key="frame" x="293" y="195" width="70" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="71" id="7HH-Wk-ot3"/>
                                     <constraint firstAttribute="height" constant="30" id="AWK-Fy-oNE"/>
@@ -525,7 +517,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TAg-Qu-MGD">
-                                <rect key="frame" x="420" y="152" width="70" height="30"/>
+                                <rect key="frame" x="418" y="195" width="70" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="Wfo-Be-4kt"/>
                                 </constraints>
@@ -533,7 +525,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GkX-s3-UuW">
-                                <rect key="frame" x="548" y="152" width="70" height="30"/>
+                                <rect key="frame" x="563" y="195" width="70" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="wHc-ME-D53"/>
                                 </constraints>
@@ -541,7 +533,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X6b-rO-GZt">
-                                <rect key="frame" x="667" y="152" width="70" height="30"/>
+                                <rect key="frame" x="672" y="195" width="70" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="AdW-W1-QK2"/>
                                 </constraints>
@@ -549,7 +541,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsU-rd-ahn">
-                                <rect key="frame" x="392" y="113" width="240" height="21"/>
+                                <rect key="frame" x="402" y="166" width="240" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Xjz-ag-9MG"/>
                                 </constraints>
@@ -557,8 +549,8 @@
                                 <color key="textColor" red="0.88790760869999996" green="0.010161577680000001" blue="0.090756688619999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppn-hS-ZNf">
-                                <rect key="frame" x="294" y="369" width="99" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppn-hS-ZNf">
+                                <rect key="frame" x="294" y="397" width="99" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="99" id="5nk-vt-MyJ"/>
                                     <constraint firstAttribute="height" constant="100" id="XBf-sj-SBp"/>
@@ -571,6 +563,15 @@
                                     <action selector="buttonTapped:" destination="gUa-0g-mYj" eventType="touchUpInside" id="KxF-vT-1cS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter Pin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEH-OQ-A06">
+                                <rect key="frame" x="378" y="113" width="289" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="289" id="1xh-ct-drG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="36"/>
+                                <color key="textColor" red="0.50196078431372548" green="0.50980392156862742" blue="0.51764705882352935" alpha="0.60999999999999999" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -669,7 +670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fht-wn-yph" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="600" y="-331"/>
+            <point key="canvasLocation" x="503" y="-338"/>
         </scene>
         <!--Department List-->
         <scene sceneID="glw-Cv-xXs">
@@ -694,24 +695,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kt-0y-3QK">
-                                <rect key="frame" x="334" y="72" width="117" height="30"/>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-BookIt" family="Bodoni 72 Oldstyle" pointSize="32"/>
-                                <state key="normal" title="My List">
-                                    <color key="titleColor" red="0.50196078430000002" green="0.50980392159999999" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="hMM-ta-r5u" kind="push" identifier="myList" id="Ty1-I4-Str"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="43" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="c3e-D1-q5P">
                                 <rect key="frame" x="5" y="110" width="1024" height="638"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="deptListCell" textLabel="CKo-eR-Ve1" detailTextLabel="eBw-e4-wQ0" rowHeight="43" style="IBUITableViewCellStyleValue1" id="Byc-Cj-4aO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="deptListCell" textLabel="CKo-eR-Ve1" detailTextLabel="eBw-e4-wQ0" rowHeight="43" style="IBUITableViewCellStyleValue1" id="Byc-Cj-4aO">
                                         <rect key="frame" x="0.0" y="86" width="1024" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Byc-Cj-4aO" id="pl7-Hw-A7z">
@@ -745,6 +733,17 @@
                                     <outlet property="delegate" destination="CMB-kf-dPb" id="H7L-Mb-THD"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kt-0y-3QK">
+                                <rect key="frame" x="334" y="72" width="117" height="30"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-BookIt" family="Bodoni 72 Oldstyle" pointSize="32"/>
+                                <state key="normal" title="My List">
+                                    <color key="titleColor" red="0.50196078430000002" green="0.50980392159999999" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hMM-ta-r5u" kind="push" identifier="myList" id="Ty1-I4-Str"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -863,12 +862,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105" id="gkM-8u-6UX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb2-9P-Hoi">
-                                <rect key="frame" x="865" y="135" width="76" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="32"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.396078431372549" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Content_HeaderLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="OYH-HE-FYI">
@@ -879,52 +874,63 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="191" id="kQ7-nD-ID5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <fontDescription key="fontDescription" name="Verdana-Italic" family="Verdana" pointSize="21"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.396078431372549" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5u-xN-xgp">
-                                <rect key="frame" x="693" y="714" width="110" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5u-xN-xgp">
+                                <rect key="frame" x="664" y="714" width="139" height="34"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="18"/>
                                 <state key="normal" title="COMPLETED">
+                                    <color key="titleColor" red="0.066666666666666666" green="0.396078431372549" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="H96-wv-gqJ" kind="unwind" unwindAction="unwindToMyList:" id="f8y-HY-ABw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-GP-Syw">
-                                <rect key="frame" x="852" y="714" width="89" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwz-GP-Syw">
+                                <rect key="frame" x="829" y="714" width="89" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="89" id="sQH-5a-YiS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="18"/>
                                 <state key="normal" title="DELETE">
+                                    <color key="titleColor" red="0.066666666666666666" green="0.396078431372549" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="H96-wv-gqJ" kind="unwind" unwindAction="unwindToMyListForDelete:" id="nCl-Gf-USj"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Content_DividerLine_Blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-Cy-RID">
-                                <rect key="frame" x="824" y="714" width="10" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Content_DividerLine_Blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="d2D-Cy-RID">
+                                <rect key="frame" x="811" y="714" width="10" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3ez-0V-Iz3"/>
                                     <constraint firstAttribute="width" constant="10" id="fL4-8S-kLd"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdx-3T-fuu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdx-3T-fuu">
                                 <rect key="frame" x="65" y="236" width="876" height="245"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="245" id="ScX-uR-gt4"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.50196078431372548" green="0.50980392156862742" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb2-9P-Hoi">
+                                <rect key="frame" x="861" y="135" width="112" height="29"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="24"/>
+                                <color key="textColor" red="0.50196078431372548" green="0.50980392156862742" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="bb2-9P-Hoi" secondAttribute="trailing" constant="35" id="009-0l-fD4"/>
                             <constraint firstItem="DD1-HF-jVE" firstAttribute="top" secondItem="d2D-Cy-RID" secondAttribute="bottom" constant="24" id="02F-x8-Hus"/>
                             <constraint firstItem="OYH-HE-FYI" firstAttribute="trailing" secondItem="Pag-Fv-LXu" secondAttribute="trailingMargin" id="1pA-Ah-ZJX"/>
                             <constraint firstItem="OYH-HE-FYI" firstAttribute="leading" secondItem="Pag-Fv-LXu" secondAttribute="leadingMargin" id="5G4-Tn-NBn"/>
@@ -971,26 +977,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcZ-EZ-pxH">
-                                <rect key="frame" x="529" y="117" width="275" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="32"/>
-                                <state key="normal" title="Department List">
-                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="4rw-M0-5KC" kind="unwind" unwindAction="unwindFromMyList:" id="8db-se-uIS"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Content_DividerLine_Gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="bGy-hL-PWV">
-                                <rect key="frame" x="507" y="104" width="9" height="55"/>
+                                <rect key="frame" x="508" y="64" width="9" height="55"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hMx-Cb-dLQ">
-                                <rect key="frame" x="20" y="167" width="984" height="581"/>
+                                <rect key="frame" x="20" y="127" width="984" height="621"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myListCell" textLabel="kTP-uJ-Dun" detailTextLabel="Mzy-RL-AJ1" style="IBUITableViewCellStyleSubtitle" id="vF3-Xn-YPd">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myListCell" textLabel="kTP-uJ-Dun" detailTextLabel="Mzy-RL-AJ1" style="IBUITableViewCellStyleValue1" id="vF3-Xn-YPd">
                                         <rect key="frame" x="0.0" y="22" width="984" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vF3-Xn-YPd" id="z2k-I4-eaH">
@@ -1000,15 +994,15 @@
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kTP-uJ-Dun">
                                                     <rect key="frame" x="15" y="3" width="34" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mzy-RL-AJ1">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mzy-RL-AJ1">
                                                     <rect key="frame" x="15" y="25" width="43" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1024,12 +1018,23 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ip-8Q-UmN">
-                                <rect key="frame" x="361" y="117" width="132" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="32"/>
+                                <rect key="frame" x="353" y="72" width="132" height="30"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="32"/>
                                 <state key="normal" title="My List">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.066666666666666666" green="0.396078431372549" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcZ-EZ-pxH">
+                                <rect key="frame" x="530" y="72" width="275" height="30"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-BookIt" family="Bodoni 72 Oldstyle" pointSize="32"/>
+                                <state key="normal" title="Department List">
+                                    <color key="titleColor" red="0.50196078431372548" green="0.50980392156862742" blue="0.51764705882352935" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4rw-M0-5KC" kind="unwind" unwindAction="unwindFromMyList:" id="8db-se-uIS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1047,6 +1052,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="0_selected.png" width="101" height="101"/>
+        <image name="0_unselected.png" width="101" height="101"/>
         <image name="1_selected.png" width="101" height="101"/>
         <image name="1_unselected.png" width="101" height="101"/>
         <image name="2_selected.png" width="101" height="101"/>
@@ -1065,6 +1072,8 @@
         <image name="8_unselected.png" width="101" height="101"/>
         <image name="9_selected.png" width="101" height="101"/>
         <image name="9_unselected.png" width="101" height="101"/>
+        <image name="C_selected.png" width="101" height="101"/>
+        <image name="C_unselected.png" width="101" height="101"/>
         <image name="Content_DividerLine_Blue.png" width="4" height="37"/>
         <image name="Content_DividerLine_Gray.png" width="4" height="42"/>
         <image name="Content_HeaderLine.png" width="952" height="5"/>
@@ -1072,8 +1081,6 @@
         <image name="HomeScreen_Icon_CheckList.png" width="382" height="382"/>
         <image name="HomeScreen_Icon_Notifications.png" width="382" height="382"/>
         <image name="HomeScreen_Icon_Schedule.png" width="382" height="382"/>
-        <image name="PinDeselected.png" width="100" height="100"/>
-        <image name="PinSelected.png" width="100" height="100"/>
         <image name="PopUp_ExitX.png" width="19" height="20"/>
         <image name="back_selected.png" width="101" height="101"/>
         <image name="back_unselected.png" width="101" height="101"/>

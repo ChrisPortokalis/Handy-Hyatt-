@@ -425,7 +425,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "253"
             endingLineNumber = "253"
-            landmarkName = "-viewDidAppear:"
+            landmarkName = "-navigationController:didShowViewController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -441,7 +441,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "555"
             endingLineNumber = "555"
-            landmarkName = "-setTimer"
+            landmarkName = "-createClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -473,7 +473,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
             endingLineNumber = "168"
-            landmarkName = "-viewDidLoad"
+            landmarkName = "-navigationController:didShowViewController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -489,7 +489,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "251"
             endingLineNumber = "251"
-            landmarkName = "-viewDidAppear:"
+            landmarkName = "-navigationController:didShowViewController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -505,7 +505,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "337"
             endingLineNumber = "337"
-            landmarkName = "-puncherAction"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -521,7 +521,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "370"
             endingLineNumber = "370"
-            landmarkName = "-puncherAction"
+            landmarkName = "-viewDidAppear:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -553,7 +553,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "319"
             endingLineNumber = "319"
-            landmarkName = "-puncherAction"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -569,7 +569,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
             endingLineNumber = "111"
-            landmarkName = "-navigationController:didShowViewController:"
+            landmarkName = "-createLogoutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -617,7 +617,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
             endingLineNumber = "135"
-            landmarkName = "-navigationController:didShowViewController:"
+            landmarkName = "-closelogoutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -633,7 +633,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "459"
             endingLineNumber = "459"
-            landmarkName = "-controlTimer"
+            landmarkName = "-puncherAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -649,7 +649,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "597"
             endingLineNumber = "597"
-            landmarkName = "-setTimer"
+            landmarkName = "-getRealDate"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -665,7 +665,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "593"
             endingLineNumber = "593"
-            landmarkName = "-setTimer"
+            landmarkName = "-closeClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -681,7 +681,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "593"
             endingLineNumber = "593"
-            landmarkName = "-setTimer"
+            landmarkName = "-closeClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -697,7 +697,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "592"
             endingLineNumber = "592"
-            landmarkName = "-setTimer"
+            landmarkName = "-closeClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -713,7 +713,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "566"
             endingLineNumber = "566"
-            landmarkName = "-setTimer"
+            landmarkName = "-createClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -729,7 +729,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "322"
             endingLineNumber = "322"
-            landmarkName = "-puncherAction"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -745,7 +745,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "574"
             endingLineNumber = "574"
-            landmarkName = "-setTimer"
+            landmarkName = "-createClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -761,7 +761,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "578"
             endingLineNumber = "578"
-            landmarkName = "-setTimer"
+            landmarkName = "-alertClockOutAccepted"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -777,7 +777,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "580"
             endingLineNumber = "580"
-            landmarkName = "-setTimer"
+            landmarkName = "-alertClockOutAccepted"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -793,7 +793,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "582"
             endingLineNumber = "582"
-            landmarkName = "-setTimer"
+            landmarkName = "-alertClockOutAccepted"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -809,7 +809,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "378"
             endingLineNumber = "378"
-            landmarkName = "-puncherAction"
+            landmarkName = "-setNavBackButton"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -825,7 +825,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
             endingLineNumber = "180"
-            landmarkName = "-viewDidLoad"
+            landmarkName = "-navigationController:didShowViewController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -841,8 +841,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "-navigationController:didShowViewController:"
-            landmarkType = "5">
+            landmarkName = "@implementation navBarViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -857,7 +857,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "496"
             endingLineNumber = "496"
-            landmarkName = "-controlTimer"
+            landmarkName = "-puncherAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -873,7 +873,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "572"
             endingLineNumber = "572"
-            landmarkName = "-setTimer"
+            landmarkName = "-createClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -889,7 +889,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "479"
             endingLineNumber = "479"
-            landmarkName = "-controlTimer"
+            landmarkName = "-puncherAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -905,7 +905,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "481"
             endingLineNumber = "481"
-            landmarkName = "-controlTimer"
+            landmarkName = "-puncherAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

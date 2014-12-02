@@ -21,6 +21,13 @@
     //remove title for navigation bar back button leaving only the arrow
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -64) forBarMetrics:UIBarMetricsDefault];
     
+    /*if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
+    {
+        [application setStatusBarStyle:UIStatusBarStyleLightContent];
+        self.window.clipsToBounds =YES;
+        self.window.frame =  CGRectMake(0,20,self.window.frame.size.width,self.window.frame.size.height-20);
+    }*/
+    
     
     
     

@@ -34,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     [self.navigationController viewDidAppear:NO];
+     [self.navigationController viewDidAppear:YES];
     //get bgImage from push Segue
     UIImage* bg = self.bgImage;
     
@@ -57,6 +57,7 @@
     
     [self.tableView setTableFooterView:v];
 
+  
     
     
 
@@ -64,7 +65,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:NO];
+    //[super viewDidAppear:NO];
     [self.navigationController viewDidAppear:animated];
 }
 
