@@ -151,7 +151,8 @@
 {
     
     
-    if(![viewController isKindOfClass:[loginView class]]){
+    if(![viewController isKindOfClass:[loginView class]])
+    {
     //creating logout bar button
     self.logoutButton =[[UIBarButtonItem alloc] initWithTitle:@"LOG OUT" style:UIBarButtonItemStyleBordered target:self
                                                        action:@selector(logout:)];
@@ -287,6 +288,19 @@
     
     }
     }
+    else if([viewController isKindOfClass:[loginView class]])
+    {
+        NSLog(@"login view title view");
+        // create compnay logo image on navigation bar at titleview*/
+        UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+        titleView.backgroundColor = [UIColor clearColor];
+        
+        UIImageView *titleImage=[[UIImageView alloc ] initWithFrame:CGRectMake(0, -5, 200, 50)];
+        titleImage.image=[UIImage imageNamed:@"TabBar_Logo_PinScreen1.png"];
+        [titleView addSubview:titleImage];
+        [viewController.navigationItem.titleView addSubview:titleImage];
+        
+    }
 }
 
 
@@ -338,7 +352,7 @@
     [self.alertView addSubview:self.alertDate];
     
     
-    //creating date label    Bookman OldStyle - replaced by Verdana-Bold
+    //creating alert clock status    Bookman OldStyle - replaced by Verdana-Bold
     self.alertClockStatus= [[UILabel alloc] initWithFrame:CGRectMake(100.0, 160.0, 50.0, 50.0)];
     [self.alertClockStatus setTextColor:[UIColor colorWithRed:17.0f/255.0f
                                                         green:101.0f/255.0f
@@ -348,7 +362,7 @@
     [self.alertView addSubview:self.alertClockStatus];
     
     //creating image view
-    UIImageView *separator=[[UIImageView alloc] initWithFrame:CGRectMake(350.0, 160.0, 5.0, 50.0)];
+    UIImageView *separator=[[UIImageView alloc] initWithFrame:CGRectMake(360.0, 160.0, 5.0, 50.0)];
     separator.image=[UIImage imageNamed:@"PopUp_DividerLine.png"];
     [self.alertView addSubview:separator];
     
@@ -602,7 +616,7 @@
     [self.clockoutAccept addTarget:self
                     action:@selector(alertClockOutAccepted)
           forControlEvents:UIControlEventTouchUpInside];
-    self.clockoutAccept.frame = CGRectMake(260.0, 170.0, 50.0, 50.0);
+    self.clockoutAccept.frame = CGRectMake(280.0, 180.0, 50.0, 50.0);
     self.clockoutAccept.titleLabel.font=[UIFont fontWithName:@"Verdana" size:25];
     [self.clockoutAccept setTitleColor:[UIColor colorWithRed:17.0f/255.0f
                                                green:101.0f/255.0f

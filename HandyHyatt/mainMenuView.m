@@ -183,10 +183,10 @@
         
         //mainMenuView  *m = (mainMenuView *) segue.destinationViewController;
         // m.userName=self.userName;
-        NSLog(@" department list segue calling");
+        //NSLog(@" department list segue calling");
         departmentList  *d= (departmentList *) segue.destinationViewController;
         
-        
+        d.view.opaque=true;
         // NSLog(@" Tasks count : %d",[self.tasks count]);
         d.tasks=self.tasks;
         

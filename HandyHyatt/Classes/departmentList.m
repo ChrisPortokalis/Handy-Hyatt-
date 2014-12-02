@@ -47,6 +47,9 @@
 {
     [self.navigationController viewDidAppear:FALSE];
     
+    [self.tableView setBackgroundColor:[UIColor clearColor]];
+    self.tableView.opaque=true;
+    
     PFQuery *query = [PFUser query];
     [query whereKey:@"username" equalTo:self.userName];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
@@ -114,6 +117,8 @@
 
     
 }
+
+
 
 - (void)viewDidLoad
 {
@@ -313,6 +318,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"deptListCell" forIndexPath:indexPath];
+    cell.backgroundColor=[UIColor clearColor];
+    cell.opaque=true;
   
     
     if(cell == nil)
