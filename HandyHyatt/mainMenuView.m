@@ -89,7 +89,7 @@
     else if([dept isEqual: @3])
     {
         self.dept=3;
-        [self.background setImage:[UIImage imageNamed: @"Maitenance.png"]];
+        [self.background setImage:[UIImage imageNamed: @"Maintenance.png"]];
     }
     else
     {

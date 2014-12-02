@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xH-X7-z1r">
-                                <rect key="frame" x="120" y="304" width="151" height="143"/>
+                                <rect key="frame" x="120" y="304" width="129" height="129"/>
                                 <state key="normal" title="Button" image="HomeScreen_Icon_CheckList.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVP-cZ-5cc">
-                                <rect key="frame" x="437" y="304" width="151" height="143"/>
+                                <rect key="frame" x="437" y="304" width="129" height="129"/>
                                 <state key="normal" title="Button" image="HomeScreen_Icon_Schedule.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVz-aD-eoQ">
-                                <rect key="frame" x="754" y="304" width="151" height="143"/>
+                                <rect key="frame" x="754" y="304" width="129" height="129"/>
                                 <state key="normal" title="Button" image="HomeScreen_Icon_Notifications.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -55,33 +55,33 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeScreen_DividerLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="k00-gN-OBh">
-                                <rect key="frame" x="341" y="262" width="4" height="266"/>
+                                <rect key="frame" x="341" y="262" width="4" height="250"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeScreen_DividerLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="i1i-Tc-EqR">
-                                <rect key="frame" x="62" y="262" width="4" height="266"/>
+                                <rect key="frame" x="62" y="262" width="4" height="250"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeScreen_DividerLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="HnB-3I-ra1">
-                                <rect key="frame" x="660" y="262" width="4" height="266"/>
+                                <rect key="frame" x="660" y="262" width="4" height="250"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HomeScreen_DividerLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="fRP-wQ-kC2">
-                                <rect key="frame" x="962" y="262" width="4" height="266"/>
+                                <rect key="frame" x="962" y="262" width="4" height="250"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8a9-YB-Pao">
-                                <rect key="frame" x="130" y="494" width="131" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" red="0.50196078431372548" green="0.50980392156862742" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Schedule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTE-YE-MfJ">
-                                <rect key="frame" x="458" y="492" width="108" height="32"/>
+                                <rect key="frame" x="447" y="452" width="108" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" red="0.50196078430000002" green="0.50980392159999999" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ2-6I-yVF">
-                                <rect key="frame" x="750" y="487" width="158" height="41"/>
+                                <rect key="frame" x="739" y="447" width="158" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" red="0.50196078430000002" green="0.50980392159999999" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Check List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8a9-YB-Pao">
+                                <rect key="frame" x="119" y="450" width="131" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.50196078431372548" green="0.50980392156862742" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

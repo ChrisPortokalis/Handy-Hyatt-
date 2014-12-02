@@ -217,6 +217,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"myListCell"];
     }
     
+    [cell setBackgroundColor:[UIColor clearColor]];
+    
     NSString *object =[self.mytasks objectAtIndex:indexPath.row];
     NSLog(@" Object id :%@",object);
     PFQuery *query = [PFQuery queryWithClassName:@"Tasks"];
