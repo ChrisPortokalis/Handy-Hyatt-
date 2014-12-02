@@ -213,16 +213,28 @@
 {
     // To hide navigation bar of root view controller
     [self.navigationController viewDidAppear:animated];
-     self.navigationController.navigationBarHidden=true;
+     //self.navigationController.navigationBarHidden=true;
     
     //hiding error label
     self.errorLabel.hidden=YES;
     
-    
+    [super viewDidLoad];
+    self.button9.titleLabel.text = @" ";
+    self.button8.titleLabel.text = @" ";
+    self.button7.titleLabel.text = @" ";
+    self.button6.titleLabel.text = @" ";
+    self.button5.titleLabel.text = @" ";
+    self.button4.titleLabel.text = @" ";
+    self.button3.titleLabel.text = @" ";
+    self.button2.titleLabel.text = @" ";
+    self.button1.titleLabel.text = @" ";
+    self.button0.titleLabel.text = @" ";
+    self.buttonClear.titleLabel.text = @" ";
+    self.buttonBack.titleLabel.text = @" ";
     
    
     //creating navigation bar to display company logo
-    UINavigationBar *navBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0,0, self.view.bounds.size.width, 35)];
+    /*UINavigationBar *navBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0,0, self.view.bounds.size.width, 35)];
     UINavigationItem* item = [[UINavigationItem alloc] init];
     [navBar   setBackgroundImage:[UIImage imageNamed:@"TabBar_Background.png"] forBarMetrics: UIBarMetricsDefault];
     
@@ -239,17 +251,24 @@
     self.buttonClear.hidden=YES;
     self.buttonBack.hidden =YES;
     
-    // create compnay logo image on navigation bar at titleview
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
-    titleView.backgroundColor = [UIColor clearColor];
+    // create compnay logo image on navigation bar at titleview*/
+    //UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+   // titleView.backgroundColor = [UIColor clearColor];*/
     
-    UIImageView *titleImage=[[UIImageView alloc ] initWithFrame:CGRectMake(0, -5, 200, 50)];
-    titleImage.image=[UIImage imageNamed:@"TabBar_Logo_PinScreen1.png"];
-    [titleView addSubview:titleImage];
+    //UIImageView *titleImage=[[UIImageView alloc ] initWithFrame:CGRectMake(0, -5, 200, 50)];
+    //titleImage.image=[UIImage imageNamed:@"TabBar_Logo_PinScreen1.png"];
+    //[titleView addSubview:titleImage];
     
-    item.titleView=titleView;
-    [navBar pushNavigationItem:item animated:YES];
-    [self.view addSubview:navBar];
+    //UIImageView* titleImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 45)];
+
+    //titleImage.image = [UIImage imageNamed:@"TabBar_Logo_PinScreen1.png"];
+    //self.navigationItem.titleView = titleImage;
+    //[self.navigationItem.titleView setFrame:CGRectMake(0, 0, 40, 45)];
+    
+    
+    //item.titleView=titleView;
+    //[navBar pushNavigationItem:item animated:YES];
+   // [self.view addSubview:navBar];
     
 }
 

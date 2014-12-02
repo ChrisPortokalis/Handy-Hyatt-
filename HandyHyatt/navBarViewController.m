@@ -8,6 +8,7 @@
 
 #import "navBarViewController.h"
 #import <Parse/Parse.h>
+#import "loginView.h"
 
 @interface navBarViewController ()
 
@@ -149,6 +150,8 @@
 
 {
     
+    
+    if(![viewController isKindOfClass:[loginView class]]){
     //creating logout bar button
     self.logoutButton =[[UIBarButtonItem alloc] initWithTitle:@"LOG OUT" style:UIBarButtonItemStyleBordered target:self
                                                        action:@selector(logout:)];
@@ -282,6 +285,7 @@
          }
      }];
     
+    }
     }
 }
 
