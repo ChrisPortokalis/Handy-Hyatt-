@@ -14,6 +14,10 @@
 #import "CKViewController.h"
 #import <Parse/Parse.h>
 
+
+#import "departmentList.h"
+
+
 @interface mainMenuView ()
 
 
@@ -25,6 +29,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *checkListButton;
 @property (strong, nonatomic) NSArray* todaysNotifs;
 @property (nonatomic) CustomBadge* notifBadge;
+
+
+@property (assign) int dept;
+@property  (strong,nonatomic) NSMutableArray *tasks;
 
 @end
 
@@ -46,6 +54,9 @@
     [self.parentViewController.navigationItem.backBarButtonItem setTitle: @" "];
     [self.navigationController viewDidAppear:FALSE];
     
+    //tasks for department list 
+     self.tasks=[[NSMutableArray alloc] init];
+    
     //set tags for 3 main menu buttons
     self.checkListButton.tag = 1;
     self.scheduleButton.tag = 2;
@@ -66,15 +77,18 @@
     //check the department to select appropriate background images
     if([dept  isEqual: @1])
     {
+        self.dept=1;
         [self.background setImage:[UIImage  imageNamed: @"Kitchen.png"]];
     }
     else if([dept isEqual: @2])
     {
+        self.dept=2;
         [self.background setImage:[UIImage imageNamed:@"Housekeeping.png"]];
 
     }
     else if([dept isEqual: @3])
     {
+        self.dept=3;
         [self.background setImage:[UIImage imageNamed: @"Maitenance.png"]];
     }
     else
@@ -82,8 +96,41 @@
         [self.background setImage:[UIImage imageNamed: @"Pin.png"]];
     }
     
+    
+    
     [self.navigationItem setHidesBackButton:YES];
+     [self departmentList];
 }
+
+
+- (void) departmentList
+{
+    // NSLog(@" dept id: %d",self.dept);
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Tasks"];
+    [query whereKey:@"dept" equalTo:@(self.dept)];
+    [query whereKey:@"status" equalTo:@"true"];
+    [query orderByAscending:@"updatedAt"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error)
+        {
+            // The find succeeded.
+            //NSLog(@"Successfully retrieved %d scores.", objects.count);
+            
+            // Do something with the found objects
+            for (PFObject *object in objects)
+            {
+                NSString *objectID=[object objectId];
+                NSLog(@" Object id :%@",objectID);
+                [self.tasks addObject:objectID];
+            }
+        }}];
+    
+    
+}
+
+
 
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -124,6 +171,22 @@
         myNotificationViewController* notiView = (myNotificationViewController*) [segue destinationViewController];
         
         notiView.bgImage = self.background.image;
+        
+    }
+    if([segue.identifier isEqualToString:@"departmentList"])
+    {
+        
+        //mainMenuView  *m = (mainMenuView *) segue.destinationViewController;
+        // m.userName=self.userName;
+        NSLog(@" department list segue calling");
+        departmentList  *d= (departmentList *) segue.destinationViewController;
+        
+        
+        // NSLog(@" Tasks count : %d",[self.tasks count]);
+        d.tasks=self.tasks;
+        
+        
+        
         
     }
         

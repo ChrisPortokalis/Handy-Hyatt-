@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1A22D01A2D3B990097DD00 /* deptListDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A22C91A2D3B990097DD00 /* deptListDetail.m */; };
+		2B1A22D11A2D3B990097DD00 /* myList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A22CB1A2D3B990097DD00 /* myList.m */; };
+		2B1A22D21A2D3B990097DD00 /* myListDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A22CD1A2D3B990097DD00 /* myListDetail.m */; };
+		2B1A22D31A2D3B990097DD00 /* departmentList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B1A22CF1A2D3B990097DD00 /* departmentList.m */; };
 		2B7B915B1A2D19020008D832 /* 1_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B7B915A1A2D19020008D832 /* 1_selected.png */; };
 		2B7B916D1A2D19120008D832 /* 1_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B7B915C1A2D19120008D832 /* 1_unselected.png */; };
 		2B7B916E1A2D19120008D832 /* 2_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B7B915D1A2D19120008D832 /* 2_selected.png */; };
@@ -120,6 +124,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B1A22C81A2D3B990097DD00 /* deptListDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deptListDetail.h; sourceTree = "<group>"; };
+		2B1A22C91A2D3B990097DD00 /* deptListDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deptListDetail.m; sourceTree = "<group>"; };
+		2B1A22CA1A2D3B990097DD00 /* myList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myList.h; sourceTree = "<group>"; };
+		2B1A22CB1A2D3B990097DD00 /* myList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myList.m; sourceTree = "<group>"; };
+		2B1A22CC1A2D3B990097DD00 /* myListDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myListDetail.h; sourceTree = "<group>"; };
+		2B1A22CD1A2D3B990097DD00 /* myListDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myListDetail.m; sourceTree = "<group>"; };
+		2B1A22CE1A2D3B990097DD00 /* departmentList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = departmentList.h; sourceTree = "<group>"; };
+		2B1A22CF1A2D3B990097DD00 /* departmentList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = departmentList.m; sourceTree = "<group>"; };
 		2B7B915A1A2D19020008D832 /* 1_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_selected.png; sourceTree = "<group>"; };
 		2B7B915C1A2D19120008D832 /* 1_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_unselected.png; sourceTree = "<group>"; };
 		2B7B915D1A2D19120008D832 /* 2_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_selected.png; sourceTree = "<group>"; };
@@ -341,6 +353,14 @@
 		E3C689371A22D70F0022D424 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2B1A22C81A2D3B990097DD00 /* deptListDetail.h */,
+				2B1A22C91A2D3B990097DD00 /* deptListDetail.m */,
+				2B1A22CA1A2D3B990097DD00 /* myList.h */,
+				2B1A22CB1A2D3B990097DD00 /* myList.m */,
+				2B1A22CC1A2D3B990097DD00 /* myListDetail.h */,
+				2B1A22CD1A2D3B990097DD00 /* myListDetail.m */,
+				2B1A22CE1A2D3B990097DD00 /* departmentList.h */,
+				2B1A22CF1A2D3B990097DD00 /* departmentList.m */,
 				E3C689381A22D70F0022D424 /* BadgeStyle.h */,
 				E3C689391A22D70F0022D424 /* BadgeStyle.m */,
 				E3C6893A1A22D70F0022D424 /* CustomBadge.h */,
@@ -626,9 +646,12 @@
 			files = (
 				F7EAF00D1A115A1C0044548F /* AppDelegate.m in Sources */,
 				E391FF2D1A15917C00B525D5 /* myNotificationViewController.m in Sources */,
+				2B1A22D31A2D3B990097DD00 /* departmentList.m in Sources */,
 				F78031501A1161C900758473 /* mainMenuView.m in Sources */,
+				2B1A22D11A2D3B990097DD00 /* myList.m in Sources */,
 				E3C689421A22D70F0022D424 /* CustomBadgeAppDelegate.m in Sources */,
 				E3C689431A22D70F0022D424 /* CustomBadgeViewController.m in Sources */,
+				2B1A22D01A2D3B990097DD00 /* deptListDetail.m in Sources */,
 				E3C689401A22D70F0022D424 /* BadgeStyle.m in Sources */,
 				F7EC00611A23CD77003575E3 /* CKCalendarView.m in Sources */,
 				F73B8F6E1A1404E800542120 /* loginView.m in Sources */,
@@ -636,6 +659,7 @@
 				E3D22DDC1A197FCE00224D7F /* notificationDetailsViewController.m in Sources */,
 				F7B8938C1A140E950030B65C /* navBarViewController.m in Sources */,
 				F7EAF0091A115A1C0044548F /* main.m in Sources */,
+				2B1A22D21A2D3B990097DD00 /* myListDetail.m in Sources */,
 				F7EC00621A23CD77003575E3 /* CKViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
