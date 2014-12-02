@@ -21,6 +21,7 @@
 @property (strong,nonatomic) NSString *userName;
 @property  (strong,nonatomic) NSString *userID;
 @property (assign) int dept;
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 
 @property (strong,nonatomic) NSString *taskTitle;
 @property (strong,nonatomic) NSString *taskSubTitle;

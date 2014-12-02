@@ -691,6 +691,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mNi-Jx-2vx">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Content_DividerLine_Gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="IZO-vu-fND">
                                 <rect key="frame" x="450" y="64" width="22" height="55"/>
                             </imageView>
@@ -753,12 +756,18 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mNi-Jx-2vx" firstAttribute="width" secondItem="OkI-Jb-b8a" secondAttribute="width" id="82f-az-uCC"/>
+                            <constraint firstItem="mNi-Jx-2vx" firstAttribute="height" secondItem="OkI-Jb-b8a" secondAttribute="height" id="LAS-fg-KN1"/>
+                            <constraint firstAttribute="centerX" secondItem="mNi-Jx-2vx" secondAttribute="centerX" constant="392" id="iru-b7-lcd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xll-ix-hoP">
                         <nil key="title"/>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="background" destination="mNi-Jx-2vx" id="PHB-vl-XCa"/>
                         <outlet property="tableView" destination="c3e-D1-q5P" id="Crt-VW-KPe"/>
                     </connections>
                 </viewController>
@@ -784,7 +793,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQY-b1-460">
-                                <rect key="frame" x="20" y="163" width="984" height="370"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.50196078431372548" green="0.50980392156862742" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
@@ -837,15 +845,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xU2-hf-nQf">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x57-t3-MY9">
+                                <rect key="frame" x="40" y="163" width="940" height="420"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ouD-tA-BZg" firstAttribute="leading" secondItem="11H-1W-zeH" secondAttribute="trailing" constant="8" id="2sl-gK-0on"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ouD-tA-BZg" secondAttribute="trailing" constant="52" id="7Fb-7L-eMb"/>
+                            <constraint firstItem="xU2-hf-nQf" firstAttribute="height" secondItem="6eo-5w-KkX" secondAttribute="height" id="DED-DD-7Iy"/>
                             <constraint firstItem="Fkm-Ir-LZu" firstAttribute="top" secondItem="ouD-tA-BZg" secondAttribute="bottom" constant="22" id="QEU-Vo-jLT"/>
                             <constraint firstItem="Fkm-Ir-LZu" firstAttribute="top" secondItem="LKk-7i-sLU" secondAttribute="bottom" constant="20" id="XNx-G8-mi2"/>
                             <constraint firstItem="11H-1W-zeH" firstAttribute="leading" secondItem="LKk-7i-sLU" secondAttribute="trailing" constant="21" id="YAr-Fi-GZd"/>
                             <constraint firstItem="Fkm-Ir-LZu" firstAttribute="top" secondItem="11H-1W-zeH" secondAttribute="bottom" constant="22" id="g9Y-Fi-PoQ"/>
+                            <constraint firstAttribute="centerY" secondItem="xU2-hf-nQf" secondAttribute="centerY" constant="256" id="xtc-33-ZGp"/>
+                            <constraint firstItem="xU2-hf-nQf" firstAttribute="width" secondItem="6eo-5w-KkX" secondAttribute="width" id="zV9-TO-BfD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yXS-e7-mDX"/>
@@ -874,6 +895,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d1t-vk-d2d">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMU-cB-5mz">
                                 <rect key="frame" x="40" y="100" width="675" height="40"/>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="32"/>
@@ -974,6 +998,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gf-PN-XMS">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Content_DividerLine_Gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="bGy-hL-PWV">
                                 <rect key="frame" x="508" y="64" width="9" height="55"/>
                             </imageView>
