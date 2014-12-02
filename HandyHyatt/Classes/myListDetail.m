@@ -8,6 +8,7 @@
 
 #import "myListDetail.h"
 #import <Parse/Parse.h>
+#import "navBarViewController.h"
 
 @interface myListDetail ()
 @property (weak, nonatomic) IBOutlet UITextView *detailDesc;
@@ -32,8 +33,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.navigationItem setHidesBackButton:YES];
-    self.detailSubTitle.backgroundColor = [UIColor clearColor];
+    //[self.navigationItem setHidesBackButton:YES];
+    self.detailDesc.backgroundColor = [UIColor clearColor];
+    [self.navigationController viewDidAppear:FALSE];
     
     
     PFUser *user=[PFUser currentUser];

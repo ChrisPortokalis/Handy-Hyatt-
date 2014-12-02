@@ -10,6 +10,8 @@
 #import "myListDetail.h"
 #import "mainMenuView.h"
 #import <Parse/Parse.h>
+#import "navBarViewController.h"
+
 
 @interface myList ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -54,9 +56,11 @@
     // Do any additional setup after loading the view.
     //self.mytasks=[[NSMutableArray alloc] init];
     
-   // [self.navigationItem setHidesBackButton:YES];
+   [self.navigationItem setHidesBackButton:YES];
     
     [self.tableView setBackgroundColor:[UIColor clearColor]];
+    [self.navigationController viewDidAppear:FALSE];
+    
     
     PFUser *user=[PFUser currentUser];
     

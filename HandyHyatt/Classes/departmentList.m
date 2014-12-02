@@ -10,6 +10,7 @@
 #import "deptListDetail.h"
 #import "myList.h"
 #import <Parse/Parse.h>
+#import "navBarViewController.h"
 
 
 
@@ -48,6 +49,8 @@
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
     [self.tableView setBackgroundColor:[UIColor clearColor]];
+    
+    [self.navigationController viewDidAppear:FALSE];
     
     //[self.navigationItem setHidesBackButton:YES];
     

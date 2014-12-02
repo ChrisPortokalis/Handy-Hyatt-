@@ -9,6 +9,7 @@
 #import "deptListDetail.h"
 #import <Parse/Parse.h>
 #import "navBarViewController.h"
+#import "navBarViewController.h"
 
 @interface deptListDetail ()
 @property (weak, nonatomic) IBOutlet UILabel *tasktitle;
@@ -40,6 +41,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.navigationController viewDidAppear:FALSE];
+    [self.navigationItem setHidesBackButton:YES];
+    
     self.desc.backgroundColor = [UIColor clearColor];
     
     PFUser *user=[PFUser currentUser];
