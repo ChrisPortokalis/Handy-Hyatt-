@@ -70,6 +70,11 @@
 		E3D22DDC1A197FCE00224D7F /* notificationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D22DDB1A197FCE00224D7F /* notificationDetailsViewController.m */; };
 		E3E9FA591A2AE79F00B2CA80 /* TabBar_Clock_ClockedIn.png in Resources */ = {isa = PBXBuildFile; fileRef = E3E9FA581A2AE79F00B2CA80 /* TabBar_Clock_ClockedIn.png */; };
 		F71BDA851A1AA0A800E530EE /* Bookman.otf in Resources */ = {isa = PBXBuildFile; fileRef = F71BDA841A1A9F0800E530EE /* Bookman.otf */; };
+		F72C42361A2E2359007EABA0 /* 0_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F72C42311A2E2359007EABA0 /* 0_selected.png */; };
+		F72C42371A2E2359007EABA0 /* 0_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = F72C42321A2E2359007EABA0 /* 0_unselected.png */; };
+		F72C42381A2E2359007EABA0 /* C_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = F72C42331A2E2359007EABA0 /* C_selected.png */; };
+		F72C42391A2E2359007EABA0 /* C_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = F72C42341A2E2359007EABA0 /* C_unselected.png */; };
+		F72C423A1A2E2359007EABA0 /* Maintenance.png in Resources */ = {isa = PBXBuildFile; fileRef = F72C42351A2E2359007EABA0 /* Maintenance.png */; };
 		F73B8F6E1A1404E800542120 /* loginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F73B8F6D1A1404E800542120 /* loginView.m */; };
 		F78031441A115CD500758473 /* PinDeselected.png in Resources */ = {isa = PBXBuildFile; fileRef = F78031421A115CD500758473 /* PinDeselected.png */; };
 		F78031451A115CD500758473 /* PinSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = F78031431A115CD500758473 /* PinSelected.png */; };
@@ -200,6 +205,11 @@
 		E3D22DDB1A197FCE00224D7F /* notificationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notificationDetailsViewController.m; sourceTree = "<group>"; };
 		E3E9FA581A2AE79F00B2CA80 /* TabBar_Clock_ClockedIn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TabBar_Clock_ClockedIn.png; sourceTree = "<group>"; };
 		F71BDA841A1A9F0800E530EE /* Bookman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bookman.otf; sourceTree = "<group>"; };
+		F72C42311A2E2359007EABA0 /* 0_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_selected.png; sourceTree = "<group>"; };
+		F72C42321A2E2359007EABA0 /* 0_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0_unselected.png; sourceTree = "<group>"; };
+		F72C42331A2E2359007EABA0 /* C_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = C_selected.png; sourceTree = "<group>"; };
+		F72C42341A2E2359007EABA0 /* C_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = C_unselected.png; sourceTree = "<group>"; };
+		F72C42351A2E2359007EABA0 /* Maintenance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Maintenance.png; sourceTree = "<group>"; };
 		F73B8F6C1A1404E800542120 /* loginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = loginView.h; path = ../loginView.h; sourceTree = "<group>"; };
 		F73B8F6D1A1404E800542120 /* loginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = loginView.m; path = ../loginView.m; sourceTree = "<group>"; };
 		F78031421A115CD500758473 /* PinDeselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PinDeselected.png; sourceTree = "<group>"; };
@@ -334,6 +344,11 @@
 				2B7B91901A2D19500008D832 /* TabBar_Clock_ClockedOut.png */,
 				2B7B91911A2D19500008D832 /* TabBar_Logo_PinScreen1.png */,
 				2B7B91641A2D19120008D832 /* 5_unselected.png */,
+				F72C42311A2E2359007EABA0 /* 0_selected.png */,
+				F72C42321A2E2359007EABA0 /* 0_unselected.png */,
+				F72C42331A2E2359007EABA0 /* C_selected.png */,
+				F72C42341A2E2359007EABA0 /* C_unselected.png */,
+				F72C42351A2E2359007EABA0 /* Maintenance.png */,
 				2B7B91651A2D19120008D832 /* 6_selected.png */,
 				2B7B91661A2D19120008D832 /* 6_unselected.png */,
 				2B7B91671A2D19120008D832 /* 7_selected.png */,
@@ -599,15 +614,18 @@
 				F7EAF0071A115A1C0044548F /* InfoPlist.strings in Resources */,
 				2B7B91731A2D19120008D832 /* 4_unselected.png in Resources */,
 				F780314B1A115EC800758473 /* HomeScreen_Icon_CheckList.png in Resources */,
+				F72C42391A2E2359007EABA0 /* C_unselected.png in Resources */,
 				2B7B91961A2D19500008D832 /* PopUp_ExitX.png in Resources */,
 				2B7B91721A2D19120008D832 /* 4_selected.png in Resources */,
 				2B7B91701A2D19120008D832 /* 3_selected.png in Resources */,
 				F7EAF0101A115A1C0044548F /* Main.storyboard in Resources */,
 				2B7B91851A2D192D0008D832 /* BlackOverlay.png in Resources */,
+				F72C42361A2E2359007EABA0 /* 0_selected.png in Resources */,
 				2B7B91951A2D19500008D832 /* PinSelected.png in Resources */,
 				2B7B91981A2D19500008D832 /* TabBar_Background.png in Resources */,
 				E38A02BA1A14619000BABC2E /* TabBar_Background.png in Resources */,
 				F78031521A11635100758473 /* Content_DividerLine_Gray.png in Resources */,
+				F72C42371A2E2359007EABA0 /* 0_unselected.png in Resources */,
 				2B7B91751A2D19120008D832 /* 5_unselected.png in Resources */,
 				2B1A22DB1A2D3F900097DD00 /* 0_selected.png in Resources */,
 				2B7B916D1A2D19120008D832 /* 1_unselected.png in Resources */,
@@ -617,6 +635,7 @@
 				2B7B915B1A2D19020008D832 /* 1_selected.png in Resources */,
 				2B7B91861A2D192D0008D832 /* Housekeeping.png in Resources */,
 				F7B893B11A14156C0030B65C /* Kitchen.png in Resources */,
+				F72C42381A2E2359007EABA0 /* C_selected.png in Resources */,
 				2B1A22DC1A2D3F900097DD00 /* C_unselected.png in Resources */,
 				F7B893AF1A14156C0030B65C /* BlackOverlay.png in Resources */,
 				E3C6894A1A22D8750022D424 /* Content_SmallSquare_Red.png in Resources */,
@@ -640,6 +659,7 @@
 				E3E9FA591A2AE79F00B2CA80 /* TabBar_Clock_ClockedIn.png in Resources */,
 				2B7B91741A2D19120008D832 /* 5_selected.png in Resources */,
 				E3C689481A22D8750022D424 /* Content_SmallSquare_Blue.png in Resources */,
+				F72C423A1A2E2359007EABA0 /* Maintenance.png in Resources */,
 				2B7B91871A2D192D0008D832 /* Kitchen.png in Resources */,
 				2B7B91931A2D19500008D832 /* Pin.png in Resources */,
 				2B7B917B1A2D19120008D832 /* 8_unselected.png in Resources */,
