@@ -91,28 +91,32 @@
              else if(self.dept==3)
              {
                  // dept 3       => Maintenance
-                 UIImage *originalImage = [UIImage imageNamed:@"Maintenance.png"];
+                /* UIImage *originalImage = [UIImage imageNamed:@"Maintenance.png"];
                  CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
                  UIGraphicsBeginImageContext(destinationSize);
                  [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
                  UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
                  UIGraphicsEndImageContext();
-                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];*/
+                 
+                 self.background.image = [UIImage imageNamed:@"Maintenance.png"];
                  
              }
              else
              {
                  // if employee belongs to no department or still department is not connected, then default screen image will be allocated.
-                 UIImage *originalImage = [UIImage imageNamed:@"Pin.png"];
+                 /*UIImage *originalImage = [UIImage imageNamed:@"Pin.png"];
                  CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
                  UIGraphicsBeginImageContext(destinationSize);
                  [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
                  UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
                  UIGraphicsEndImageContext();
-                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];*/
+                 
+                 self.background.image = [UIImage imageNamed:@"Pin.png"];
                  
              }
-             // [self displayDepartmentList];
+             [self displayDepartmentList];
              [self displayMyList];
              
          }
@@ -147,7 +151,7 @@
     
     PFQuery *query = [PFUser query];
     [query whereKey:@"username" equalTo:self.userName];
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
+ /*   [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
      {
          if (error)
          {
@@ -208,7 +212,7 @@
              [self displayMyList];
              
          }
-     }];
+     }];*/
 
 }
 

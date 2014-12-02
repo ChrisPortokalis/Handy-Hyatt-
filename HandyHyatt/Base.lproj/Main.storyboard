@@ -688,11 +688,11 @@
                         <viewControllerLayoutGuide type="bottom" id="X9p-K8-d7j"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OkI-Jb-b8a">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mNi-Jx-2vx">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Content_DividerLine_Gray.png" translatesAutoresizingMaskIntoConstraints="NO" id="IZO-vu-fND">
                                 <rect key="frame" x="450" y="64" width="22" height="55"/>
@@ -757,6 +757,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="xll-ix-hoP">
                         <nil key="title"/>
                     </navigationItem>
