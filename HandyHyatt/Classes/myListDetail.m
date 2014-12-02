@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *detailDesc;
 @property (weak, nonatomic) IBOutlet UILabel *detailSubTitle;
 @property (weak, nonatomic) IBOutlet UILabel *detailTitle;
+@property (weak, nonatomic) IBOutlet UILabel *completionTime;
 
 @end
 
@@ -32,10 +33,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //[self.navigationItem setHidesBackButton:YES];
+    
+    
     self.detailDesc.backgroundColor = [UIColor clearColor];
-    [self.navigationController viewDidAppear:FALSE];
+    //[self.navigationController viewDidAppear:FALSE];
     
     
     PFUser *user=[PFUser currentUser];
@@ -97,8 +98,29 @@
              // The find succeeded.
              // NSLog(@" object retrieved");
              self.detailTitle.text=[object objectForKey:@"title"];
+             [self.detailTitle sizeToFit];
+             
              self.detailSubTitle.text=[object objectForKey:@"subtitle"];
+             [self.detailSubTitle sizeToFit];
+             
              self.detailDesc.text=[object objectForKey:@"description"];
+             [self.detailDesc sizeToFit];
+             
+             NSDate *notifDate=[[NSDate alloc] init];
+             NSDateFormatter* format = [[NSDateFormatter alloc] init];
+             NSDateFormatter *df = [[NSDateFormatter alloc]init];
+             [format setDateFormat:@"dd MMMM YYYY"];
+             [df setDateFormat:@" hh:mma "];
+             notifDate=[object objectForKey:@"finishTime"];
+             NSString* dateString = [format stringFromDate: notifDate];
+             NSString* timeString = [df stringFromDate: notifDate];
+            // NSLog(@"%@ %@ ",dateString,timeString);
+             
+             self.completionTime.text=[NSString stringWithFormat:@"%@ %@ (%@)",@" Complete By", timeString,dateString];
+             [self.completionTime sizeToFit];
+            
+           
+
              
          }
          else

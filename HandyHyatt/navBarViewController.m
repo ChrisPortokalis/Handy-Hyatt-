@@ -112,7 +112,7 @@
     [alertAccept addTarget:self
                     action:@selector(alertLogoutAccepted)
           forControlEvents:UIControlEventTouchUpInside];
-    alertAccept.frame = CGRectMake(260.0, 170.0, 50.0, 50.0);
+    alertAccept.frame = CGRectMake(280.0, 180.0, 50.0, 50.0);
     alertAccept.titleLabel.font=[UIFont fontWithName:@"Verdana" size:25];
     [alertAccept setTitleColor:[UIColor colorWithRed:17.0f/255.0f
                                                green:101.0f/255.0f

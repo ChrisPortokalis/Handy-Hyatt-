@@ -206,6 +206,20 @@
     
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    // To hide navigation bar of root view controller
+    [self.navigationController viewDidAppear:animated];
+    
+    //hiding error label
+    self.errorLabel.hidden=YES;
+    
+    //hiding clear and back button
+    self.buttonClear.hidden=YES;
+    self.buttonBack.hidden =YES;
+    
+}
+
 
 
 
@@ -217,6 +231,10 @@
     
     //hiding error label
     self.errorLabel.hidden=YES;
+    
+    //hiding clear and back button
+    self.buttonClear.hidden=YES;
+    self.buttonBack.hidden =YES;
     
     [super viewDidLoad];
     self.button9.titleLabel.text = @" ";
@@ -247,9 +265,7 @@
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
     
-    //hiding clear and back button
-    self.buttonClear.hidden=YES;
-    self.buttonBack.hidden =YES;
+    
     
     // create compnay logo image on navigation bar at titleview*/
     //UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];

@@ -13,8 +13,15 @@
 
 @interface deptListDetail ()
 @property (weak, nonatomic) IBOutlet UILabel *tasktitle;
+
+@property (weak, nonatomic) IBOutlet UILabel *completionTime;
 @property (weak, nonatomic) IBOutlet UITextView *desc;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *subtitle;
+
+
+
 
 
 @end
@@ -38,14 +45,20 @@
 }
 
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [self.navigationController viewDidAppear:FALSE];
+    //[self.navigationController viewDidAppear:FALSE];
     [self.navigationItem setHidesBackButton:YES];
     
     self.desc.backgroundColor = [UIColor clearColor];
+    
+    
+    
+
     
     PFUser *user=[PFUser currentUser];
     NSNumber *dept = user[@"dept"];
@@ -105,8 +118,36 @@
             // The find succeeded.
            // NSLog(@" object retrieved");
             self.tasktitle.text=[object objectForKey:@"title"];
+            [self.tasktitle setFont:[UIFont fontWithName:@"Bodoni 72 OldStyle" size:32]];
+            [self.tasktitle setTextColor:[UIColor colorWithRed:17.0f/255.0f green:101.0f/255.0f blue:168.0f/255.0f alpha:1.0f]];
+            [self.tasktitle sizeToFit];
+            
+            
             self.subtitle.text=[object objectForKey:@"subtitle"];
+            [self.subtitle setFont:[UIFont fontWithName:@"Verdana" size:24]];
+            [self.subtitle setTextColor:[UIColor colorWithRed:128.0f/255.0f green:130.0f/255.0f blue:132.0f/255.0f alpha:1.0f]];
+            [self.subtitle sizeToFit];
+            
             self.desc.text=[object objectForKey:@"description"];
+            [self.desc setTextColor:[UIColor colorWithRed:128.0f/255.0f green:130.0f/255.0f blue:132.0f/255.0f alpha:1.0f]];
+            [self.desc setFont:[UIFont fontWithName:@"Verdana" size:21]];
+            [self.desc sizeToFit];
+            
+             NSDate *notifDate=[[NSDate alloc] init];
+            NSDateFormatter* format = [[NSDateFormatter alloc] init];
+            NSDateFormatter *df = [[NSDateFormatter alloc]init];
+            [format setDateFormat:@"dd MMMM YYYY"];
+            [df setDateFormat:@" hh:mma "];
+            notifDate=[object objectForKey:@"finishTime"];
+            NSString* dateString = [format stringFromDate: notifDate];
+            NSString* timeString = [df stringFromDate: notifDate];
+                        
+            
+            
+            self.completionTime.text=[NSString stringWithFormat:@"%@ %@ (%@)",@" Complete By", timeString,dateString];
+            [self.completionTime sizeToFit];
+            //[self.completionTime  setFont:[UIFont fontWithName:@"Verdana Italic" size:21]];
+            [self.completionTime setTextColor:[UIColor colorWithRed:17.0f/255.0f green:101.0f/255.0f blue:168.0f/255.0f alpha:1.0f]];
             
         }
         else
@@ -125,6 +166,10 @@
     
     
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
