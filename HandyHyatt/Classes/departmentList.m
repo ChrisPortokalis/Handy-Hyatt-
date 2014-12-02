@@ -49,7 +49,6 @@
     [self.navigationController viewDidAppear:FALSE];
     
     [self.tableView setBackgroundColor:[UIColor clearColor]];
-    self.tableView.opaque=true;
     
     PFQuery *query = [PFUser query];
     [query whereKey:@"username" equalTo:self.userName];
@@ -65,25 +64,28 @@
              self.dept =[[object objectForKey:@"dept"] intValue];
              if(self.dept==1)
              {
-                 UIImage *originalImage = [UIImage imageNamed:@"Kitchen.png"];
+                 /*UIImage *originalImage = [UIImage imageNamed:@"Kitchen.png"];
                  CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
                  UIGraphicsBeginImageContext(destinationSize);
                  [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
                  UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
                  UIGraphicsEndImageContext();
-                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];*/
+                 self.background.image= [UIImage imageNamed:@"Kitchen.png"];
                  
              }
              else if(self.dept==2)
              {
                  // dept 2       => HouseKeeping
-                 UIImage *originalImage = [UIImage imageNamed:@"HouseKeeping.png"];
+                 /*UIImage *originalImage = [UIImage imageNamed:@"HouseKeeping.png"];
                  CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
                  UIGraphicsBeginImageContext(destinationSize);
                  [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
                  UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
                  UIGraphicsEndImageContext();
-                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
+                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];*/
+                 
+                  self.background.image= [UIImage imageNamed:@"HouseKeeping.png"];
                  
              }
              else if(self.dept==3)

@@ -13,9 +13,10 @@
 
 @interface deptListDetail ()
 @property (weak, nonatomic) IBOutlet UILabel *tasktitle;
+@property (weak, nonatomic) IBOutlet UITextView *desc;
 
 @property (weak, nonatomic) IBOutlet UILabel *completionTime;
-@property (weak, nonatomic) IBOutlet UITextView *desc;
+
 
 
 @property (weak, nonatomic) IBOutlet UILabel *subtitle;
@@ -44,6 +45,10 @@
     return self;
 }
 
+- (void)     viewWillAppear:(BOOL)animated
+{
+    self.desc.text=@ " ";
+}
 
 
 
@@ -51,8 +56,10 @@
 {
     [super viewDidLoad];
     
-    //[self.navigationController viewDidAppear:FALSE];
+ 
     [self.navigationItem setHidesBackButton:YES];
+    
+    [self.navigationController viewDidAppear:FALSE];
     
     self.desc.backgroundColor = [UIColor clearColor];
     
@@ -129,6 +136,10 @@
             [self.subtitle sizeToFit];
             
             self.desc.text=[object objectForKey:@"description"];
+            if([self.desc.text isEqualToString:@" "])
+            {
+                self.desc.text=@" NO DESCRIPTION AVAILABLE";
+            }
             [self.desc setTextColor:[UIColor colorWithRed:128.0f/255.0f green:130.0f/255.0f blue:132.0f/255.0f alpha:1.0f]];
             [self.desc setFont:[UIFont fontWithName:@"Verdana" size:21]];
             [self.desc sizeToFit];
