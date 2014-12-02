@@ -52,7 +52,7 @@
     [self setLabelFont:self.screenTitleLabel];
     //[self initSectionArr];
     //[self.tableView reloadData];
-    
+
     
     
 
@@ -490,6 +490,12 @@
     {
         [self.sectionArr addObject: self.fiveDaysBeforeArr];
     }
+}
+
+
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 @end

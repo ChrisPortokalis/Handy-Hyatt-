@@ -49,6 +49,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.button9.titleLabel.text = @" ";
+    self.button8.titleLabel.text = @" ";
+    self.button7.titleLabel.text = @" ";
+    self.button6.titleLabel.text = @" ";
+    self.button5.titleLabel.text = @" ";
+    self.button4.titleLabel.text = @" ";
+    self.button3.titleLabel.text = @" ";
     
 }
 

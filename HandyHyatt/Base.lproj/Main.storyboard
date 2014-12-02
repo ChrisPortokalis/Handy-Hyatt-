@@ -276,9 +276,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Content_HeaderLine.png" translatesAutoresizingMaskIntoConstraints="NO" id="QKa-GP-Fbq">
-                                <rect key="frame" x="20" y="132" width="984" height="5"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4W-Qh-mvS">
                                 <rect key="frame" x="333" y="53" width="358" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -844,6 +841,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="mUH-VG-E3n"/>
+        <segue reference="Vp3-4a-2sX"/>
     </inferredMetricsTieBreakers>
 </document>
