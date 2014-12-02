@@ -52,6 +52,10 @@
     [self setLabelFont:self.screenTitleLabel];
     //[self initSectionArr];
     //[self.tableView reloadData];
+    
+    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [self.tableView setTableFooterView:v];
 
     
     

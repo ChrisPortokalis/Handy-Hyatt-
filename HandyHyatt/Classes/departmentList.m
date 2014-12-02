@@ -26,7 +26,7 @@
 @property (strong,nonatomic) NSString *removeObjectid;
 @property (strong,nonatomic) NSString  *selectedobjectid;
 @property (strong,nonatomic) NSMutableArray *mytasks;
-@property (assign) NSNumber *priority;
+@property (weak, nonatomic) IBOutlet UIImageView *background;
 
 @end
 
@@ -47,7 +47,6 @@
     [super viewDidLoad];
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
-    [self.tableView setBackgroundColor:[UIColor clearColor]];
     
     //[self.navigationItem setHidesBackButton:YES];
     
@@ -69,58 +68,16 @@
          {
              
             self.dept =[[object objectForKey:@"dept"] intValue];
-             if(self.dept==1)
-             {
-                 UIImage *originalImage = [UIImage imageNamed:@"Kitchen.png"];
-                 CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
-                 UIGraphicsBeginImageContext(destinationSize);
-                 [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
-                 UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-                 UIGraphicsEndImageContext();
-                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
-                 
-             }
-             else if(self.dept==2)
-             {
-                 // dept 2       => HouseKeeping
-                 UIImage *originalImage = [UIImage imageNamed:@"HouseKeeping.png"];
-                 CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
-                 UIGraphicsBeginImageContext(destinationSize);
-                 [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
-                 UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-                 UIGraphicsEndImageContext();
-                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
-                 
-             }
-             else if(self.dept==3)
-             {
-                 // dept 3       => Maintenance
-                 UIImage *originalImage = [UIImage imageNamed:@"Maintenance.png"];
-                 CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
-                 UIGraphicsBeginImageContext(destinationSize);
-                 [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
-                 UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-                 UIGraphicsEndImageContext();
-                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
-                 
-             }
-             else
-             {
-                 // if employee belongs to no department or still department is not connected, then default screen image will be allocated.
-                 UIImage *originalImage = [UIImage imageNamed:@"Pin.png"];
-                 CGSize destinationSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
-                 UIGraphicsBeginImageContext(destinationSize);
-                 [originalImage drawInRect:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y,destinationSize.width,destinationSize.height)];
-                 UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-                 UIGraphicsEndImageContext();
-                 self.view.backgroundColor = [UIColor colorWithPatternImage:newImage];
-                 
-             }
             // [self displayDepartmentList];
              [self displayMyList];
              
          }
      }];
+    
+    
+    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [self.tableView setTableFooterView:v];
 
 }
 
@@ -252,7 +209,6 @@
           //  NSLog(@" object retrieved");
             self.taskTitle=[object objectForKey:@"title"];
             self.taskSubTitle=[object objectForKey:@"subtitle"];
-            self.priority=[object objectForKey:@"Priority"];
             
         }
         else
@@ -261,8 +217,6 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
        
-         cell.backgroundColor=[UIColor clearColor];
-        
         cell.textLabel.font=[UIFont fontWithName:@"Verdana" size:24];
         cell.textLabel.textColor=[UIColor colorWithRed:128.0f/255.0f
                                                  green:130.0f/255.0f
@@ -280,25 +234,6 @@
         cell.detailTextLabel.text=self.taskSubTitle;
         cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
         cell.detailTextLabel.numberOfLines=1;
-        
-        if([self.priority isEqual:@1])
-        {
-            cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Red.png"];
-        }
-        else if([self.priority isEqual:@2])
-        {
-            cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Blue.png"];
-        }
-        else if([self.priority isEqual:@3])
-        {
-            cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Turquois.png"];
-        }
-        else
-        {
-           cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Empty.png"];
-        }
-        
-       
        
 
     }];

@@ -173,9 +173,9 @@
     
     UILabel *nameLabel = [[UILabel alloc] init];
     [nameLabel setFrame:CGRectMake(50,20,100,20)];
-    [nameLabel setTextColor:[UIColor colorWithRed:128.0f/255.0f
-                                            green:130.0f/255.0f
-                                             blue:132.0f/255.0f
+    [nameLabel setTextColor:[UIColor colorWithRed:160.0f/255.0f
+                                            green:162.0f/255.0f
+                                             blue:164.0f/255.0f
                                             alpha:1.0f]];
     [nameLabel setFont:[UIFont fontWithName:@"Verdana" size:14]];
     [nameLabel setText:self.userName];
@@ -184,7 +184,7 @@
     
     
     self.navClockStatus = [[UILabel alloc] init];
-    [self.navClockStatus setFrame:CGRectMake(50,-5,150,20)];
+    [self.navClockStatus setFrame:CGRectMake(50,-5,250,20)];
     
     [self.navClockStatus setFont:[UIFont fontWithName:@"Verdana" size:24]];
     [self.titleView addSubview:self.navClockStatus];
@@ -298,7 +298,7 @@
     //creating close button
     self.alertClose = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.alertClose addTarget:self
-                        action:@selector(closeAlertView:)
+                        action:@selector(closeAlertView)
               forControlEvents:UIControlEventTouchUpInside];
     [self.alertClose setBackgroundImage:[UIImage imageNamed:@"PopUp_ExitX.png"] forState:UIControlStateNormal];
     self.alertClose.frame = CGRectMake(680.0, 20.0, 20.0, 20.0);
@@ -352,8 +352,8 @@
     self.alertView.hidden=YES;
     
     
-    self.navigationBar.barTintColor = [UIColor whiteColor];
-    
+    //self.navigationBar.barTintColor = [UIColor whiteColor];
+ 
 }
 
 
@@ -362,6 +362,7 @@
 {
     [super viewDidAppear: animated];
     [self setNavBackButton];
+    [self setNeedsStatusBarAppearanceUpdate];
     
     if([PFUser currentUser] != nil)
     {
@@ -424,6 +425,16 @@
              punchIn[@"status"] = @YES;
              [punchIn saveInBackground];
              self.alertView.hidden=NO;
+             
+             if(self.shiftTimer == nil)
+             {
+                 [self setTimer];
+                 self.shiftTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                                    target:self
+                                                                  selector:@selector(controlTimer)
+                                                                  userInfo:nil repeats:YES];
+                 
+             }
              
              
          } else
@@ -673,7 +684,7 @@
     }
     
 
-    if(hours <= 0 && mins <= 0 && self.secsLeft == 0)
+    if(hours <= 0 && mins <= 0)
     {
         shiftIsOver = true;
     }
@@ -825,9 +836,11 @@
         
     }
     
-    
-    
-    
+}
+
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 
