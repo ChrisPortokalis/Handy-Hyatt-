@@ -34,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-     [self.navigationController viewDidAppear:NO];
+     [self.navigationController viewDidAppear:YES];
     //get bgImage from push Segue
     UIImage* bg = self.bgImage;
     
@@ -52,7 +52,12 @@
     [self setLabelFont:self.screenTitleLabel];
     //[self initSectionArr];
     //[self.tableView reloadData];
+    
+    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [self.tableView setTableFooterView:v];
 
+  
     
     
 
@@ -60,7 +65,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:NO];
+    //[super viewDidAppear:NO];
     [self.navigationController viewDidAppear:animated];
 }
 

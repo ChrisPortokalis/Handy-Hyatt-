@@ -45,6 +45,7 @@
 @property (strong, nonatomic) NSTimer* shiftTimer;
 @property bool status;
 @property bool startTimer;
+@property bool shiftIsOver;
 
 
 @end
@@ -174,7 +175,7 @@
     [self.alertEmpName sizeToFit];
     
     // create clock button, name label and clock staus label on navigation bar
-    self.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+    self.titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 300, 44)];
     self.titleView.backgroundColor = [UIColor clearColor];
     
     UILabel *nameLabel = [[UILabel alloc] init];
@@ -290,6 +291,8 @@
 
     [super viewDidLoad];
 
+    self.shiftIsOver = false;
+    
     [self.navigationBar setBackgroundColor: [UIColor clearColor]];
     [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"TabBar_Background.png"]forBarMetrics: UIBarMetricsDefault];
     self.navigationBar.translucent = NO;
@@ -368,6 +371,7 @@
 {
     [super viewDidAppear: animated];
     [self setNavBackButton];
+    [self setNeedsStatusBarAppearanceUpdate];
     
     if([PFUser currentUser] != nil)
     {
@@ -438,7 +442,6 @@
                                                                     target:self
                                                                   selector:@selector(controlTimer)
                                                                   userInfo:nil repeats:YES];
-                 
              }
              
              PFObject *punchIn = [PFObject objectWithClassName:@"Clock"];
@@ -731,25 +734,33 @@
     NSInteger mins = [self.minsLeft integerValue];
     
     //bool to flag if shift is over
-    bool shiftIsOver = false;
+   // bool shiftIsOver = false;
     
     self.secsLeft--;
     if(self.secsLeft == 0)
     {
         mins--;
-        if(mins == 0)
+        if(mins <= 0)
         {
-            hours--;
-            mins = 59;
+            if(hours <= 0)
+            {
+                self.navClockStatus.text = @"Shift Over";
+                self.shiftIsOver = true;
+            }
+            else
+            {
+                hours--;
+                mins = 59;
+            }
         }
         
         self.secsLeft = 59;
     }
     
 
-    if(hours <= 0 && mins <= 0 && self.secsLeft == 0)
+    if(hours <= 0 && mins <= 0)
     {
-        shiftIsOver = true;
+        //shiftIsOver = true;
     }
     
     //set strings for hours and mins
@@ -757,9 +768,9 @@
     self.minsLeft = [NSString stringWithFormat:@"%ld", (long)mins];
     
     
-    if(shiftIsOver)
+    if(self.shiftIsOver)
     {
-        self.timeLeft = @"Shift Over";
+       
         [self.shiftTimer invalidate];
         self.shiftTimer = nil;
         
@@ -821,10 +832,11 @@
     
     //get actual time today
         NSDateComponents *todayActualComp = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour| NSCalendarUnitMinute fromDate:now];
+        [todayActualComp setMinute: [todayActualComp minute] - 30];
         NSDate* todayActual = [calendar dateFromComponents:todayActualComp];
     
         NSDateComponents *upper = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour fromDate:now];
-        [upper setHour: [upper hour] + 14];
+        [upper setHour: [upper hour] + 13];
     
         NSDate* upperDate = [calendar dateFromComponents:upper];
     
@@ -857,10 +869,13 @@
                     int mins = [components minute];
                     self.secsLeft = [components second];
                 
-                    if(hours <= 0 && mins <= 0 && self.secsLeft<=0)
+                    if(hours <= 0 && mins <= 0)
                     {
                         //if shift over
                         self.timeLeft = @"Shift Over";
+                        self.shiftIsOver = true;
+                        [self.shiftTimer invalidate];
+                        self.shiftTimer = nil;
                     }
                 
                     else
@@ -903,6 +918,11 @@
     
     
 }
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 
 
 @end

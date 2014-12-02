@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/myNotificationViewController.m"
-            timestampString = "439015866.709447"
+            timestampString = "439198120.176508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-setLabelFont:"
             landmarkType = "5">
          </BreakpointContent>
@@ -244,11 +244,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/myNotificationViewController.m"
-            timestampString = "439015866.709447"
+            timestampString = "439198120.176508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "-queryDBforNotifications"
             landmarkType = "5">
          </BreakpointContent>
@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/myNotificationViewController.m"
-            timestampString = "439015049.438439"
+            timestampString = "439198120.176508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -308,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/myNotificationViewController.m"
-            timestampString = "439015866.709447"
+            timestampString = "439198120.176508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "-queryDBforNotifications"
             landmarkType = "5">
          </BreakpointContent>
@@ -324,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/myNotificationViewController.m"
-            timestampString = "439015866.709447"
+            timestampString = "439198120.176508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "-queryDBforNotifications"
             landmarkType = "5">
          </BreakpointContent>
@@ -340,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/myNotificationViewController.m"
-            timestampString = "439015866.709447"
+            timestampString = "439198120.176508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "-queryDBforNotifications"
             landmarkType = "5">
          </BreakpointContent>
@@ -356,11 +356,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/myNotificationViewController.m"
-            timestampString = "439015866.709447"
+            timestampString = "439198120.176508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "-queryDBforNotifications"
             landmarkType = "5">
          </BreakpointContent>
@@ -372,12 +372,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/mainMenuView.m"
-            timestampString = "439016110.552198"
+            timestampString = "439196121.950941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "-queryTodaysNotifications"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -388,12 +388,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/mainMenuView.m"
-            timestampString = "439016110.552198"
+            timestampString = "439196121.950941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "-queryTodaysNotifications"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -404,12 +404,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/mainMenuView.m"
-            timestampString = "439016110.552198"
+            timestampString = "439196121.950941"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
-            landmarkName = "-queryTodaysNotifications"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -420,43 +420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439090663.659642"
+            timestampString = "439197326.739194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "253"
-            endingLineNumber = "253"
-            landmarkName = "-viewDidAppear:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "555"
-            endingLineNumber = "555"
-            landmarkName = "-setTimer"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439083761.332273"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "-navigationController:didShowViewController:"
             landmarkType = "5">
          </BreakpointContent>
@@ -468,11 +436,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439083761.332273"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "558"
+            endingLineNumber = "558"
+            landmarkName = "-createClockOutAlertView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197326.739194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "-closelogoutAlertView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197326.739194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "-navigationController:didShowViewController:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197326.739194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
+            landmarkName = "-navigationController:didShowViewController:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197326.739194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -484,44 +516,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439090663.659642"
+            timestampString = "439197326.739194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "373"
+            endingLineNumber = "373"
             landmarkName = "-viewDidAppear:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439090663.659642"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
-            landmarkName = "-puncherAction"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439097493.224951"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "370"
-            endingLineNumber = "370"
-            landmarkName = "-puncherAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -537,6 +537,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
+            landmarkName = "-initWithNibName:bundle:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197326.739194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -548,12 +564,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439090663.659642"
+            timestampString = "439197326.739194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
-            landmarkName = "-puncherAction"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-createLogoutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -564,39 +580,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439083761.332273"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "-navigationController:didShowViewController:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439083761.332273"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "-navigationController:didShowViewController:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439083761.332273"
+            timestampString = "439197326.739194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
@@ -612,11 +596,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439083761.332273"
+            timestampString = "439197326.739194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-navigationController:didShowViewController:"
             landmarkType = "5">
          </BreakpointContent>
@@ -628,12 +612,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439097493.224951"
+            timestampString = "439197326.739194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "459"
-            endingLineNumber = "459"
-            landmarkName = "-controlTimer"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "-alertLogoutAccepted"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -644,91 +628,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "597"
-            endingLineNumber = "597"
-            landmarkName = "-setTimer"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "593"
-            endingLineNumber = "593"
-            landmarkName = "-setTimer"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "593"
-            endingLineNumber = "593"
-            landmarkName = "-setTimer"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "592"
-            endingLineNumber = "592"
-            landmarkName = "-setTimer"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "566"
-            endingLineNumber = "566"
-            landmarkName = "-setTimer"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439090663.659642"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
             landmarkName = "-puncherAction"
             landmarkType = "5">
          </BreakpointContent>
@@ -740,12 +644,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "574"
-            endingLineNumber = "574"
-            landmarkName = "-setTimer"
+            startingLineNumber = "600"
+            endingLineNumber = "600"
+            landmarkName = "-createClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -756,12 +660,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "578"
-            endingLineNumber = "578"
-            landmarkName = "-setTimer"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
+            landmarkName = "-createClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -772,12 +676,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "580"
-            endingLineNumber = "580"
-            landmarkName = "-setTimer"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
+            landmarkName = "-createClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -788,12 +692,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "582"
-            endingLineNumber = "582"
-            landmarkName = "-setTimer"
+            startingLineNumber = "595"
+            endingLineNumber = "595"
+            landmarkName = "-createClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -804,12 +708,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439097493.224951"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
-            landmarkName = "-puncherAction"
+            startingLineNumber = "569"
+            endingLineNumber = "569"
+            landmarkName = "-createClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -820,11 +724,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439090663.659642"
+            timestampString = "439197326.739194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -836,11 +740,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439093260.637285"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "577"
+            endingLineNumber = "577"
+            landmarkName = "-createClockOutAlertView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197515.917951"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "581"
+            endingLineNumber = "581"
+            landmarkName = "-createClockOutAlertView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197515.917951"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "583"
+            endingLineNumber = "583"
+            landmarkName = "-createClockOutAlertView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197515.917951"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "585"
+            endingLineNumber = "585"
+            landmarkName = "-createClockOutAlertView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197326.739194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "382"
+            endingLineNumber = "382"
+            landmarkName = "-setNavBackButton"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197326.739194"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "-navigationController:didShowViewController:"
             landmarkType = "5">
          </BreakpointContent>
@@ -852,12 +836,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
+            timestampString = "439197326.739194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "496"
-            endingLineNumber = "496"
-            landmarkName = "-controlTimer"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "-closelogoutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -868,12 +852,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098110.418392"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "572"
-            endingLineNumber = "572"
-            landmarkName = "-setTimer"
+            startingLineNumber = "499"
+            endingLineNumber = "499"
+            landmarkName = "-puncherAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -884,12 +868,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098102.606266"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "479"
-            endingLineNumber = "479"
-            landmarkName = "-controlTimer"
+            startingLineNumber = "575"
+            endingLineNumber = "575"
+            landmarkName = "-createClockOutAlertView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -900,12 +884,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HandyHyatt/navBarViewController.m"
-            timestampString = "439098105.666404"
+            timestampString = "439197515.917951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "481"
-            endingLineNumber = "481"
-            landmarkName = "-controlTimer"
+            startingLineNumber = "482"
+            endingLineNumber = "482"
+            landmarkName = "-puncherAction"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HandyHyatt/navBarViewController.m"
+            timestampString = "439197515.917951"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "484"
+            endingLineNumber = "484"
+            landmarkName = "-puncherAction"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

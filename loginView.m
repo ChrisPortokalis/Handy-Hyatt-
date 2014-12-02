@@ -62,6 +62,8 @@
     self.buttonClear.titleLabel.text = @" ";
     self.buttonBack.titleLabel.text = @" ";
     
+     [self setNeedsStatusBarAppearanceUpdate];
+    
 }
 
 - (IBAction)buttonTapped:(id)sender
@@ -258,5 +260,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 
 @end

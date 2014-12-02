@@ -60,7 +60,10 @@
     
     [self.tableView setBackgroundColor:[UIColor clearColor]];
     [self.navigationController viewDidAppear:FALSE];
+    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
     
+    [self.tableView setTableFooterView:v];
+
     
     PFUser *user=[PFUser currentUser];
     

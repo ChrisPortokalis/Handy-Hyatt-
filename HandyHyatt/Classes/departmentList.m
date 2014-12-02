@@ -60,6 +60,11 @@
     self.userName=user.username;
     self.userID = [user objectId];
     
+    UIView *v = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    [self.tableView setTableFooterView:v];
+
+    
     PFQuery *query = [PFUser query];
     [query whereKey:@"username" equalTo:self.userName];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
