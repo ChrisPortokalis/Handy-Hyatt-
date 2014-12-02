@@ -33,7 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationItem setHidesBackButton:YES];
-    self.desc.backgroundColor = [UIColor clearColor];
+    self.detailSubTitle.backgroundColor = [UIColor clearColor];
     
     
     PFUser *user=[PFUser currentUser];
