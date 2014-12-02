@@ -56,6 +56,11 @@
     self.button5.titleLabel.text = @" ";
     self.button4.titleLabel.text = @" ";
     self.button3.titleLabel.text = @" ";
+    self.button2.titleLabel.text = @" ";
+    self.button1.titleLabel.text = @" ";
+    self.button0.titleLabel.text = @" ";
+    self.buttonClear.titleLabel.text = @" ";
+    self.buttonBack.titleLabel.text = @" ";
     
 }
 
