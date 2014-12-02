@@ -22,6 +22,8 @@
 @property (strong,nonatomic) NSString *removeObjectid;
 @property (strong,nonatomic) NSString *selectedobjectid;
 
+@property (assign) NSNumber *priority;
+
 
 @end
 
@@ -222,6 +224,7 @@
             NSLog(@" object retrieved");
             self.taskTitle=[object objectForKey:@"title"];
             self.taskSubTitle=[object objectForKey:@"subtitle"];
+            self.priority=[object objectForKey:@"Priority"];
             
         }
         else
@@ -238,7 +241,44 @@
     }];
     
     
-    cell.backgroundColor= [ UIColor clearColor];
+    cell.backgroundColor=[UIColor clearColor];
+    
+    cell.textLabel.font=[UIFont fontWithName:@"Verdana" size:24];
+    cell.textLabel.textColor=[UIColor colorWithRed:128.0f/255.0f
+                                             green:130.0f/255.0f
+                                              blue:132.0f/255.0f
+                                             alpha:1.0f];
+    cell.textLabel.text=self.taskTitle;
+    cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    cell.textLabel.numberOfLines = 1;
+    
+    cell.detailTextLabel.font=[UIFont fontWithName:@"Verdana Italic" size:16];
+    cell.detailTextLabel.textColor=[UIColor colorWithRed:17.0f/255.0f
+                                                   green:101.0f/255.0f
+                                                    blue:168.0f/255.0f
+                                                   alpha:1.0f];
+    cell.detailTextLabel.text=self.taskSubTitle;
+    cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
+    cell.detailTextLabel.numberOfLines=1;
+
+    
+    if([self.priority isEqual:@1])
+    {
+        cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Red.png"];
+    }
+    else if([self.priority isEqual:@2])
+    {
+        cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Blue.png"];
+    }
+    else if([self.priority isEqual:@3])
+    {
+        cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Turquois.png"];
+    }
+    else
+    {
+        cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Empty.png"];
+    }
+
     
     return cell;
     

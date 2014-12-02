@@ -26,6 +26,7 @@
 @property (strong,nonatomic) NSString *removeObjectid;
 @property (strong,nonatomic) NSString  *selectedobjectid;
 @property (strong,nonatomic) NSMutableArray *mytasks;
+@property (assign) NSNumber *priority;
 
 @end
 
@@ -251,6 +252,7 @@
           //  NSLog(@" object retrieved");
             self.taskTitle=[object objectForKey:@"title"];
             self.taskSubTitle=[object objectForKey:@"subtitle"];
+            self.priority=[object objectForKey:@"Priority"];
             
         }
         else
@@ -259,6 +261,8 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
        
+         cell.backgroundColor=[UIColor clearColor];
+        
         cell.textLabel.font=[UIFont fontWithName:@"Verdana" size:24];
         cell.textLabel.textColor=[UIColor colorWithRed:128.0f/255.0f
                                                  green:130.0f/255.0f
@@ -277,7 +281,24 @@
         cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
         cell.detailTextLabel.numberOfLines=1;
         
-        cell.backgroundColor=[UIColor clearColor];
+        if([self.priority isEqual:@1])
+        {
+            cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Red.png"];
+        }
+        else if([self.priority isEqual:@2])
+        {
+            cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Blue.png"];
+        }
+        else if([self.priority isEqual:@3])
+        {
+            cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Turquois.png"];
+        }
+        else
+        {
+           cell.imageView.image=[UIImage imageNamed:@"Content_SmallSquare_Empty.png"];
+        }
+        
+       
        
 
     }];
