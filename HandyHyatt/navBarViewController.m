@@ -751,6 +751,7 @@
             if(hours <= 0)
             {
                 self.navClockStatus.text = @"Shift Over";
+                self.navClockStatus.frame = CGRectMake(50,-5,150,20);
                 self.shiftIsOver = true;
             }
             else
@@ -766,7 +767,7 @@
 
     if(hours <= 0 && mins <= 0)
     {
-        //shiftIsOver = true;
+        //self.shiftIsOver = true;
     }
     
     //set strings for hours and mins
@@ -809,10 +810,15 @@
              {
                  
              
-                 if(status)
+                 if(status && !self.shiftIsOver)
                  {
                      self.navClockStatus.text = self.timeLeft;
                  }
+                 else if(self.shiftIsOver)
+                 {
+                     self.shiftIsOver = false;
+                 }
+                    
              
              }
     
@@ -879,9 +885,9 @@
                     {
                         //if shift over
                         self.timeLeft = @"Shift Over";
-                        self.shiftIsOver = true;
                         [self.shiftTimer invalidate];
                         self.shiftTimer = nil;
+                        self.shiftIsOver = true;
                     }
                 
                     else
