@@ -71,7 +71,7 @@
     
     //get dept to set background
     NSNumber* dept = curr[@"dept"];
-    NSString* name = curr[@"employeeName"];
+   // NSString* name = curr[@"employeeName"];
     [self queryTodaysNotifications];
 
     //check the department to select appropriate background images
@@ -159,20 +159,20 @@
     
     if(senderButton.tag == 1 )
     {
-        NSLog(@"Task");
+       // NSLog(@"Task");
         
         
     }
     else if(senderButton.tag == 2)
     {
-        NSLog(@"Sched");
+       // NSLog(@"Sched");
         CKViewController* ckView = (CKViewController*) [segue destinationViewController];
-        ckView.bgImage = self.bgImage;
+        ckView.bgImage = self.background.image;
     }
     else
     {
         //send background pic to next view
-        NSLog(@"Noti");
+        //NSLog(@"Noti");
         myNotificationViewController* notiView = (myNotificationViewController*) [segue destinationViewController];
         
         notiView.bgImage = self.background.image;

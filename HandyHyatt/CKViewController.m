@@ -41,10 +41,22 @@
     _selectedDateView.hidden = YES;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    //applying background for the calendar
+    [self.bgImageView setImage:self.bgImage];
+    
+
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
      [self.navigationController viewDidAppear:false];
+    
+    
+    
     
     //Get from parse
     

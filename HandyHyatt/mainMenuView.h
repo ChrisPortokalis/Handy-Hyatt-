@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface mainMenuView : UIViewController
-@property (retain, nonatomic) UIImageView* bgImage;
+@property (retain, nonatomic) UIImage* bgImage;
 @end
