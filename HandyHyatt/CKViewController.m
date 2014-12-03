@@ -1,6 +1,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import "CKViewController.h"
 #import "CKCalendarView.h"
+#import <Parse/Parse.h>
 
 @interface CKViewController () <CKCalendarDelegate>
 
@@ -17,7 +18,7 @@
 
 
 // "day/monthyear" => ["Shift(P/M)", "Shift2(P/M)", "Shift3(P/M)", ..., "ShiftN(P/M)"]
-@property(nonatomic, strong) NSDictionary *scheduleDates;
+@property(nonatomic, strong) NSMutableDictionary *scheduleDates;
 
 
 @end
@@ -45,14 +46,46 @@
     [super viewDidLoad];
      [self.navigationController viewDidAppear:false];
     
+    //Get from parse
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Schedule"];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    NSArray *stuff = [query findObjects];
+
+   
+    _scheduleDates = [[NSMutableDictionary alloc] init];
+    
+    for (NSDictionary *data in stuff) {
+        NSDate *from = [data objectForKey:@"from"];
+        NSDate *to = [data objectForKey:@"to"];
+        
+        
+        NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:from];
+        NSDateComponents *components2 = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit fromDate:to];
+        
+        NSString *date = [NSString stringWithFormat:@"%ld/%ld/%ld", (long)[components day], (long)[components month], (long)[components year]];
+        
+        NSString *toStrFrom = [NSString stringWithFormat:@"%ld:%ld - %ld:%ld", (long)[components hour], (long)[components minute], (long)[components2 hour], (long)[components2 minute]];
+        
+        if ([_scheduleDates objectForKey:date] == nil) {
+            [_scheduleDates setObject:@[] forKey:date];
+        }
+        
+        NSMutableArray *temp = [[_scheduleDates objectForKey:date] mutableCopy];
+        [temp addObject:toStrFrom];
+        
+        [_scheduleDates setObject:temp forKey:date];
+        
+    }
+    
     //Load shedule
-    _scheduleDates = [NSDictionary dictionaryWithObjectsAndKeys:
-                      @[@"12:00P - 4:30P"],
-                      @"28/11/2014",
-                      @[@"8:00A - 11:30A", @"12:30P - 4:30P"],
-                      @"29/11/2014",
-                      @[@"8:00A - 11:30A", @"12:30P - 4:30P"],
-                      @"30/11/2014", nil];
+//    _scheduleDates = [NSDictionary dictionaryWithObjectsAndKeys:
+//                      @[@"12:00P - 4:30P"],
+//                      @"28/11/2014",
+//                      @[@"8:00A - 11:30A", @"12:30P - 4:30P"],
+//                      @"29/11/2014",
+//                      @[@"8:00A - 11:30A", @"12:30P - 4:30P"],
+//                      @"30/11/2014", nil];
     
     self.bgImageView.image = self.bgImage;
     
@@ -74,7 +107,7 @@
     calendar.onlyShowCurrentMonth = NO;
     calendar.adaptHeightToNumberOfWeeksInMonth = YES;
     
-    calendar.frame = CGRectMake(162, 80, 700, 600);
+    calendar.frame = CGRectMake(162, 30, 700, 600);
     [self.view addSubview:calendar];
 //    
 //    self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, CGRectGetMaxY(calendar.frame) + 4, self.view.bounds.size.width, 24)];
@@ -133,7 +166,7 @@
 //    self.dateLabel.text = [self.dateFormatter stringFromDate:date];
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"dd/MM/yyyy"];
+    [formatter setDateFormat:@"d/MM/yyyy"];
     
     NSString *stringFromDate = [formatter stringFromDate:date];
     
