@@ -47,6 +47,44 @@
     return self;
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    // To hide navigation bar of root view controller
+    [self.navigationController viewDidAppear:animated];
+    
+    //hiding error label
+    self.errorLabel.hidden=YES;
+    
+    //hiding clear and back button
+    self.buttonClear.hidden=YES;
+    self.buttonBack.hidden =YES;
+    
+    
+    [self.button9 setTitle:@" " forState:UIControlStateNormal];
+    [self.button8 setTitle:@" " forState:UIControlStateNormal];
+    [self.button7 setTitle:@" " forState:UIControlStateNormal];
+    [self.button6 setTitle:@" " forState:UIControlStateNormal];
+    [self.button5 setTitle:@" " forState:UIControlStateNormal];
+    [self.button4 setTitle:@" " forState:UIControlStateNormal];
+    [self.button3 setTitle:@" " forState:UIControlStateNormal];
+    [self.button2 setTitle:@" " forState:UIControlStateNormal];
+    [self.button1 setTitle:@" " forState:UIControlStateNormal];
+    [self.button0 setTitle:@" " forState:UIControlStateNormal];
+    [self.buttonClear setTitle:@" " forState:UIControlStateNormal];
+    [self.buttonBack setTitle:@" " forState:UIControlStateNormal];
+    
+    // create compnay logo image on navigation bar at titleview
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+    titleView.backgroundColor = [UIColor clearColor];
+    
+    UIImageView *titleImage=[[UIImageView alloc ] initWithFrame:CGRectMake(0, -5, 200, 49)];
+    titleImage.image=[UIImage imageNamed:@"TabBar_Logo_PinScreen1.png"];
+    [titleView addSubview:titleImage];
+    self.navigationItem.titleView=titleView;
+    
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -211,41 +249,6 @@
     
 }
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    // To hide navigation bar of root view controller
-    [self.navigationController viewDidAppear:animated];
-    
-    //hiding error label
-    self.errorLabel.hidden=YES;
-    
-    //hiding clear and back button
-    self.buttonClear.hidden=YES;
-    self.buttonBack.hidden =YES;
-    
-    self.button9.titleLabel.text = @" ";
-    self.button8.titleLabel.text = @" ";
-    self.button7.titleLabel.text = @" ";
-    self.button6.titleLabel.text = @" ";
-    self.button5.titleLabel.text = @" ";
-    self.button4.titleLabel.text = @" ";
-    self.button3.titleLabel.text = @" ";
-    self.button2.titleLabel.text = @" ";
-    self.button1.titleLabel.text = @" ";
-    self.button0.titleLabel.text = @" ";
-    self.buttonClear.titleLabel.text = @" ";
-    self.buttonBack.titleLabel.text = @" ";
-    
-    // create compnay logo image on navigation bar at titleview
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
-    titleView.backgroundColor = [UIColor clearColor];
-    
-    UIImageView *titleImage=[[UIImageView alloc ] initWithFrame:CGRectMake(0, -5, 200, 49)];
-    titleImage.image=[UIImage imageNamed:@"TabBar_Logo_PinScreen1.png"];
-    [titleView addSubview:titleImage];
-    self.navigationItem.titleView=titleView;
-    
-}
 
 
 
