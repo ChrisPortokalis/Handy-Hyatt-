@@ -218,7 +218,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BY1-7M-S60">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BY1-7M-S60">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z1H-1A-gEw">
@@ -244,12 +244,6 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="BY1-7M-S60" secondAttribute="centerX" constant="57" id="1dq-fg-eOn"/>
-                            <constraint firstAttribute="height" secondItem="BY1-7M-S60" secondAttribute="height" id="3be-3X-EUl"/>
-                            <constraint firstAttribute="centerY" secondItem="BY1-7M-S60" secondAttribute="centerY" constant="-38" id="L5S-dt-1d4"/>
-                            <constraint firstAttribute="width" secondItem="BY1-7M-S60" secondAttribute="width" id="ZwA-dd-cKG"/>
-                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="8FM-fr-Xyu">

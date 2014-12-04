@@ -44,7 +44,8 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     //applying background for the calendar
-    [self.bgImageView setImage:self.bgImage];
+    UIImage *bg=self.bgImage;
+    [self.bgImageView setImage:bg];
     
 
     
